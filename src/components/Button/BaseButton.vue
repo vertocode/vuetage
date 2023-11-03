@@ -40,31 +40,33 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  action: 'Action',
-  disabled: false,
-  tooltipMessage: null,
-  variant: 'outline-primary',
-  size: 'medium',
-  loading: false
+	action: 'Action',
+	disabled: false,
+	tooltipMessage: null,
+	variant: 'outline-primary',
+	size: 'medium',
+	loading: false
 })
 
 const variantClass = computed(() => {
-  return `btn-${props.variant}`
+	return `btn-${props.variant}`
 })
 
 const titleMessage = computed(() => {
-  return props.tooltipMessage ?? props.disabled ? 'This button is disabled.' : ''
+	return props.tooltipMessage ?? props.disabled ? 'This button is disabled.' : ''
 })
 
 const sizeClass = computed(() => {
-  switch (props.size) {
-    case 'small':
-      return 'btn-small'
-    case 'medium':
-      return 'btn-medium'
-    case 'large':
-      return 'btn-large'
-  }
+	switch (props.size) {
+	case 'small':
+		return 'btn-small'
+	case 'medium':
+		return 'btn-medium'
+	case 'large':
+		return 'btn-large'
+	default:
+		throw new Error('"size" props value passed is not valid.')
+	}
 })
 </script>
 
