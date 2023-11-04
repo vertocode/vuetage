@@ -5,23 +5,113 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/build.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/fontawesome-webfont-2adefcbc.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/fontawesome-webfont-7bfcab6d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/fontawesome-webfont-aa58f33f.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/fontawesome-webfont-ad615792.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/fontawesome-webfont-ba0c59de.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-22abec4e.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-6c117989.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vuerto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vuetage.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/vuetage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/vuetage.umd.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/vue-demi-fix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/vue-demi-switch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/api/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/api/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/api/component.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/api/context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/api/hooks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/api/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/api/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/const.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/proxy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/cjs/time.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/api.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/app.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/component.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/component.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/context.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/hooks.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/hooks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/util.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/api/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/const.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/const.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/plugin.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/proxy.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/proxy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/time.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/lib/esm/time.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vue/devtools-api/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/dist/pinia.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/dist/pinia.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/dist/pinia.esm-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/dist/pinia.iife.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/dist/pinia.iife.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/dist/pinia.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/dist/pinia.prod.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/node_modules/.bin/tsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/node_modules/.bin/tsserver" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/node_modules/.bin/vue-demi-fix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/node_modules/.bin/vue-demi-switch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pinia/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/bin/vue-demi-fix.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/bin/vue-demi-switch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/index.iife.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/index.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/v2.7/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/v2.7/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/v2.7/index.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/v2/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/v2/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/v2/index.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/v3/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/v3/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/lib/v3/index.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/scripts/postinstall.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/scripts/switch-cli.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-demi/scripts/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.cjs.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.esm-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.global.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.node.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.prod.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/vetur/attributes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-router/vetur/tags.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,13 +136,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/evertonvanonifernandes/Documents/vuerto",
+    "last_opened_file_path": "/Users/evertonvanonifernandes/Documents/vuetage",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "/Users/evertonvanonifernandes/Documents/vuerto/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/evertonvanonifernandes/Documents/vuetage/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -72,7 +162,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699049549234</updated>
-      <workItem from="1699049550596" duration="7538000" />
+      <workItem from="1699049550596" duration="8562000" />
+      <workItem from="1699059835995" duration="5709000" />
     </task>
     <servers />
   </component>
