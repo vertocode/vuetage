@@ -3,7 +3,7 @@
   "title": "vuetage",
   "type": "module",
   "version": "0.0.6",
-  "main": "vuetage.umd.cjs",
+  "main": "vuetage.js",
   "module": "vuetage.js",
   "license": "MIT",
   "scripts": {

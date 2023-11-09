@@ -15,7 +15,7 @@
       </span>
       <span v-else class="base-button-content">
         <i v-if="leftIcon" :class="leftIcon"></i>
-        {{ action }}
+        <slot></slot>
         <i v-if="rightIcon" :class="rightIcon"></i>
       </span>
     </button>
@@ -28,7 +28,6 @@ import { Size, Variant } from '../../typing/BaseButton'
 import Spinner from '../Spinner/Spinner.vue'
 
 interface Props {
-  action?: string
   disabled?: boolean
   tooltipMessage?: string | null
   size?: Size
@@ -40,7 +39,6 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	action: 'Action',
 	disabled: false,
 	tooltipMessage: null,
 	variant: 'outline-primary',
