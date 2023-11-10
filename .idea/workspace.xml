@@ -5,11 +5,346 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/CONTRIBUTION.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vite-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.node.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/semver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/.tonic_example.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/dist/ajv.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/dist/ajv.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/dist/ajv.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/ajv.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/ajv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/cache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/compile/async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/compile/equal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/compile/error_classes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/compile/formats.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/compile/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/compile/resolve.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/compile/rules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/compile/schema_obj.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/compile/ucs2length.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/compile/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/definition_schema.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/_limit.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/_limitItems.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/_limitLength.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/_limitProperties.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/allOf.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/anyOf.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/coerce.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/comment.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/const.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/contains.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/custom.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/defaults.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/definitions.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/dependencies.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/enum.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/errors.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/format.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/if.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/items.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/missing.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/multipleOf.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/not.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/oneOf.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/pattern.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/properties.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/propertyNames.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/ref.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/required.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/uniqueItems.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dot/validate.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/_limit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/_limitItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/_limitLength.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/_limitProperties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/allOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/anyOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/comment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/const.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/contains.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/dependencies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/enum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/format.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/if.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/items.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/multipleOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/not.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/oneOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/pattern.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/properties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/propertyNames.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/ref.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/required.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/uniqueItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/dotjs/validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/keyword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/refs/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/refs/json-schema-draft-04.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/refs/json-schema-draft-06.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/refs/json-schema-draft-07.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/lib/refs/json-schema-secure.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/scripts/.eslintrc.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/scripts/bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/scripts/compile-dots.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/scripts/info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/scripts/prepare-tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/scripts/publish-built-version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@eslint/eslintrc/node_modules/ajv/scripts/travis-gh-pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/_formatLimit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/deepProperties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/deepRequired.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/dot/_formatLimit.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/dot/patternRequired.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/dot/switch.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/dotjs/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/dotjs/_formatLimit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/dotjs/patternRequired.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/dotjs/switch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/dynamicDefaults.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/formatMaximum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/formatMinimum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/if.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/instanceof.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/patternRequired.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/prohibited.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/propertyNames.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/range.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/regexp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/switch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/keywords/typeof.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv-keywords/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/.tonic_example.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/.tonic_example.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/dist/ajv.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/dist/ajv.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/dist/ajv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/dist/ajv.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/dist/ajv.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/dist/ajv.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/dist/nodent.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/dist/regenerator.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/ajv.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/ajv.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/ajv.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/ajv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/compile/_rules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/compile/equal.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/compile/equal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/compile/formats.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/compile/formats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/compile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/compile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/compile/resolve.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/compile/resolve.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/compile/rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/compile/rules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/compile/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/compile/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/compile/validation_error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/_limit.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/_limit.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/_limitItems.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/_limitItems.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/_limitLength.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/_limitLength.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/_limitProperties.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/_limitProperties.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/allOf.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/allOf.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/anyOf.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/anyOf.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/coerce.def" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/coerce.def" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/custom.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/custom.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/defaults.def" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/defaults.def" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/definitions.def" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/definitions.def" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/dependencies.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/dependencies.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/errors.def" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/errors.def" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/format.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/format.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/items.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/items.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/missing.def" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/missing.def" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/multipleOf.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/multipleOf.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/oneOf.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/oneOf.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/properties.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/properties.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/ref.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/ref.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/required.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/required.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/uniqueItems.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/uniqueItems.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/v5/_formatLimit.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/v5/constant.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/v5/patternRequired.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/v5/switch.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dot/validate.jst" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dot/validate.jst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/_formatLimit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/_limit.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/_limit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/_limitItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/_limitItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/_limitLength.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/_limitLength.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/_limitProperties.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/_limitProperties.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/allOf.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/allOf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/anyOf.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/anyOf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/constant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/dependencies.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/dependencies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/enum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/format.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/format.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/items.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/multipleOf.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/multipleOf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/not.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/not.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/oneOf.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/oneOf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/pattern.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/pattern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/patternRequired.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/properties.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/properties.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/ref.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/ref.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/required.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/required.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/switch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/uniqueItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/uniqueItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/dotjs/validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/keyword.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/keyword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/refs/json-schema-draft-04.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/lib/refs/json-schema-draft-04.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/refs/json-schema-v5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/lib/v5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/scripts/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/scripts/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/scripts/compile-dots.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/scripts/compile-dots.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/scripts/info" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/scripts/info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/scripts/prepare-tests" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/scripts/prepare-tests" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ajv/scripts/travis-gh-pages" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ajv/scripts/travis-gh-pages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/argparse/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/argparse/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/argparse/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/argparse/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/argparse/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/argparse/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/argparse/argparse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/argparse/lib/sub.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/argparse/lib/textwrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/argparse/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/argparse/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action/append.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action/append/constant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action/count.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action/help.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action/store/constant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action/store/false.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action/store/true.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action/subparsers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action/version.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/action_container.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/argparse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/argument/error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/argument/exclusive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/argument/group.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/argument_parser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/const.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/help/added_formatters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/help/formatter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/namespace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/lib/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint-config/node_modules/argparse/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/.tonic_example.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/dist/ajv.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/dist/ajv.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/dist/ajv.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/ajv.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/ajv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/cache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/compile/async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/compile/equal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/compile/error_classes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/compile/formats.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/compile/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/compile/resolve.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/compile/rules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/compile/schema_obj.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/compile/ucs2length.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/compile/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/definition_schema.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/_limit.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/_limitItems.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/_limitLength.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/_limitProperties.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/allOf.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/anyOf.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/coerce.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/comment.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/const.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/contains.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/custom.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/defaults.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/definitions.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/dependencies.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/enum.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/errors.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/format.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/if.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/items.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/missing.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/multipleOf.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/not.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/oneOf.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/pattern.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/properties.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/propertyNames.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/ref.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/required.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/uniqueItems.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dot/validate.jst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/_limit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/_limitItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/_limitLength.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/_limitProperties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/allOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/anyOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/comment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/const.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/contains.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/dependencies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/enum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/format.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/if.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/items.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/multipleOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/not.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/oneOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/pattern.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/properties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/propertyNames.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/ref.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/required.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/uniqueItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/dotjs/validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/keyword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/refs/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/refs/json-schema-draft-04.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/refs/json-schema-draft-06.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/refs/json-schema-draft-07.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/lib/refs/json-schema-secure.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/scripts/.eslintrc.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/scripts/bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/scripts/compile-dots.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/scripts/info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/scripts/prepare-tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/scripts/publish-built-version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eslint/node_modules/ajv/scripts/travis-gh-pages" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,28 +363,40 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/evertonvanonifernandes/Documents/vuetage&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/evertonvanonifernandes/Documents/vuetage/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/evertonvanonifernandes/Documents/vuetage/src/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "/Users/evertonvanonifernandes/Documents/vuetage/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vuetage/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,6 +409,7 @@
       <workItem from="1699049550596" duration="8562000" />
       <workItem from="1699059835995" duration="8123000" />
       <workItem from="1699555493419" duration="1301000" />
+      <workItem from="1699627356903" duration="1651000" />
     </task>
     <servers />
   </component>

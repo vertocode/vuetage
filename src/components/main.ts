@@ -1,7 +1,11 @@
-import BaseButton from './Button/BaseButton.vue'
-import Spinner from './Spinner/Spinner.vue'
+import type { App } from 'vue';
+import { Spinner, BaseButton } from '@/components'
 
-export {
-	BaseButton,
-	Spinner
-}
+export default {
+  install: (app: App) => {
+    app.component('BaseButton', BaseButton)
+    app.component('Spinner', Spinner)
+  }
+};
+
+export { BaseButton, Spinner }

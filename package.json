@@ -1,11 +1,16 @@
 {
   "name": "vuetage",
+  "private": false,
   "title": "vuetage",
   "type": "module",
-  "version": "0.0.6",
-  "main": "vuetage.js",
-  "module": "vuetage.js",
+  "version": "0.0.27.1",
+  "main": "./dist/vuetage.umd.js",
+  "module": "./dist/vuetage.es.js",
   "license": "MIT",
+  "types": "./dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "bash scripts/build.sh",
@@ -13,13 +18,13 @@
     "lint": "yarn eslint --ext .vue,.ts ."
   },
   "exports": {
-    "*": {
-      "import": "vuetage.js",
-      "require": "vuetage.umd.cjs",
-      "/index.css": {
-        "import": "style.css",
-        "require": "style.css"
-      }
+    ".": {
+      "import": "./dist/vuetage.es.js",
+      "require": "./dist/vuetage.umd.js"
+    },
+    "./dist/vuetage-ts.css": {
+      "import": "./dist/vuetage.css",
+      "require": "./dist/vuetage.css"
     }
   },
   "dependencies": {
@@ -36,9 +41,11 @@
     "eslint-plugin-vue": "^9.17.0",
     "font-awesome": "^4.7.0",
     "path": "^0.12.7",
+    "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.52.2",
     "typescript": "^4.9.5",
     "vite": "^4.5.0",
+    "vite-plugin-dts": "^3.6.3",
     "vue-fontawesome": "^0.0.2",
     "vue-tsc": "^0.34.7"
   },
