@@ -4,7 +4,7 @@ Vuetage is a library of custom Vue components designed to simplify and enhance y
 
 ## Installation
 
-You can install the Vuetage library using either npm or yarn.
+You can install the Vuetage library using your prefer package manager.
 
 ### Yarn
 
@@ -55,7 +55,7 @@ The Result of this code will be:
 
 ![Imgur](https://i.imgur.com/Tn3vkIp.png)
 
-For more information on each component's usage, please refer to the [documentation](https://vuetage.vertocode.com).
+For a more comprehensive understanding of each component's capabilities and usage, consult the [documentation](https://vuetage.vertocode.com).
 
 ## License
 
@@ -63,4 +63,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contributing
 
-We welcome contributions from the community. Please see our [CONTRIBUTION](docs/CONTRIBUTION.md) for more information.
+Contributions from the community are highly valued. Please review our [CONTRIBUTION](docs/CONTRIBUTION.md) for more information.

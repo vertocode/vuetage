@@ -8,9 +8,7 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
 	plugins: [
 		vue(),
-		dts({
-			insertTypesEntry: true,
-		}),
+		dts(),
 		typescript2({
 			check: false,
 			include: ["src/components/**/*.vue"],

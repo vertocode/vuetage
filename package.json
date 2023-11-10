@@ -1,9 +1,14 @@
 {
   "name": "vuetage",
+  "author": {
+    "name": "vertocode | Everton Vanoni",
+    "email": "evertonvanoni1@gmail.com",
+    "url": "https://vertocode.com"
+  },
   "private": false,
   "title": "vuetage",
   "type": "module",
-  "version": "0.0.27.1",
+  "version": "0.0.31",
   "main": "./dist/vuetage.umd.js",
   "module": "./dist/vuetage.es.js",
   "license": "MIT",
@@ -51,5 +56,24 @@
   },
   "engines": {
     "node": "^18.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "typescript",
+    "vite",
+    "component",
+    "library"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vertocode/vuetage"
+  },
+  "bugs": {
+    "link": "https://github.com/vertocode/vuetage/issues",
+    "contact": "evertonvanoni1@gmail.com"
   }
 }
