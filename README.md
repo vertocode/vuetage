@@ -26,34 +26,23 @@ Make sure to include the component's markup in your Vue template:
 <template>
   <div>
     <BaseButton
-      variant="primary"
-      size="large"
-      left-icon="fa fa-cart-plus"
-      tooltip-message="Add product to cart"
       :disabled="isDisabled"
       :loading="isLoading"
-      @click="addToCart"
+      @click="clickFunction"
     >
-      Add to Cart
+      Base Button
     </BaseButton>
   </div>
 </template>
-
-<script setup>
-import { BaseButton } from 'vuetage'
-import { ref } from 'vue'
-
-const isDisabled = ref(false)
-const isLoading = ref(false)
-const addToCart = () => { 
-  // logic to add here
-}
-</script>
 ```
+
+> NOTE
+> 
+> There are a lot of props to modify the styles of component, this is just a default, you can edit the colors, size, effects, and add custom styles as you need.
 
 The Result of this code will be:
 
-![Imgur](https://i.imgur.com/Tn3vkIp.png)
+![Imgur](https://i.imgur.com/pC2AHq6m.png)
 
 For a more comprehensive understanding of each component's capabilities and usage, consult the [documentation](https://vuetage.vertocode.com).
 

@@ -8,7 +8,7 @@
   "private": false,
   "title": "vuetage",
   "type": "module",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "main": "./dist/vuetage.umd.js",
   "module": "./dist/vuetage.es.js",
   "license": "MIT",
@@ -20,7 +20,9 @@
     "dev": "vite",
     "build": "bash scripts/build.sh",
     "preview": "vite preview",
-    "lint": "yarn eslint --ext .vue,.ts ."
+    "lint": "yarn eslint --ext .vue,.ts .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "exports": {
     ".": {
@@ -37,17 +39,29 @@
   },
   "devDependencies": {
     "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
+    "@storybook/vue3": "^7.5.3",
+    "@storybook/vue3-vite": "^7.5.3",
     "@types/node": "^20.8.10",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "@vitejs/plugin-vue": "^4.4.0",
     "eslint": "^8.51.0",
     "eslint-config": "^0.3.0",
+    "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-vue": "^9.17.0",
     "font-awesome": "^4.7.0",
     "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.5",
     "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.52.2",
+    "storybook": "^7.5.3",
     "typescript": "^4.9.5",
     "vite": "^4.5.0",
     "vite-plugin-dts": "^3.6.3",
@@ -75,5 +89,10 @@
   "bugs": {
     "link": "https://github.com/vertocode/vuetage/issues",
     "contact": "evertonvanoni1@gmail.com"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

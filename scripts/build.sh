@@ -1,4 +1,10 @@
 set -e
+
+echo 'removing wrong type react if has in node_modules/@types...'
+# If this type exist, it generates conflicts with storybook type.
+rimraf "./node_modules/@types/react"
+
+echo 'building...'
 vue-tsc --noEmit && vite build
 
 # For some reason the build of vite is not importing automatically the style.css, this is a treatment to import css correctly.

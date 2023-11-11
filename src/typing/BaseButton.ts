@@ -1,4 +1,21 @@
-export type Variant =
+import { StyleValue } from 'vue'
+
+export interface Props {
+    disabled?: boolean
+    tooltipMessage?: string | null
+    size?: Size
+    variant?: Variant
+    leftIcon?: string
+    rightIcon?: string | null
+    loading?: boolean
+    customClass?: string
+    customStyle?: StyleValue | undefined
+    colorSpinner?: string
+    useBGTransition?: boolean
+    useHover?: boolean
+}
+
+type Variant =
     'primary'
     | 'success'
     | 'danger'
@@ -8,5 +25,5 @@ export type Variant =
     | 'dark'
     | 'outline-dark'
 
-export type Size = 'small' | 'medium' | 'large'
+type Size = 'small' | 'medium' | 'large'
 

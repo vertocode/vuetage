@@ -2,21 +2,27 @@
   <div style="width: max-content">
     <button
         class="base-button"
-        :class="[
-          sizeClass,
-          variantClass,
-          customClass
-        ]"
+        :class="classes"
         :disabled="props.disabled"
+        :style="customStyle"
         :title="titleMessage"
     >
       <span v-if="loading">
-        <Spinner />
+        <slot name="spinner">
+          <Spinner size="small" :color-spinner="colorSpinner" />
+        </slot>
       </span>
+
       <span v-else class="base-button-content">
-        <i v-if="leftIcon" :class="leftIcon"></i>
-        <slot></slot>
-        <i v-if="rightIcon" :class="rightIcon"></i>
+        <slot name="leftIcon">
+         <i v-if="leftIcon" :class="leftIcon"></i>
+        </slot>
+
+        <slot>Label</slot>
+
+        <slot name="rightIcon">
+          <i v-if="rightIcon" :class="rightIcon"></i>
+        </slot>
       </span>
     </button>
   </div>
@@ -24,30 +30,19 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Size, Variant } from '../../typing/BaseButton'
-import Spinner from '../Spinner/Spinner.vue'
-
-interface Props {
-  disabled?: boolean
-  tooltipMessage?: string | null
-  size?: Size
-  variant?: Variant
-  leftIcon?: string
-  rightIcon?: string
-  loading?: boolean
-  customClass?: string
-}
+import { Props } from '@/typing/BaseButton'
+import Spinner from '@/components/Spinner/Spinner.vue'
 
 const props = withDefaults(defineProps<Props>(), {
 	disabled: false,
 	tooltipMessage: null,
-	variant: 'outline-primary',
+	variant: 'primary',
 	size: 'medium',
-	loading: false
-})
-
-const variantClass = computed(() => {
-	return `btn-${props.variant}`
+  rightIcon: null,
+	loading: false,
+  customStyle: undefined,
+  useBGTransition: true,
+  useHover: true
 })
 
 const titleMessage = computed(() => {
@@ -66,6 +61,20 @@ const sizeClass = computed(() => {
 		throw new Error('"size" props value passed is not valid.')
 	}
 })
+
+const classes = computed(() => {
+  const classes = [sizeClass.value, `btn-${props.variant}`, props.customClass]
+
+  if (props.useBGTransition) {
+    classes.push('base-button-transition')
+  }
+
+  if (props.useHover) {
+    classes.push('base-button-hover')
+  }
+
+  return classes.filter(Boolean)
+})
 </script>
 
 <style scoped lang="scss">
@@ -73,18 +82,24 @@ const sizeClass = computed(() => {
   padding: 10px 20px;
   border: 1px solid transparent;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 3em;
+  line-height: 1;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  font-weight: 700;
+  font-family: 'Nuvito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  &.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+  &-transition {
+    transition: background-color 0.3s ease-in-out;
+  }
 
-    &:hover {
+  &.btn-primary {
+    background-color: #1EA7FD;
+    border-color: #1EA7FD;
+
+    &.base-button-hover:hover {
       background-color: #0056b3;
       border-color: #0056b3;
     }
@@ -94,7 +109,7 @@ const sizeClass = computed(() => {
     background-color: #28a745;
     border-color: #28a745;
 
-    &:hover {
+    &.base-button-hover:hover {
       background-color: #1e7e34;
       border-color: #1e7e34;
     }
@@ -104,7 +119,7 @@ const sizeClass = computed(() => {
     background-color: #dc3545;
     border-color: #dc3545;
 
-    &:hover {
+    &.base-button-hover:hover {
       background-color: #c82333;
       border-color: #c82333;
     }
@@ -115,7 +130,7 @@ const sizeClass = computed(() => {
     border-color: #007bff;
     color: #007bff;
 
-    &:hover {
+    &.base-button-hover:hover {
       background-color: #007bff;
       color: #fff;
     }
@@ -126,7 +141,7 @@ const sizeClass = computed(() => {
     border-color: #28a745;
     color: #28a745;
 
-    &:hover {
+    &.base-button-hover:hover {
       background-color: #28a745;
       color: #fff;
     }
@@ -137,7 +152,7 @@ const sizeClass = computed(() => {
     border-color: #dc3545;
     color: #dc3545;
 
-    &:hover {
+    &.base-button-hover:hover {
       background-color: #dc3545;
       color: #fff;
     }
@@ -148,7 +163,7 @@ const sizeClass = computed(() => {
     border-color: black;
     color: white;
 
-    &:hover {
+    &.base-button-hover:hover {
       background-color: #424242;
     }
   }
@@ -158,7 +173,7 @@ const sizeClass = computed(() => {
     border-color: black;
     color: black;
 
-    &:hover {
+    &.base-button-hover:hover {
       background-color: #969696;
     }
   }
@@ -188,7 +203,7 @@ const sizeClass = computed(() => {
     background-color: gray;
     border-color: gray;
     cursor: auto;
-    &:hover {
+    &.base-button-hover:hover {
       background-color: gray;
       border-color: gray;
     }
