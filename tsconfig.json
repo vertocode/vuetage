@@ -25,10 +25,7 @@
         "./src/*"
       ]
     },
-    "typeRoots": ["src/typing/*", "./node_modules/@types"],
-    "types": [
-      "vite/client",
-    ]
+    "typeRoots": ["src/typing/*", "./node_modules/@types"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
