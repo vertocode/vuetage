@@ -58,6 +58,134 @@ const meta: Meta = {
     }
 }
 
+export const Primary: Story = {
+    render: (args) => ({
+        components: { BaseButton },
+        setup() {
+            return { args }
+        },
+        template: '<BaseButton v-bind="args">Primary</BaseButton>'
+    }),
+    args: {
+        ...BaseButton.args
+    }
+}
+Primary.args = {
+    variant: 'primary'
+}
+
+export const Success: Story = {
+    render: (args) => ({
+        components: { BaseButton },
+        setup() {
+            return { args }
+        },
+        template: '<BaseButton v-bind="args">Success</BaseButton>'
+    }),
+    args: {
+        ...BaseButton.args
+    }
+}
+Success.args = {
+    variant: 'success'
+}
+
+export const Danger: Story = {
+    render: (args) => ({
+        components: { BaseButton },
+        setup() {
+            return { args }
+        },
+        template: '<BaseButton v-bind="args">Danger</BaseButton>'
+    }),
+    args: {
+        ...BaseButton.args
+    }
+}
+Danger.args = {
+    variant: 'danger'
+}
+
+export const OutlinePrimary: Story = {
+    render: (args) => ({
+        components: { BaseButton },
+        setup() {
+            return { args }
+        },
+        template: '<BaseButton v-bind="args">Outline Primary</BaseButton>'
+    }),
+    args: {
+        ...BaseButton.args
+    }
+}
+OutlinePrimary.args = {
+    variant: 'outline-primary'
+}
+
+export const OutlineSuccess: Story = {
+    render: (args) => ({
+        components: { BaseButton },
+        setup() {
+            return { args }
+        },
+        template: '<BaseButton v-bind="args">Outline Success</BaseButton>'
+    }),
+    args: {
+        ...BaseButton.args
+    }
+}
+OutlineSuccess.args = {
+    variant: 'outline-success'
+}
+
+export const OutlineDanger: Story = {
+    render: (args) => ({
+        components: { BaseButton },
+        setup() {
+            return { args }
+        },
+        template: '<BaseButton v-bind="args">Outline Danger</BaseButton>'
+    }),
+    args: {
+        ...BaseButton.args
+    }
+}
+OutlineDanger.args = {
+    variant: 'outline-danger'
+}
+
+export const Dark: Story = {
+    render: (args) => ({
+        components: { BaseButton },
+        setup() {
+            return { args }
+        },
+        template: '<BaseButton v-bind="args">Dark</BaseButton>'
+    }),
+    args: {
+        ...BaseButton.args
+    }
+}
+Dark.args = {
+    variant: 'dark'
+}
+
+export const OutlineDark: Story = {
+    render: (args) => ({
+        components: { BaseButton },
+        setup() {
+            return { args }
+        },
+        template: '<BaseButton v-bind="args">Outline Dark</BaseButton>'
+    }),
+    args: {
+        ...BaseButton.args
+    }
+}
+OutlineDark.args = {
+    variant: 'outline-dark'
+}
+
 export default meta
 type Story = StoryObj<typeof meta>
 
