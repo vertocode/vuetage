@@ -49,6 +49,11 @@ withDefaults(defineProps<Props>(), {
     width: 4em;
     height: 4em;
   }
+
+  &-large {
+    width: 6em;
+    height: 6em;
+  }
 }
 
 @keyframes spin {
