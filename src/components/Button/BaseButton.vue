@@ -3,25 +3,37 @@
     <button
         class="base-button"
         :class="classes"
-        :disabled="props.disabled"
+        :disabled="disabled"
         :style="customStyle"
         :title="titleMessage"
     >
       <span v-if="loading">
         <slot name="spinner">
-          <Spinner size="small" :color-spinner="colorSpinner" />
+          <Spinner
+              data-test-id="spinner"
+              size="small"
+              :color-spinner="colorSpinner"
+          />
         </slot>
       </span>
 
       <span v-else class="base-button-content">
         <slot name="leftIcon">
-         <i v-if="leftIcon" :class="leftIcon"></i>
+         <i
+             v-if="leftIcon"
+             :class="leftIcon"
+             data-test-id="left-icon"
+         ></i>
         </slot>
 
         <slot>Label</slot>
 
         <slot name="rightIcon">
-          <i v-if="rightIcon" :class="rightIcon"></i>
+          <i
+              v-if="rightIcon"
+              :class="rightIcon"
+              data-test-id="right-icon"
+          ></i>
         </slot>
       </span>
     </button>
