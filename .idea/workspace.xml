@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/block-navigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/clover.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/components/Button/BaseButton.vue.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/components/Button/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/components/Spinner/Spinner.vue.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/components/Spinner/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/components/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/components/index.ts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/coverage-final.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/sort-arrow-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/sorter.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Spinner/__tests__/Spinner.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,25 +25,26 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/evertonvanonifernandes/Documents/vuetage/src/components&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/evertonvanonifernandes/Documents/vuetage/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/evertonvanonifernandes/Documents/vuetage/src/components/Spinner/__tests__",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "/Users/evertonvanonifernandes/Documents/vuetage/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Spinner/__tests__" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
@@ -100,7 +86,7 @@
       <workItem from="1699840295481" duration="1717000" />
       <workItem from="1699912038520" duration="554000" />
       <workItem from="1699970862624" duration="2421000" />
-      <workItem from="1699989063227" duration="3151000" />
+      <workItem from="1699989063227" duration="4775000" />
     </task>
     <servers />
   </component>
