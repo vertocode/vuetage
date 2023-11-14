@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/stories/Spinner.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/Spinner.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +85,7 @@
       <workItem from="1699840295481" duration="1717000" />
       <workItem from="1699912038520" duration="554000" />
       <workItem from="1699970862624" duration="2421000" />
-      <workItem from="1699989063227" duration="5443000" />
+      <workItem from="1699989063227" duration="5540000" />
     </task>
     <servers />
   </component>
