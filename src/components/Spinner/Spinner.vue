@@ -23,8 +23,8 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  colorSpinner: '#fff',
-  size: 'medium'
+	colorSpinner: '#fff',
+	size: 'medium'
 })
 </script>
 

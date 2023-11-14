@@ -11,42 +11,40 @@ export default defineConfig({
 		dts(),
 		typescript2({
 			check: false,
-			include: ["src/components/**/*.vue"],
+			include: ['src/components/**/*.vue'],
 			tsconfigOverride: {
 				compilerOptions: {
-					outDir: "dist",
+					outDir: 'dist',
 					sourceMap: true,
 					declaration: true,
 					declarationMap: true,
 				},
 			},
-			exclude: ["vite.config.ts"]
+			exclude: ['vite.config.ts']
 		})
 	],
 	build: {
 		cssCodeSplit: true,
 		lib: {
 			// Could also be a dictionary or array of multiple entry points
-			entry: "src/components/vuetage.ts",
+			entry: 'src/components/vuetage.ts',
 			name: 'vuetage',
-			formats: ["es", "cjs", "umd"],
+			formats: ['es', 'cjs', 'umd'],
 			fileName: format => `vuetage.${format}.js`
 		},
 		rollupOptions: {
 			// make sure to externalize deps that shouldn't be bundled
 			// into your library
 			input: {
-				main: path.resolve(__dirname, "src/components/main.ts")
+				main: path.resolve(__dirname, 'src/components/main.ts')
 			},
 			external: ['vue'],
-			// TODO: Remove this ts-ignore
-			// @ts-ignore
 			output: {
 				assetFileNames: (assetInfo) => {
-					if (assetInfo.name === 'main.css') return 'vuetage.css';
-					return assetInfo.name;
+					if (assetInfo.name === 'main.css') return 'vuetage.css'
+					return assetInfo.name
 				},
-				exports: "named",
+				exports: 'named',
 				globals: {
 					vue: 'Vue',
 				},

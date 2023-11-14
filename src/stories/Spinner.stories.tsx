@@ -31,7 +31,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Small: Story = {
-    render: (args: Spinner.args) => ({
+    render: (args) => ({
         components: { Spinner },
         setup() {
             return { args }
@@ -48,7 +48,7 @@ Small.args = {
 }
 
 export const Medium: Story = {
-    render: (args: Spinner.args) => ({
+    render: (args) => ({
         components: { Spinner },
         setup() {
             return { args }
@@ -65,7 +65,7 @@ Medium.args = {
 }
 
 export const Large: Story = {
-    render: (args: Spinner.args) => ({
+    render: (args) => ({
         components: { Spinner },
         setup() {
             return { args }

@@ -1,5 +1,21 @@
 set -e
 
+echo 'running vitest...'
+vitest --no-watch
+
+if [ $? -ne 0 ]; then
+  echo 'Error: vitest failed. Build process aborted.'
+  exit 1
+fi
+
+yarn lint
+
+if [ $? -ne 0 ]; then
+  echo 'Error: ESLint failed. Build process aborted.'
+  exit 1
+fi
+
+
 echo 'removing wrong type react if has in node_modules/@types...'
 # If this type exist, it generates conflicts with storybook type.
 rimraf "./node_modules/@types/react"

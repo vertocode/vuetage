@@ -50,11 +50,11 @@ const props = withDefaults(defineProps<Props>(), {
 	tooltipMessage: null,
 	variant: 'primary',
 	size: 'medium',
-  rightIcon: null,
+	rightIcon: null,
 	loading: false,
-  customStyle: undefined,
-  useBGTransition: true,
-  useHover: true
+	customStyle: undefined,
+	useBGTransition: true,
+	useHover: true
 })
 
 const titleMessage = computed(() => {
@@ -75,17 +75,17 @@ const sizeClass = computed(() => {
 })
 
 const classes = computed(() => {
-  const classes = [sizeClass.value, `btn-${props.variant}`, props.customClass]
+	const classes = [sizeClass.value, `btn-${props.variant}`, props.customClass]
 
-  if (props.useBGTransition) {
-    classes.push('base-button-transition')
-  }
+	if (props.useBGTransition) {
+		classes.push('base-button-transition')
+	}
 
-  if (props.useHover) {
-    classes.push('base-button-hover')
-  }
+	if (props.useHover) {
+		classes.push('base-button-hover')
+	}
 
-  return classes.filter(Boolean)
+	return classes.filter(Boolean)
 })
 </script>
 
