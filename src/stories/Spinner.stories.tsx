@@ -1,6 +1,5 @@
 import { Spinner } from '@/components'
 import { Meta, StoryObj } from '@storybook/vue3'
-import {computed} from "vue";
 
 const meta: Meta = {
     title: 'Loading/Spinner',
