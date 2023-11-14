@@ -5,7 +5,6 @@
     "email": "evertonvanoni1@gmail.com",
     "url": "https://vertocode.com"
   },
-  "private": false,
   "title": "vuetage",
   "type": "module",
   "version": "0.0.33",
@@ -76,7 +75,8 @@
     "vue-tsc": "^0.34.7"
   },
   "engines": {
-    "node": "^18.0.0"
+    "node": "^18.0.0",
+    "yarn": "^3.0.0"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -101,5 +101,6 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
