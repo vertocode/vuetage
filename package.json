@@ -7,7 +7,7 @@
   },
   "title": "vuetage",
   "type": "module",
-  "version": "0.0.33",
+  "version": "0.0.35",
   "main": "./dist/vuetage.umd.js",
   "module": "./dist/vuetage.es.js",
   "license": "MIT",
