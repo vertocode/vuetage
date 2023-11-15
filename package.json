@@ -74,10 +74,6 @@
     "vue-fontawesome": "^0.0.2",
     "vue-tsc": "^0.34.7"
   },
-  "engines": {
-    "node": "^18.0.0",
-    "yarn": "^3.0.0"
-  },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
