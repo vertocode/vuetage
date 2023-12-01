@@ -192,21 +192,21 @@ const classes = computed(() => {
 
   &.btn-small {
     height: 3em;
-    width: 8em;
+    min-width: 8em;
     font-size: 0.8rem;
     padding: 5px 10px;
   }
 
   &.btn-medium {
     height: 3em;
-    width: 10em;
+    min-width: 10em;
     font-size: 0.9rem;
     padding: 10px 20px;
   }
 
   &.btn-large {
-    height: 3em;
-    width: 12em;
+    min-height: 3em;
+    min-width: 12em;
     font-size: 1rem;
     padding: 15px 30px;
   }
