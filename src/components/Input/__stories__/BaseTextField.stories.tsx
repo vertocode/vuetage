@@ -17,7 +17,7 @@ export const Default: Story = {
         setup() {
             return { args }
         },
-        template: '<BaseTextField v-bind="args">Default</BaseTextField>'
+        template: '<BaseTextField modelValue="hello" v-bind="args">Default</BaseTextField>'
     }),
     args: {
         ...BaseButton.args
