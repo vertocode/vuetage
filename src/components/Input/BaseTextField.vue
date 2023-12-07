@@ -1,10 +1,13 @@
 <template>
-  <div class="base-text-field">
+  <div class="base-text-field" :class="{ ['base-text-field-has-label']: label }">
     <label
+        v-if="label"
         for="base-text-field-input-name"
         class="base-text-field-label"
         :style="customStyleLabel"
-        :class="{ ['base-text-field-label-active']: currentValue?.length }"
+        :class="{
+          ['base-text-field-label-active']: currentValue?.length || inputFocused
+        }"
     >{{ label }}</label>
     <input
         name="base-text-field-input-name"
@@ -21,6 +24,7 @@
         @input="emitInputValue"
         @change="emitChangeValue"
         @blur="emitBlurValue"
+        @focus="inputFocused = true"
         v-bind="bind"
     >
     <span class="error-message">{{ errorMessage }}</span>
@@ -30,6 +34,7 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
 
+/* === Props === */
 const props = defineProps({
   modelValue: {
     type: String,
@@ -89,24 +94,13 @@ const props = defineProps({
   }
 })
 
-const emits = defineEmits(['input:value', 'change:value', 'blur:value'])
-
-const emitInputValue = () => {
-  validateRules()
-  emits("input:value", currentValue)
-}
-
-const emitChangeValue = () => {
-  validateRules()
-  emits("change:value", currentValue)
-}
-
-const emitBlurValue = () => {
-  validateRules()
-  emits("blur:value", currentValue)
-}
-
+/* === State === */
 const currentValue = ref(props.modelValue)
+const inputFocused = ref(false)
+const hasError = ref(false)
+const errorMessage = ref('')
+
+/* === Computed === */
 const allRules = computed(() => {
   const rules = []
   if (props.required && !props.disableRequiredRule) {
@@ -124,9 +118,7 @@ const allRules = computed(() => {
   return [...rules, ...props.rules]
 })
 
-const hasError = ref(false)
-const errorMessage = ref('')
-
+/* === Methods === */
 const validateRules = () => {
   const errors = allRules
       .value
@@ -136,63 +128,87 @@ const validateRules = () => {
   hasError.value = !!errors.length
 }
 
+/* === Emits === */
+const emits = defineEmits(['input:value', 'change:value', 'blur:value'])
+const emitInputValue = () => {
+  validateRules()
+  emits("input:value", currentValue)
+}
+const emitChangeValue = () => {
+  validateRules()
+  emits("change:value", currentValue)
+}
+const emitBlurValue = () => {
+  inputFocused.value = false
+  validateRules()
+  emits("blur:value", currentValue)
+}
+
+/* === Watchers === */
 watch(currentValue, () => {
   validateRules()
 })
 </script>
 
 <style lang="scss">
+// Variables
+$base-spacing: 0.7em;
+$base-font-size: 1rem;
+$label-color: #868686;
+$error-color: red;
+
 .base-text-field {
   position: relative;
   width: max-content;
   display: flex;
   flex-direction: column;
+  margin-bottom: $base-spacing;
+
+  &-has-label {
+    margin-top: $base-spacing;
+  }
 
   &-input {
     height: 2em;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-  }
+    border: none;
+    border-bottom: 1px solid $label-color;
+    padding-left: $base-spacing;
 
-  &-input:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    outline: none;
-  }
-
-  &-input::placeholder {
-    font-family: Arial, serif;
+    &:focus {
+      outline: none;
+      border-color: $label-color;
+    }
   }
 
   &-error {
-    border-color: red;
-  }
+    border-color: $error-color;
 
-  &-error:focus {
-    border-color: red;
+    &:focus {
+      border-color: $error-color;
+    }
   }
 
   .error-message {
     font-family: 'Arial', serif;
-    color: red;
+    color: $error-color;
     font-size: 0.7em;
-    margin-left: 2px;
+    margin-top: $base-spacing;
+    margin-left: $base-spacing;
     font-weight: bolder;
     display: inline-block;
   }
 
   &-label {
-    color: #868686;
-    left: 5%;
-    top: 0.2em;
-    font-size: 1.2em;
+    color: $label-color;
+    pointer-events: none;
+    font-size: $base-font-size;
     position: absolute;
-    font-family: Arial, serif;
+    left: 5%;
+    top: 10%;
 
     &-active {
-      top: -0.7em;
-      font-size: 0.8em;
+      top: -1em;
+      font-size: 0.7em;
       font-weight: bold;
     }
   }
