@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/__stories__/BaseTextField.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/__stories__/BaseTextField.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,8 @@
       <workItem from="1701465281526" duration="618000" />
       <workItem from="1701467179045" duration="6000" />
       <workItem from="1701723410340" duration="2681000" />
-      <workItem from="1701902402159" duration="4179000" />
+      <workItem from="1701902402159" duration="4851000" />
+      <workItem from="1701980152119" duration="4044000" />
     </task>
     <servers />
   </component>
