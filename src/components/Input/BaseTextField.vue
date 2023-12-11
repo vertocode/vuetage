@@ -15,12 +15,13 @@
         class="base-text-field-input"
         v-model="currentValue"
         :class="{
-            ['base-text-field-error']: hasError && !loading
+            ['base-text-field-error']: hasError && !loading,
+            ['base-text-field-border']: border
         }"
         :required="required"
         :style="customStyle"
+        :placeholder="currentValue?.length || inputFocused ? placeholder : null"
         :disabled="disabled"
-        :placeholder="placeholder"
         @input="emitInputValue"
         @change="emitChangeValue"
         @blur="emitBlurValue"
@@ -43,6 +44,10 @@ const props = defineProps({
   bind: {
     type: Object,
     default: null
+  },
+  border: {
+    type: Boolean,
+    default: false
   },
   disabled: {
     type: Boolean,
@@ -154,8 +159,9 @@ watch(currentValue, () => {
 // Variables
 $base-spacing: 0.7em;
 $base-font-size: 1rem;
-$label-color: #868686;
+$label-color: #999999;
 $error-color: red;
+$disabled-color: #E0E0E0;
 
 .base-text-field {
   position: relative;
@@ -163,6 +169,10 @@ $error-color: red;
   display: flex;
   flex-direction: column;
   margin-bottom: $base-spacing;
+
+  [disabled] {
+    background-color: $disabled-color;
+  }
 
   &-has-label {
     margin-top: $base-spacing;
@@ -179,6 +189,13 @@ $error-color: red;
       border-color: $label-color;
     }
   }
+
+  &-border {
+    border: 1px solid $label-color;
+    border-radius: 0.4em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
 
   &-error {
     border-color: $error-color;
