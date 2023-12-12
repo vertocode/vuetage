@@ -17,14 +17,14 @@
 import { Size } from '@/typing/Spinner'
 interface Props {
   colorSpinner?: string,
-  size: Size,
+  size: Size | null,
   customSpinnerClass?: string,
   customSpinnerInnerClass?: string
 }
 
 withDefaults(defineProps<Props>(), {
 	colorSpinner: '#fff',
-	size: 'medium'
+	size: null
 })
 </script>
 
@@ -41,8 +41,8 @@ withDefaults(defineProps<Props>(), {
   }
 
   &-small {
-    width: 1.5em;
-    height: 1.5em;
+    width: 0.7em;
+    height: 0.7em;
   }
 
   &-medium {

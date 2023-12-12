@@ -16,7 +16,8 @@
         v-model="currentValue"
         :class="{
             ['base-text-field-error']: hasError && !loading,
-            ['base-text-field-border']: border
+            ['base-text-field-border']: border,
+            ['base-text-field-has-spinner']: loading && !useBorderLoading
         }"
         :required="required"
         :style="customStyle"
@@ -28,12 +29,15 @@
         @focus="inputFocused = true"
         v-bind="bind"
     >
-    <span class="error-message">{{ errorMessage }}</span>
+    <div class="base-text-field-loading-border" :style="{ ['background-color']: loadingColor }" v-if="loading && useBorderLoading"></div>
+    <Spinner class="base-text-field-spinner" size="small" :color-spinner="loadingColor" v-else-if="loading"></Spinner>
+    <span class="error-message" v-else>{{ errorMessage }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
+import Spinner from "@/components/Spinner/Spinner.vue";
 
 /* === Props === */
 const props = defineProps({
@@ -45,9 +49,17 @@ const props = defineProps({
     type: Object,
     default: null
   },
+  useBorderLoading: {
+    type: Boolean,
+    default: false
+  },
   border: {
     type: Boolean,
     default: false
+  },
+  loadingColor: {
+    type: String,
+    default: '#3498db'
   },
   disabled: {
     type: Boolean,
@@ -157,11 +169,20 @@ watch(currentValue, () => {
 
 <style lang="scss">
 // Variables
-$base-spacing: 0.7em;
+$base-spacing: 0.8em;
 $base-font-size: 1rem;
 $label-color: #999999;
 $error-color: red;
 $disabled-color: #E0E0E0;
+
+@keyframes loadingBorder {
+  0% {
+    transform: scaleX(0.4);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+}
 
 .base-text-field {
   position: relative;
@@ -196,6 +217,23 @@ $disabled-color: #E0E0E0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
 
+  &-has-spinner {
+    padding-right: 2.7em;
+  }
+
+  &-loading-border {
+    height: 2px;
+    border-style: groove;
+    border-radius: 0.4em;
+    transform-origin: left;
+    animation: loadingBorder 1s linear infinite;
+  }
+
+  &-spinner {
+    position: absolute;
+    top: 17%;
+    right: 5%;
+  }
 
   &-error {
     border-color: $error-color;
@@ -220,8 +258,9 @@ $disabled-color: #E0E0E0;
     pointer-events: none;
     font-size: $base-font-size;
     position: absolute;
+    transition: top 100ms, left 500ms;
     left: 5%;
-    top: 10%;
+    top: 17%;
 
     &-active {
       top: -1em;
