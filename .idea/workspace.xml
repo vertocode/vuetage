@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Spinner/Spinner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,8 @@
       <workItem from="1701723410340" duration="2681000" />
       <workItem from="1701902402159" duration="4851000" />
       <workItem from="1701980152119" duration="5963000" />
-      <workItem from="1702337182269" duration="4288000" />
+      <workItem from="1702337182269" duration="4406000" />
+      <workItem from="1702465267156" duration="662000" />
     </task>
     <servers />
   </component>

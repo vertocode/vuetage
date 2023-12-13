@@ -6,7 +6,7 @@
         class="base-text-field-label"
         :style="customStyleLabel"
         :class="{
-          ['base-text-field-label-active']: currentValue?.length || inputFocused
+          ['base-text-field-label-active']: (currentValue?.length || inputFocused) && !readonly
         }"
     >{{ label }}</label>
     <input
@@ -21,8 +21,9 @@
         }"
         :required="required"
         :style="customStyle"
-        :placeholder="currentValue?.length || inputFocused ? placeholder : null"
-        :disabled="disabled"
+        :placeholder="(currentValue?.length || inputFocused) && !readonly ? placeholder : null"
+        :disabled="disabled || (disableOnLoading && disabled)"
+        :readonly="readonly"
         @input="emitInputValue"
         @change="emitChangeValue"
         @blur="emitBlurValue"
@@ -36,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue'
+import {ref, watch, computed, readonly} from 'vue'
 import Spinner from "@/components/Spinner/Spinner.vue";
 
 /* === Props === */
@@ -62,6 +63,10 @@ const props = defineProps({
     default: '#3498db'
   },
   disabled: {
+    type: Boolean,
+    default: false
+  },
+  readonly: {
     type: Boolean,
     default: false
   },
@@ -137,6 +142,9 @@ const allRules = computed(() => {
 
 /* === Methods === */
 const validateRules = () => {
+  if (props.readonly) {
+    return
+  }
   const errors = allRules
       .value
       .map(rule => rule(currentValue.value))
