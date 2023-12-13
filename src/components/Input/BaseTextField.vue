@@ -1,5 +1,8 @@
 <template>
-  <div class="base-text-field" :class="{ ['base-text-field-has-label']: label }">
+  <div class="base-text-field" :class="{
+    ['base-text-field-has-label']: label,
+    ['base-text-field-has-shadow']: variant === 'box-shadow'
+  }">
     <label
         v-if="label"
         for="base-text-field-input-name"
@@ -16,8 +19,10 @@
         v-model="currentValue"
         :class="{
             ['base-text-field-error']: hasError && !loading,
-            ['base-text-field-border']: border,
-            ['base-text-field-has-spinner']: loading && !useBorderLoading
+            ['base-text-field-border']: variant === 'outlined',
+            ['base-text-field-has-spinner']: loading && !useBorderLoading,
+            ['base-text-field-input-has-base-color']: variant === 'default',
+            ['base-text-field-input-has-dark-color']: variant === 'dark'
         }"
         :required="required"
         :style="customStyle"
@@ -37,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref, watch, computed, readonly} from 'vue'
+import { ref, watch, computed } from 'vue'
 import Spinner from "@/components/Spinner/Spinner.vue";
 
 /* === Props === */
@@ -50,11 +55,12 @@ const props = defineProps({
     type: Object,
     default: null
   },
-  useBorderLoading: {
-    type: Boolean,
-    default: false
+  variant: {
+    type: String,
+    default: 'default',
+    validator: (value: string) => ['default', 'outlined', 'underlined', 'box-shadow'].includes(value),
   },
-  border: {
+  useBorderLoading: {
     type: Boolean,
     default: false
   },
@@ -176,12 +182,7 @@ watch(currentValue, () => {
 </script>
 
 <style lang="scss">
-// Variables
-$base-spacing: 0.8em;
-$base-font-size: 1rem;
-$label-color: #999999;
-$error-color: red;
-$disabled-color: #E0E0E0;
+@import '@/components/main.scss';
 
 @keyframes loadingBorder {
   0% {
@@ -197,32 +198,58 @@ $disabled-color: #E0E0E0;
   width: max-content;
   display: flex;
   flex-direction: column;
-  margin-bottom: $base-spacing;
+  margin-bottom: $size-tiny-3x;
 
   [disabled] {
     background-color: $disabled-color;
   }
 
   &-has-label {
-    margin-top: $base-spacing;
+    margin-top: $size-tiny-3x;
+  }
+
+  &-has-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   &-input {
     height: 2em;
     border: none;
-    border-bottom: 1px solid $label-color;
-    padding-left: $base-spacing;
+    padding-left: $size-tiny-3x;
 
-    &:focus {
-      outline: none;
-      border-color: $label-color;
+    &-has-base-color {
+      background-color: $base-color;
+      border-bottom: 1px solid $label-color;
+      color: $label-color;
+
+      &:focus {
+        outline: none;
+        border-color: $dark-label-color;
+      }
+    }
+
+    &-has-dark-color {
+      background-color: $dark-base-color;
+      border-bottom: 1px solid $dark-label-color;
+      color: $dark-label-color;
+
+      &:focus {
+        outline: none;
+        border-color: $label-color;
+      }
     }
   }
 
   &-border {
-    border: 1px solid $label-color;
+    &:not(.has-dark-color) {
+      border: 1px solid $label-color;
+    }
+    &:not(.has-base-color) {
+      border: 1px solid $dark-label-color;
+    }
     border-radius: 0.4em;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-top: 0.1em;
   }
 
   &-has-spinner {
@@ -255,8 +282,8 @@ $disabled-color: #E0E0E0;
     font-family: 'Arial', serif;
     color: $error-color;
     font-size: 0.7em;
-    margin-top: $base-spacing;
-    margin-left: $base-spacing;
+    margin-top: $size-tiny-1x;
+    margin-left: $size-tiny-3x;
     font-weight: bolder;
     display: inline-block;
   }
@@ -264,11 +291,11 @@ $disabled-color: #E0E0E0;
   &-label {
     color: $label-color;
     pointer-events: none;
-    font-size: $base-font-size;
+    font-size: $size-small-1x;
     position: absolute;
     transition: top 100ms, left 500ms;
     left: 5%;
-    top: 17%;
+    top: 12%;
 
     &-active {
       top: -1em;

@@ -1,6 +1,6 @@
 <template>
   <div style="width: 30px;">
-    <BaseTextField readonly placeholder="Type your text" label="Text Field" required max-length="5" v-model="value" @input="input" />
+    <BaseTextField variant="dark" placeholder="Type your text" label="Text Field" required max-length="5" v-model="value" @input="input" />
   </div>
 </template>
 <script setup lang="ts">
