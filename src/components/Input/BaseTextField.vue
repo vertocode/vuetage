@@ -26,7 +26,7 @@
         }"
         :required="required"
         :style="customStyle"
-        :placeholder="(currentValue?.length || inputFocused) && !readonly ? placeholder : null"
+        :placeholder="(currentValue?.length || inputFocused) && !readonly ? placeholder : ''"
         :disabled="disabled || (disableOnLoading && disabled)"
         :readonly="readonly"
         @input="emitInputValue"
@@ -43,83 +43,83 @@
 
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
-import Spinner from "@/components/Spinner/Spinner.vue";
+import Spinner from '@/components/Spinner/Spinner.vue'
 
 /* === Props === */
 const props = defineProps({
-  modelValue: {
-    type: String,
-    default: null
-  },
-  bind: {
-    type: Object,
-    default: null
-  },
-  variant: {
-    type: String,
-    default: 'default',
-    validator: (value: string) => ['default', 'outlined', 'underlined', 'box-shadow'].includes(value),
-  },
-  useBorderLoading: {
-    type: Boolean,
-    default: false
-  },
-  loadingColor: {
-    type: String,
-    default: '#3498db'
-  },
-  disabled: {
-    type: Boolean,
-    default: false
-  },
-  readonly: {
-    type: Boolean,
-    default: false
-  },
-  loading: {
-    type: Boolean,
-    default: false
-  },
-  label: {
-    type: String,
-    default: null
-  },
-  placeholder: {
-    type: String,
-    default: null
-  },
-  disableOnLoading: {
-    type: Boolean,
-    default: true
-  },
-  maxLength: {
-    type: Number,
-    default: null
-  },
-  minLength: {
-    type: Number,
-    default: 0
-  },
-  required: {
-    type: Boolean,
-    default: false
-  },
-  rules: {
-    type: Array<Function>,
-    default: []
-  },
-  customStyle: {
-    type: String,
-    default: ''
-  },
-  customStyleLabel: {
-    type: String,
-    default: ''
-  },
-  disableRequiredRule: {
-    type: Boolean,
-    default: false
-  }
+	modelValue: {
+		type: String,
+		default: null
+	},
+	bind: {
+		type: Object,
+		default: null
+	},
+	variant: {
+		type: String,
+		default: 'default',
+		validator: (value: string) => ['default', 'outlined', 'underlined', 'box-shadow'].includes(value),
+	},
+	useBorderLoading: {
+		type: Boolean,
+		default: false
+	},
+	loadingColor: {
+		type: String,
+		default: '#3498db'
+	},
+	disabled: {
+		type: Boolean,
+		default: false
+	},
+	readonly: {
+		type: Boolean,
+		default: false
+	},
+	loading: {
+		type: Boolean,
+		default: false
+	},
+	label: {
+		type: String,
+		default: null
+	},
+	placeholder: {
+		type: String,
+		default: null
+	},
+	disableOnLoading: {
+		type: Boolean,
+		default: true
+	},
+	maxLength: {
+		type: Number,
+		default: null
+	},
+	minLength: {
+		type: Number,
+		default: 0
+	},
+	required: {
+		type: Boolean,
+		default: false
+	},
+	rules: {
+		type: Array<() => string | boolean>,
+		default: []
+	},
+	customStyle: {
+		type: String,
+		default: ''
+	},
+	customStyleLabel: {
+		type: String,
+		default: ''
+	},
+	disableRequiredRule: {
+		type: Boolean,
+		default: false
+	}
 })
 
 /* === State === */
@@ -130,54 +130,54 @@ const errorMessage = ref('')
 
 /* === Computed === */
 const allRules = computed(() => {
-  const rules = []
-  if (props.required && !props.disableRequiredRule) {
-    rules.push((value: string) => !!value.length && value !== '' || 'Required field')
-  }
+	const rules = []
+	if (props.required && !props.disableRequiredRule) {
+		rules.push((value: string) => !!value.length && value !== '' || 'Required field')
+	}
 
-  if (props.minLength) {
-    rules.push((value: string) => value.length >= props.minLength || `Min ${props.minLength} characters`)
-  }
+	if (props.minLength) {
+		rules.push((value: string) => value.length >= props.minLength || `Min ${props.minLength} characters`)
+	}
 
-  if (props.maxLength) {
-    rules.push((value: string) => value.length <= props.maxLength || `Max ${props.maxLength} characters`)
-  }
+	if (props.maxLength) {
+		rules.push((value: string) => value.length <= props.maxLength || `Max ${props.maxLength} characters`)
+	}
 
-  return [...rules, ...props.rules]
+	return [...rules, ...props.rules]
 })
 
 /* === Methods === */
 const validateRules = () => {
-  if (props.readonly) {
-    return
-  }
-  const errors = allRules
-      .value
-      .map(rule => rule(currentValue.value))
-      .filter(result => typeof result === 'string' || result === false)
-  errorMessage.value = errors[0]
-  hasError.value = !!errors.length
+	if (props.readonly) {
+		return
+	}
+	const errors = allRules
+		.value
+		.map((rule) => rule(currentValue.value))
+		.filter(result => typeof result === 'string' || result === false)
+	errorMessage.value = errors[0] as string
+	hasError.value = !!errors.length
 }
 
 /* === Emits === */
 const emits = defineEmits(['input:value', 'change:value', 'blur:value'])
 const emitInputValue = () => {
-  validateRules()
-  emits("input:value", currentValue)
+	validateRules()
+	emits('input:value', currentValue)
 }
 const emitChangeValue = () => {
-  validateRules()
-  emits("change:value", currentValue)
+	validateRules()
+	emits('change:value', currentValue)
 }
 const emitBlurValue = () => {
-  inputFocused.value = false
-  validateRules()
-  emits("blur:value", currentValue)
+	inputFocused.value = false
+	validateRules()
+	emits('blur:value', currentValue)
 }
 
 /* === Watchers === */
 watch(currentValue, () => {
-  validateRules()
+	validateRules()
 })
 </script>
 

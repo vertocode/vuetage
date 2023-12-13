@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Spinner/__tests__/__snapshots__/Spinner.test.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Spinner/__tests__/__snapshots__/Spinner.test.ts.snap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +101,7 @@
       <workItem from="1701980152119" duration="5963000" />
       <workItem from="1702337182269" duration="4406000" />
       <workItem from="1702465267156" duration="776000" />
-      <workItem from="1702506902952" duration="2950000" />
+      <workItem from="1702506902952" duration="3589000" />
     </task>
     <servers />
   </component>
