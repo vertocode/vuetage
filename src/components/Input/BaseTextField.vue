@@ -1,7 +1,7 @@
 <template>
   <div class="base-text-field" :class="{
     ['base-text-field-has-label']: label,
-    ['base-text-field-has-shadow']: variant === 'box-shadow'
+    [`base-text-field-${variant}`]: variant
   }">
     <label
         v-if="label"
@@ -18,14 +18,15 @@
         class="base-text-field-input"
         v-model="currentValue"
         :class="{
+            [`base-text-field-input-${variant}`]: variant,
             ['base-text-field-error']: hasError && !loading,
             ['base-text-field-border']: variant === 'outlined',
-            ['base-text-field-has-spinner']: loading && !useBorderLoading,
+            ['base-text-field-input-has-spinner']: loading && !useBorderLoading,
             ['base-text-field-input-has-base-color']: variant === 'default',
             ['base-text-field-input-has-dark-color']: variant === 'dark'
         }"
         :required="required"
-        :style="customStyle"
+        :style="[customStyle, { width, height }]"
         :placeholder="(currentValue?.length || inputFocused) && !readonly ? placeholder : ''"
         :disabled="disabled || (disableOnLoading && disabled)"
         :readonly="readonly"
@@ -58,7 +59,7 @@ const props = defineProps({
 	variant: {
 		type: String,
 		default: 'default',
-		validator: (value: string) => ['default', 'outlined', 'underlined', 'box-shadow'].includes(value),
+		validator: (value: string) => ['default', 'outlined', 'underlined', 'dark'].includes(value),
 	},
 	useBorderLoading: {
 		type: Boolean,
@@ -104,6 +105,14 @@ const props = defineProps({
 		type: Boolean,
 		default: false
 	},
+  width: {
+    type: String,
+    default: '100%'
+  },
+  height: {
+    type: String,
+    default: '30px'
+  },
 	rules: {
 		type: Array<() => string | boolean>,
 		default: []
@@ -186,16 +195,28 @@ watch(currentValue, () => {
 
 @keyframes loadingBorder {
   0% {
-    transform: scaleX(0.4);
+    transform: scaleX(0);
+  }
+  10% {
+    transform: scaleX(0.5)
+  }
+  30% {
+    transform: scaleX(0.7)
   }
   50% {
+    transform: scaleX(0.8);
+  }
+  75% {
+    transform: scaleX(0.9);
+  }
+  100% {
     transform: scaleX(1);
   }
 }
 
 .base-text-field {
   position: relative;
-  width: max-content;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: $size-tiny-3x;
@@ -205,21 +226,25 @@ watch(currentValue, () => {
   }
 
   &-has-label {
-    margin-top: $size-tiny-3x;
-  }
-
-  &-has-shadow {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: $size-small-1x;
   }
 
   &-input {
     height: 2em;
     border: none;
     padding-left: $size-tiny-3x;
+    border-bottom: 1px solid $label-color;
+
+    &-underlined {
+      outline: none;
+
+      &:focus {
+       border-color:  $label-color;
+      }
+    }
 
     &-has-base-color {
       background-color: $base-color;
-      border-bottom: 1px solid $label-color;
       color: $label-color;
 
       &:focus {
@@ -238,6 +263,11 @@ watch(currentValue, () => {
         border-color: $label-color;
       }
     }
+
+    &-has-spinner {
+      padding-right: $size-large-2x;
+      box-sizing: border-box;
+    }
   }
 
   &-border {
@@ -252,22 +282,18 @@ watch(currentValue, () => {
     margin-top: 0.1em;
   }
 
-  &-has-spinner {
-    padding-right: 2.7em;
-  }
-
   &-loading-border {
     height: 2px;
-    border-style: groove;
+    border-style: solid;
     border-radius: 0.4em;
     transform-origin: left;
-    animation: loadingBorder 1s linear infinite;
+    animation: loadingBorder 3s linear infinite;
   }
 
   &-spinner {
     position: absolute;
-    top: 17%;
-    right: 5%;
+    top: 0.35em;
+    right: 0.4em;
   }
 
   &-error {
@@ -294,11 +320,11 @@ watch(currentValue, () => {
     font-size: $size-small-1x;
     position: absolute;
     transition: top 100ms, left 500ms;
-    left: 5%;
-    top: 12%;
+    left: $size-tiny-3x;
+    top: 0.8em;
 
     &-active {
-      top: -1em;
+      top: -1.1em;
       font-size: 0.7em;
       font-weight: bold;
     }
