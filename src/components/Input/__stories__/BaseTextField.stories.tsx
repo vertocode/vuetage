@@ -74,6 +74,39 @@ export const LoadingUseBorder = {
     }
 }
 
+export const Disabled = {
+    ...Template,
+    args: {
+        ...Template.args,
+        disabled: true
+    }
+}
+
+export const DisabledOnLoading = {
+    ...Template,
+    args: {
+        ...Template.args,
+        disableOnLoading: true,
+        loading: true
+    }
+}
+
+export const Readonly = {
+    ...Template,
+    args: {
+        ...Template.args,
+        readonly: true
+    }
+}
+
+export const Required = {
+    ...Template,
+    args: {
+        ...Template.args,
+        required: true
+    }
+}
+
 export const MinLength5 = {
     ...Template,
     args: {
@@ -87,5 +120,37 @@ export const MaxLength5 = {
     args: {
         ...Template.args,
         maxLength: 5
+    }
+}
+
+export const CustomRule = {
+    ...Template,
+    args: {
+        ...Template.args,
+        rules: [(value: string) => value.includes('vuetage') || 'Text should include "vuetage"']
+    }
+}
+
+export const CustomStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        customStyle: 'background-color: yellow; border-radius: 15px;'
+    }
+}
+
+export const Width = {
+    ...Template,
+    args: {
+        ...Template.args,
+        width: '40px'
+    }
+}
+
+export const Height = {
+    ...Template,
+    args: {
+        ...Template.args,
+        height: '80px'
     }
 }

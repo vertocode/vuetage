@@ -28,7 +28,7 @@
         :required="required"
         :style="[customStyle, { width, height }]"
         :placeholder="(currentValue?.length || inputFocused) && !readonly ? placeholder : ''"
-        :disabled="disabled || (disableOnLoading && disabled)"
+        :disabled="disabled || (disableOnLoading && loading)"
         :readonly="readonly"
         @input="emitInputValue"
         @change="emitChangeValue"
@@ -45,6 +45,8 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
 import Spinner from '@/components/Spinner/Spinner.vue'
+import {Simulate} from "react-dom/test-utils";
+import load = Simulate.load;
 
 /* === Props === */
 const props = defineProps({
@@ -91,7 +93,7 @@ const props = defineProps({
 	},
 	disableOnLoading: {
 		type: Boolean,
-		default: true
+		default: false
 	},
 	maxLength: {
 		type: Number,
@@ -141,7 +143,7 @@ const errorMessage = ref('')
 const allRules = computed(() => {
 	const rules = []
 	if (props.required && !props.disableRequiredRule) {
-		rules.push((value: string) => !!value.length && value !== '' || 'Required field')
+		rules.push((value: string) => !!value && !!value.length && value !== '' || 'Required field')
 	}
 
 	if (props.minLength) {
