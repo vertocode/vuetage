@@ -282,7 +282,7 @@ export const WithLeftIcon: Story = {
     }
 }
 WithLeftIcon.args = {
-    leftIcon: 'fa fa-whatsapp'
+    leftIcon: 'fa fa-check'
 }
 
 export const WithRightIcon: Story = {
