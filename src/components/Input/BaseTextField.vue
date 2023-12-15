@@ -3,13 +3,17 @@
     ['base-text-field-has-label']: label,
     [`base-text-field-${variant}`]: variant
   }">
+    <div class="base-text-field-left-icon">
+      <i v-if="leftIcon" :class="leftIcon"></i>
+    </div>
     <label
         v-if="label"
         for="base-text-field-input-name"
         class="base-text-field-label"
         :style="customStyleLabel"
         :class="{
-          ['base-text-field-label-active']: (currentValue?.length || inputFocused) && !readonly
+          ['base-text-field-label-active']: (currentValue?.length || inputFocused) && !readonly,
+          ['base-text-field-label-has-left-icon']: leftIcon
         }"
     >{{ label }}</label>
     <input
@@ -24,7 +28,8 @@
             ['base-text-field-border']: variant === 'outlined',
             ['base-text-field-input-has-spinner']: loading && !useBorderLoading,
             ['base-text-field-input-has-base-color']: variant === 'default',
-            ['base-text-field-input-has-dark-color']: variant === 'dark'
+            ['base-text-field-input-has-dark-color']: variant === 'dark',
+            ['base-text-field-input-has-left-icon']: leftIcon
         }"
         :required="required"
         :style="[customStyle, { width, height }]"
@@ -134,6 +139,10 @@ const props = defineProps({
 		default: false
 	},
   rightIcon: {
+    type: String,
+    default: ''
+  },
+  leftIcon: {
     type: String,
     default: ''
   }
@@ -276,6 +285,11 @@ watch(currentValue, () => {
       padding-right: $size-large-2x;
       box-sizing: border-box;
     }
+
+    &-has-left-icon {
+      padding-left: $size-large-1x;
+      box-sizing: border-box;
+    }
   }
 
   &-border {
@@ -296,6 +310,12 @@ watch(currentValue, () => {
     border-radius: 0.4em;
     transform-origin: left;
     animation: loadingBorder 3s linear infinite;
+  }
+
+  &-left-icon {
+    position: absolute;
+    top: 0.35em;
+    left: 0.4em;
   }
 
   &-right-icon {
@@ -327,11 +347,17 @@ watch(currentValue, () => {
     pointer-events: none;
     font-size: $size-small-1x;
     position: absolute;
-    transition: top 100ms, left 500ms;
+    transition: top 100ms, left 1s;
     left: $size-tiny-3x;
-    top: 0.8em;
+    top: 0.6em;
+
+    &-has-left-icon {
+      transition: top 200ms, padding-left 1s;
+      padding-left: $size-medium-3x;
+    }
 
     &-active {
+      padding-left: 0;
       top: -1.1em;
       font-size: 0.7em;
       font-weight: bold;

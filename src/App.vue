@@ -1,6 +1,6 @@
 <template>
   <div style="width: 300px;">
-    <BaseTextField right-icon="fa fa-search" placeholder="Type your text" label="Text Field" required max-length="5" v-model="value" />
+    <BaseTextField left-icon="fa fa-search" placeholder="Type your text" label="Text Field" required max-length="5" v-model="value" />
   </div>
 </template>
 <script setup lang="ts">

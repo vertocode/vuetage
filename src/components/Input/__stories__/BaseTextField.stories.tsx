@@ -197,6 +197,19 @@ CustomRule.play = async ({ canvasElement }) => {
     await userEvent.type(input, `Custom rule`)
 }
 
+export const WithLeftIcon = {
+    ...Template,
+    args: {
+        ...Template.args,
+        leftIcon: 'fa fa-search'
+    }
+}
+WithLeftIcon.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, `With left icon`)
+}
+
 export const WithRightIcon = {
     ...Template,
     args: {
