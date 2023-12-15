@@ -13,6 +13,7 @@
         }"
     >{{ label }}</label>
     <input
+        data-testid="base-text-field-input"
         name="base-text-field-input-name"
         type="text"
         class="base-text-field-input"

@@ -1,5 +1,6 @@
 import type  { Meta, StoryObj } from '@storybook/vue3'
 import { BaseButton, BaseTextField } from '@/components'
+import {userEvent, within} from "@storybook/testing-library";
 
 const meta: Meta = {
     title: 'Input/BaseTextField',
@@ -32,6 +33,11 @@ const Template: Story = {
 
 export const Default = Template
 Default.args = {}
+Default.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, 'Default')
+}
 
 export const Outlined = {
     ...Template,
@@ -39,6 +45,11 @@ export const Outlined = {
         ...Template.args,
         variant: 'outlined'
     }
+}
+Outlined.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, 'Outlined')
 }
 
 export const Underlined = {
@@ -48,6 +59,11 @@ export const Underlined = {
         variant: 'underlined'
     }
 }
+Underlined.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, 'Underlined')
+}
 
 export const Dark = {
     ...Template,
@@ -55,6 +71,11 @@ export const Dark = {
         ...Template.args,
         variant: 'dark'
     }
+}
+Dark.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, 'Dark')
 }
 
 export const LoadingDefault = {
@@ -64,6 +85,11 @@ export const LoadingDefault = {
         loading: true
     }
 }
+LoadingDefault.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, 'LoadingDefault')
+}
 
 export const LoadingUseBorder = {
     ...Template,
@@ -72,6 +98,11 @@ export const LoadingUseBorder = {
         loading: true,
         useBorderLoading: true
     }
+}
+LoadingUseBorder.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, 'LoadingUseBorder')
 }
 
 export const Disabled = {
@@ -106,6 +137,12 @@ export const Required = {
         required: true
     }
 }
+Required.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, `Required`)
+    await userEvent.clear(input)
+}
 
 export const MinLength5 = {
     ...Template,
@@ -113,6 +150,11 @@ export const MinLength5 = {
         ...Template.args,
         minLength: 5
     }
+}
+MinLength5.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, `1234`)
 }
 
 export const MaxLength5 = {
@@ -122,6 +164,11 @@ export const MaxLength5 = {
         maxLength: 5
     }
 }
+MaxLength5.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, `123456`)
+}
 
 export const CustomRule = {
     ...Template,
@@ -129,6 +176,11 @@ export const CustomRule = {
         ...Template.args,
         rules: [(value: string) => value.includes('vuetage') || 'Text should include "vuetage"']
     }
+}
+CustomRule.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, `Custom rule`)
 }
 
 export const Width = {
@@ -138,6 +190,11 @@ export const Width = {
         width: '40px'
     }
 }
+Width.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, `Width`)
+}
 
 export const Height = {
     ...Template,
@@ -146,6 +203,11 @@ export const Height = {
         height: '80px'
     }
 }
+Height.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, `Height`)
+}
 
 export const CustomStyle = {
     ...Template,
@@ -153,4 +215,9 @@ export const CustomStyle = {
         ...Template.args,
         customStyle: 'background-color: yellow; border-radius: 15px;'
     }
+}
+CustomStyle.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, `Custom Style`)
 }
