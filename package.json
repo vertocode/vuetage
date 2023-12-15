@@ -36,8 +36,8 @@
     }
   },
   "dependencies": {
-    "vue": "^3.3.7",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "vue": "^3.3.7"
   },
   "devDependencies": {
     "@fortawesome/vue-fontawesome": "^3.0.3",

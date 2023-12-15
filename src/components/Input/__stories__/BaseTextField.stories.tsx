@@ -131,14 +131,6 @@ export const CustomRule = {
     }
 }
 
-export const CustomStyle = {
-    ...Template,
-    args: {
-        ...Template.args,
-        customStyle: 'background-color: yellow; border-radius: 15px;'
-    }
-}
-
 export const Width = {
     ...Template,
     args: {
@@ -152,5 +144,13 @@ export const Height = {
     args: {
         ...Template.args,
         height: '80px'
+    }
+}
+
+export const CustomStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        customStyle: 'background-color: yellow; border-radius: 15px;'
     }
 }
