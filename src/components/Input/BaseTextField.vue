@@ -37,8 +37,11 @@
         @focus="inputFocused = true"
         v-bind="bind"
     >
+    <div class="base-text-field-right-icon">
+      <Spinner class="base-text-field-spinner" size="small" :color-spinner="loadingColor" v-if="loading && !useBorderLoading"></Spinner>
+      <i v-else-if="rightIcon" :class="rightIcon"></i>
+    </div>
     <div class="base-text-field-loading-border" :style="{ ['background-color']: loadingColor }" v-if="loading && useBorderLoading"></div>
-    <Spinner class="base-text-field-spinner" size="small" :color-spinner="loadingColor" v-else-if="loading"></Spinner>
     <span class="error-message" v-else>{{ errorMessage }}</span>
   </div>
 </template>
@@ -46,8 +49,6 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
 import Spinner from '@/components/Spinner/Spinner.vue'
-import {Simulate} from "react-dom/test-utils";
-import load = Simulate.load;
 
 /* === Props === */
 const props = defineProps({
@@ -131,7 +132,11 @@ const props = defineProps({
 	disableRequiredRule: {
 		type: Boolean,
 		default: false
-	}
+	},
+  rightIcon: {
+    type: String,
+    default: ''
+  }
 })
 
 /* === State === */
@@ -293,7 +298,7 @@ watch(currentValue, () => {
     animation: loadingBorder 3s linear infinite;
   }
 
-  &-spinner {
+  &-right-icon {
     position: absolute;
     top: 0.35em;
     right: 0.4em;

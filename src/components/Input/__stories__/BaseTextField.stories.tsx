@@ -1,6 +1,6 @@
 import type  { Meta, StoryObj } from '@storybook/vue3'
 import { BaseButton, BaseTextField } from '@/components'
-import {userEvent, within} from "@storybook/testing-library";
+import { userEvent, within } from '@storybook/testing-library'
 
 const meta: Meta = {
     title: 'Input/BaseTextField',
@@ -105,6 +105,20 @@ LoadingUseBorder.play = async ({ canvasElement }) => {
     await userEvent.type(input, 'LoadingUseBorder')
 }
 
+export const LoadingColor = {
+    ...Template,
+    args: {
+        ...Template.args,
+        loading: true,
+        loadingColor: 'red'
+    }
+}
+LoadingColor.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, 'Custom Loading Color')
+}
+
 export const Disabled = {
     ...Template,
     args: {
@@ -181,6 +195,19 @@ CustomRule.play = async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const input = canvas.getByTestId('base-text-field-input')
     await userEvent.type(input, `Custom rule`)
+}
+
+export const WithRightIcon = {
+    ...Template,
+    args: {
+        ...Template.args,
+        rightIcon: 'fa fa-search'
+    }
+}
+WithRightIcon.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, `With right icon`)
 }
 
 export const Width = {
