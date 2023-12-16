@@ -28,6 +28,9 @@ const meta: Meta = {
         loadingColor: {
             control: 'color'
         },
+        loadingSize: {
+            control: 'text'
+        },
         disabled: {
             control: 'boolean'
         },

@@ -15,9 +15,10 @@ declare module 'vuetage' {
     export const BaseTextField: DefineComponent<{
         modelValue?: string
         bind?: object
-        variant?: string
+        variant?: 'default' | 'outlined' | 'underlined' | 'dark'
         useBorderLoading?: boolean
         loadingColor?: string
+        loadingSize?: 'small' | 'medium' | 'large' | string // Can be any css size like for example "30px".
         disabled?: boolean
         readonly?: boolean
         loading?: boolean
