@@ -90,7 +90,7 @@ const classes = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@import '@/components/main.scss';
+@import '@/components/variables.scss';
 
 .base-button {
   padding: $size-tiny-2x $size-small-2x;

@@ -222,7 +222,7 @@ watch(currentValue, () => {
 </script>
 
 <style scoped lang="scss">
-@import '@/components/main.scss';
+@import '@/components/variables.scss';
 
 @keyframes loadingBorder {
   0% {

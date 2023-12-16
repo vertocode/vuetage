@@ -7,9 +7,9 @@
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/__stories__/BaseButton.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/__stories__/BaseButton.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +104,7 @@
       <workItem from="1702512162072" duration="602000" />
       <workItem from="1702593429458" duration="4146000" />
       <workItem from="1702671977684" duration="2656000" />
-      <workItem from="1702675899048" duration="7457000" />
+      <workItem from="1702675899048" duration="7737000" />
     </task>
     <servers />
   </component>
