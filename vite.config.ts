@@ -40,10 +40,7 @@ export default defineConfig({
 			},
 			external: ['vue'],
 			output: {
-				assetFileNames: (assetInfo) => {
-					if (assetInfo.name === 'main.css') return 'vuetage.css'
-					return assetInfo.name
-				},
+				assetFileNames: 'vuetage.css',
 				exports: 'named',
 				globals: {
 					vue: 'Vue',
