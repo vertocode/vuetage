@@ -1,4 +1,4 @@
-import { Size } from '../../typing/Spinner';
+import { Size } from '../../typing/Spinner'
 interface Props {
     colorSpinner?: string;
     size: Size | null;
@@ -14,8 +14,8 @@ declare const _default: import('./vue/dist/vue.esm-bundler.js').DefineComponent<
 }>>>, {
     colorSpinner: string;
     size: Size | null;
-}, {}>;
-export default _default;
+}, {}>
+export default _default
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {
     [K in keyof T]-?: {} extends Pick<T, K> ? {

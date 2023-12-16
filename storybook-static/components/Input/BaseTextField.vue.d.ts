@@ -94,9 +94,9 @@ declare const _default: import('./vue/dist/vue.esm-bundler.js').DefineComponent<
         default: boolean;
     };
 }, {}, unknown, {}, {}, import('./vue/dist/vue.esm-bundler.js').ComponentOptionsMixin, import('./vue/dist/vue.esm-bundler.js').ComponentOptionsMixin, {
-    "input:value": (...args: any[]) => void;
-    "change:value": (...args: any[]) => void;
-    "blur:value": (...args: any[]) => void;
+    'input:value': (...args: any[]) => void;
+    'change:value': (...args: any[]) => void;
+    'blur:value': (...args: any[]) => void;
 }, string, import('./vue/dist/vue.esm-bundler.js').VNodeProps & import('./vue/dist/vue.esm-bundler.js').AllowedComponentProps & import('./vue/dist/vue.esm-bundler.js').ComponentCustomProps, Readonly<import('./vue/dist/vue.esm-bundler.js').ExtractPropTypes<{
     modelValue: {
         type: StringConstructor;
@@ -193,9 +193,9 @@ declare const _default: import('./vue/dist/vue.esm-bundler.js').DefineComponent<
         default: boolean;
     };
 }>> & {
-    "onInput:value"?: ((...args: any[]) => any) | undefined;
-    "onChange:value"?: ((...args: any[]) => any) | undefined;
-    "onBlur:value"?: ((...args: any[]) => any) | undefined;
+    'onInput:value'?: ((...args: any[]) => any) | undefined;
+    'onChange:value'?: ((...args: any[]) => any) | undefined;
+    'onBlur:value'?: ((...args: any[]) => any) | undefined;
 }, {
     required: boolean;
     label: string;
@@ -217,5 +217,5 @@ declare const _default: import('./vue/dist/vue.esm-bundler.js').DefineComponent<
     customStyle: string;
     customStyleLabel: string;
     disableRequiredRule: boolean;
-}, {}>;
-export default _default;
+}, {}>
+export default _default

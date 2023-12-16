@@ -1,4 +1,4 @@
-import { StyleValue } from './vue/dist/vue.esm-bundler.js';
+import { StyleValue } from './vue/dist/vue.esm-bundler.js'
 export interface Props {
     disabled?: boolean;
     tooltipMessage?: string | null;
@@ -15,4 +15,4 @@ export interface Props {
 }
 type Variant = 'primary' | 'success' | 'danger' | 'outline-primary' | 'outline-success' | 'outline-danger' | 'dark' | 'outline-dark';
 type Size = 'small' | 'medium' | 'large';
-export {};
+export {}

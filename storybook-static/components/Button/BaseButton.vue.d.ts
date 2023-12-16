@@ -1,4 +1,4 @@
-import { Props } from '../../typing/BaseButton';
+import { Props } from '../../typing/BaseButton'
 declare const _default: __VLS_WithTemplateSlots<import('./vue/dist/vue.esm-bundler.js').DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<Props>, {
     disabled: boolean;
     tooltipMessage: null;
@@ -20,8 +20,8 @@ declare const _default: __VLS_WithTemplateSlots<import('./vue/dist/vue.esm-bundl
     useBGTransition: boolean;
     useHover: boolean;
 }>>>, {
-    size: "small" | "medium" | "large";
-    variant: "dark" | "primary" | "success" | "danger" | "outline-primary" | "outline-success" | "outline-danger" | "outline-dark";
+    size: 'small' | 'medium' | 'large';
+    variant: 'dark' | 'primary' | 'success' | 'danger' | 'outline-primary' | 'outline-success' | 'outline-danger' | 'outline-dark';
     disabled: boolean;
     loading: boolean;
     customStyle: import('./vue/dist/vue.esm-bundler.js').StyleValue;
@@ -34,8 +34,8 @@ declare const _default: __VLS_WithTemplateSlots<import('./vue/dist/vue.esm-bundl
     leftIcon?(_: {}): any;
     default?(_: {}): any;
     rightIcon?(_: {}): any;
-}>;
-export default _default;
+}>
+export default _default
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {
     [K in keyof T]-?: {} extends Pick<T, K> ? {

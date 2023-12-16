@@ -128,14 +128,14 @@ const props = defineProps({
 		type: Boolean,
 		default: false
 	},
-  width: {
-    type: String,
-    default: '100%'
-  },
-  height: {
-    type: String,
-    default: '30px'
-  },
+	width: {
+		type: String,
+		default: '100%'
+	},
+	height: {
+		type: String,
+		default: '30px'
+	},
 	rules: {
 		type: Array<() => string | boolean>,
 		default: []
@@ -152,14 +152,14 @@ const props = defineProps({
 		type: Boolean,
 		default: false
 	},
-  rightIcon: {
-    type: String,
-    default: ''
-  },
-  leftIcon: {
-    type: String,
-    default: ''
-  }
+	rightIcon: {
+		type: String,
+		default: ''
+	},
+	leftIcon: {
+		type: String,
+		default: ''
+	}
 })
 
 /* === State === */
