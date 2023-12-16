@@ -50,7 +50,7 @@
     >
     <div class="base-text-field-right-icon">
       <slot name="spinner">
-        <Spinner class="base-text-field-spinner" size="small" :color-spinner="loadingColor" v-if="loading && !useBorderLoading"></Spinner>
+        <Spinner class="base-text-field-spinner" :size="loadingSize" :color-spinner="loadingColor" v-if="loading && !useBorderLoading"></Spinner>
       </slot>
       <slot name="rightIcon">
         <i v-if="!(loading && !useBorderLoading) && rightIcon" :class="rightIcon"></i>
@@ -92,6 +92,10 @@ const props = defineProps({
 		type: String,
 		default: '#3498db'
 	},
+  loadingSize: {
+    type: String,
+    default: 'small'
+  },
 	disabled: {
 		type: Boolean,
 		default: false
@@ -169,6 +173,13 @@ const hasError = ref(false)
 const errorMessage = ref('')
 
 /* === Computed === */
+const loadingBorderSize = computed(() => {
+  if (props.loadingSize === 'small') {
+    return '2px'
+  }
+
+  return props.loadingSize
+})
 const allRules = computed(() => {
 	const rules = []
 	if (props.required && !props.disableRequiredRule) {
@@ -319,7 +330,7 @@ watch(currentValue, () => {
   }
 
   &-loading-border {
-    height: 0;
+    height: v-bind(loadingBorderSize);
     border-color: v-bind(loadingColor);
     border-style: solid;
     border-radius: 0.4em;

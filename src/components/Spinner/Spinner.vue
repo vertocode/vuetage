@@ -14,17 +14,26 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { Size } from '@/typing/Spinner'
 interface Props {
   colorSpinner?: string,
-  size: Size | null,
+  size: Size | string | null,
   customSpinnerClass?: string,
   customSpinnerInnerClass?: string
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
 	colorSpinner: '#fff',
 	size: null
+})
+
+const customSize = computed(() => {
+  if (['small', 'medium', 'large'].includes(props.size as string)) {
+    return null
+  }
+
+  return props.size
 })
 </script>
 
@@ -33,6 +42,8 @@ withDefaults(defineProps<Props>(), {
   border: 4px solid transparent;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
+  width: v-bind(customSize);
+  height: v-bind(customSize);
 
   &-inner {
     width: 100%;
