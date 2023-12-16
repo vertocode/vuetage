@@ -4,7 +4,9 @@
     [`base-text-field-${variant}`]: variant
   }">
     <div class="base-text-field-left-icon">
-      <i v-if="leftIcon" :class="leftIcon"></i>
+      <slot name="leftIcon">
+        <i v-if="leftIcon" :class="leftIcon"></i>
+      </slot>
     </div>
     <label
         v-if="label"
@@ -15,7 +17,11 @@
           ['base-text-field-label-active']: (currentValue?.length || inputFocused) && !readonly,
           ['base-text-field-label-has-left-icon']: leftIcon
         }"
-    >{{ label }}</label>
+    >
+      <slot name="label">
+        {{ label }}
+      </slot>
+    </label>
     <input
         data-testid="base-text-field-input"
         name="base-text-field-input-name"
@@ -43,11 +49,19 @@
         v-bind="bind"
     >
     <div class="base-text-field-right-icon">
-      <Spinner class="base-text-field-spinner" size="small" :color-spinner="loadingColor" v-if="loading && !useBorderLoading"></Spinner>
-      <i v-else-if="rightIcon" :class="rightIcon"></i>
+      <slot name="spinner">
+        <Spinner class="base-text-field-spinner" size="small" :color-spinner="loadingColor" v-if="loading && !useBorderLoading"></Spinner>
+      </slot>
+      <slot name="rightIcon">
+        <i v-else-if="rightIcon" :class="rightIcon"></i>
+      </slot>
     </div>
-    <div class="base-text-field-loading-border" :style="{ ['background-color']: loadingColor }" v-if="loading && useBorderLoading"></div>
-    <span class="error-message" v-else>{{ errorMessage }}</span>
+    <slot name="loadingBorder">
+      <div class="base-text-field-loading-border" :style="{ ['background-color']: loadingColor }" v-if="loading && useBorderLoading"></div>
+    </slot>
+    <slot name="errorMessage" v-bind="{ error: errorMessage }">
+      <span class="error-message" v-else>{{ errorMessage }}</span>
+    </slot>
   </div>
 </template>
 
