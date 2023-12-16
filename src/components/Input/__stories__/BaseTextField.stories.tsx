@@ -26,7 +26,7 @@ const meta: Meta = {
             control: 'boolean'
         },
         loadingColor: {
-            control: 'text'
+            control: 'color'
         },
         disabled: {
             control: 'boolean'

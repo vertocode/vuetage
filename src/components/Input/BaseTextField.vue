@@ -319,7 +319,8 @@ watch(currentValue, () => {
   }
 
   &-loading-border {
-    height: 2px;
+    height: 0;
+    border-color: v-bind(loadingColor);
     border-style: solid;
     border-radius: 0.4em;
     transform-origin: left;
