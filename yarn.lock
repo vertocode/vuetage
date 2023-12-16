@@ -12463,13 +12463,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-css@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "vite-plugin-css@npm:1.0.4"
-  checksum: 36dd6c877e52efcbd7d193b2cd0451cdc32efafa4f4e24010adaa82dadbda6438f114b526b9febc15f64fa37b9e60f12d454de75715a29ff52796d67de7c9c47
-  languageName: node
-  linkType: hard
-
 "vite-plugin-dts@npm:^3.6.3":
   version: 3.6.3
   resolution: "vite-plugin-dts@npm:3.6.3"
@@ -12768,7 +12761,6 @@ __metadata:
     storybook: "npm:^7.5.3"
     typescript: "npm:^4.9.5"
     vite: "npm:^4.5.0"
-    vite-plugin-css: "npm:^1.0.4"
     vite-plugin-dts: "npm:^3.6.3"
     vitest: "npm:^0.34.6"
     vue: "npm:^3.3.7"
