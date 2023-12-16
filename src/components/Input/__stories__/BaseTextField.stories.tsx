@@ -6,7 +6,77 @@ const meta: Meta = {
     title: 'Input/BaseTextField',
     component: BaseTextField,
     tags: ['input', 'textField'],
-    argTypes: {}
+    argTypes: {
+        modelValue: {
+            control: 'text'
+        },
+        bind: {
+            control: 'object'
+        },
+        variant: {
+            control: 'select',
+            options: [
+                'default',
+                'outlined',
+                'underlined',
+                'dark'
+            ]
+        },
+        useBorderLoading: {
+            control: 'boolean'
+        },
+        loadingColor: {
+            control: 'text'
+        },
+        disabled: {
+            control: 'boolean'
+        },
+        readonly: {
+            control: 'boolean'
+        },
+        loading: {
+            control: 'boolean'
+        },
+        label: {
+            control: 'text'
+        },
+        placeholder: {
+            control: 'text'
+        },
+        disableOnLoading: {
+            control: 'boolean'
+        },
+        maxLength: {
+            control: 'number'
+        },
+        minLength: {
+            control: 'number'
+        },
+        required: {
+            control: 'boolean'
+        },
+        width: {
+            control: 'text'
+        },
+        height: {
+            control: 'text'
+        },
+        rules: {
+            control: 'array'
+        },
+        customStyle: {
+            control: 'text'
+        },
+        disableRequiredRule: {
+            control: 'boolean'
+        },
+        rightIcon: {
+            control: 'text'
+        },
+        leftIcon: {
+            control: 'text'
+        }
+    }
 }
 
 export default meta

@@ -131,7 +131,7 @@ const props = defineProps({
 		default: ''
 	},
 	customStyleLabel: {
-		type: String,
+		type: String || Object,
 		default: ''
 	},
 	disableRequiredRule: {
