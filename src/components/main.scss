@@ -23,3 +23,57 @@ $dark-base-color: #1a1a1a;
 $dark-label-color: #CCCCCC;
 $dark-error-color: #FF6666;
 $dark-disabled-color: #666666;
+
+/* === Variant colors === */
+// Primary
+$primary: #1EA7FD;
+$border-primary: #1EA7FDl;
+$primary-hover: #0056b3;
+$border-primary-hover: #0056b3;
+
+// Success
+$success: #28a745;
+$border-success: #28a745;
+$success-hover: #1e7e34;
+$border-success-hover: #1e7e34;
+
+// Danger
+$danger: #dc3545;
+$border-danger: #dc3545;
+$danger-hover: #c82333;
+$border-danger-hover: #c82333;
+
+// Dark
+$dark: black;
+$border-dark: black;
+$dark-color: white;
+$dark-hover: #424242;
+$border-dark-hover: #2f2f2f;
+
+// Outline Primary
+$outline-primary: #transparent;
+$outline-primary-color: #007bff;
+$border-outline-primary: #007bff;
+$outline-primary-hover: #007bff;
+$outline-primary-color-hover: #fff;
+
+// Outline Success
+$outline-success: #transparent;
+$outline-success-color: #28a745;
+$border-outline-success: #28a745;
+$outline-success-hover: #28a745;
+$outline-success-color-hover: #fff;
+
+// Outline Danger
+$outline-danger: #transparent;
+$border-outline-danger: #dc3545;
+$outline-danger-color: #dc3545;
+$outline-danger-hover: #dc3545;
+$outline-danger-color-hover: #fff;
+
+// Outline Dark
+$outline-dark: #transparent;
+$border-outline-dark: black;
+$outline-dark-color: black;
+$outline-dark-hover: #969696;
+$outline-dark-color-hover: #fff;

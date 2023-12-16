@@ -24,10 +24,10 @@ const meta: Meta = {
                 'primary',
                 'success',
                 'danger',
+                'dark',
                 'outline-primary',
                 'outline-success',
                 'outline-danger',
-                'dark',
                 'outline-dark'
             ]
         },
@@ -299,4 +299,20 @@ export const WithRightIcon: Story = {
 }
 WithRightIcon.args = {
     rightIcon: 'fa fa-whatsapp'
+}
+
+export const CustomStyle: Story = {
+    render: (args) => ({
+        components: { BaseButton },
+        setup() {
+            return { args }
+        },
+        template: '<BaseButton v-bind="args">Custom Style</BaseButton>'
+    }),
+    args: {
+        ...BaseButton.args
+    }
+}
+CustomStyle.args = {
+    customStyle: 'border-radius: 3em; background-color: purple;'
 }

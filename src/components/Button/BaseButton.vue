@@ -90,11 +90,13 @@ const classes = computed(() => {
 </script>
 
 <style scoped lang="scss">
+@import '@/components/main.scss';
+
 .base-button {
-  padding: 10px 20px;
+  padding: $size-tiny-2x $size-small-2x;
   border: 1px solid transparent;
   color: #fff;
-  border-radius: 3em;
+  border-radius: $size-tiny-1x;
   line-height: 1;
   cursor: pointer;
   font-weight: 700;
@@ -108,85 +110,87 @@ const classes = computed(() => {
   }
 
   &.btn-primary {
-    background-color: #1EA7FD;
-    border-color: #1EA7FD;
+    background-color: $primary;
+    border-color: $border-primary;
 
     &.base-button-hover:hover {
-      background-color: #0056b3;
-      border-color: #0056b3;
+      background-color: $primary-hover;
+      border-color: $border-primary-hover;
     }
   }
 
   &.btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
+    background-color: $success;
+    border-color: $border-success;
 
     &.base-button-hover:hover {
-      background-color: #1e7e34;
-      border-color: #1e7e34;
+      background-color: $success-hover;
+      border-color: $border-success-hover;
     }
   }
 
   &.btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
+    background-color: $danger;
+    border-color: $border-danger;
 
     &.base-button-hover:hover {
-      background-color: #c82333;
-      border-color: #c82333;
+      background-color: $danger-hover;
+      border-color: $border-danger-hover;
     }
   }
 
   &.btn-outline-primary {
-    background-color: transparent;
-    border-color: #007bff;
-    color: #007bff;
+    background-color: $outline-primary;
+    border-color: $border-outline-primary;
+    color: $outline-primary-color;
 
     &.base-button-hover:hover {
-      background-color: #007bff;
-      color: #fff;
+      background-color: $outline-primary-hover;
+      color: $outline-primary-color-hover;
     }
   }
 
   &.btn-outline-success {
-    background-color: transparent;
-    border-color: #28a745;
-    color: #28a745;
+    background-color: $outline-success;
+    border-color: $outline-success-color;
+    color: $border-outline-success;
 
     &.base-button-hover:hover {
-      background-color: #28a745;
-      color: #fff;
+      background-color: $outline-success-hover;
+      color: $outline-success-color-hover;
     }
   }
 
   &.btn-outline-danger {
-    background-color: transparent;
-    border-color: #dc3545;
-    color: #dc3545;
+    background-color: $outline-danger;
+    border-color: $border-outline-danger;
+    color: $outline-danger-color;
 
     &.base-button-hover:hover {
-      background-color: #dc3545;
-      color: #fff;
+      background-color: $outline-danger-hover;
+      color: $outline-danger-color-hover;
     }
   }
 
   &.btn-dark {
-    background-color: black;
-    border-color: black;
-    color: white;
+    background-color: $dark;
+    border-color: $border-dark;
+    color: $dark-color;
 
     &.base-button-hover:hover {
-      background-color: #424242;
+      background-color: $dark-hover;
+      border-color: $border-dark-hover;
     }
   }
 
   &.btn-outline-dark {
-    background-color: transparent;
-    border-color: black;
-    color: black;
+    background-color: $outline-dark;
+    border-color: $border-outline-dark;
+    color: $outline-dark-color;
 
     &.base-button-hover:hover {
-      background-color: #969696;
+      background-color: $outline-dark-hover;
+      color: $outline-dark-color-hover;
     }
   }
 
