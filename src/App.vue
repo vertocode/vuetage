@@ -8,7 +8,7 @@
 </template>
 <script setup lang="ts">
 import { BaseTextField as fromDist } from '../dist/vuetage.es.js'
-import { BaseTextField, Spinner } from '@/components'
+import { BaseTextField } from '@/components'
 import { ref } from 'vue'
 
 const value = ref('')

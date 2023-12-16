@@ -92,10 +92,10 @@ const props = defineProps({
 		type: String,
 		default: '#3498db'
 	},
-  loadingSize: {
-    type: String,
-    default: 'small'
-  },
+	loadingSize: {
+		type: String,
+		default: 'small'
+	},
 	disabled: {
 		type: Boolean,
 		default: false
@@ -174,11 +174,11 @@ const errorMessage = ref('')
 
 /* === Computed === */
 const loadingBorderSize = computed(() => {
-  if (props.loadingSize === 'small') {
-    return '2px'
-  }
+	if (props.loadingSize === 'small') {
+		return '2px'
+	}
 
-  return props.loadingSize
+	return props.loadingSize
 })
 const allRules = computed(() => {
 	const rules = []

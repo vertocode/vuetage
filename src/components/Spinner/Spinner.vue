@@ -29,11 +29,11 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const customSize = computed(() => {
-  if (['small', 'medium', 'large'].includes(props.size as string)) {
-    return null
-  }
+	if (['small', 'medium', 'large'].includes(props.size as string)) {
+		return null
+	}
 
-  return props.size
+	return props.size
 })
 </script>
 
