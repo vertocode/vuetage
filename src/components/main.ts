@@ -8,4 +8,4 @@ export default {
 	}
 }
 
-export { BaseButton, Spinner }
+export { BaseButton, Spinner, BaseTextField }

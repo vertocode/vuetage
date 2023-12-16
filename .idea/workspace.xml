@@ -7,18 +7,7 @@
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/components/Button/BaseButton.vue.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/components/Button/BaseButton.vue.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/components/Button/__stories__/BaseButton.stories.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/components/Button/__stories__/BaseButton.stories.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/components/Button/__tests__/BaseButton.test.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/components/Button/__tests__/BaseButton.test.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/components/Input/BaseTextField.vue.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/components/Input/BaseTextField.vue.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/components/Input/__stories__/BaseTextField.stories.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/components/Input/__stories__/BaseTextField.stories.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/components/Spinner/Spinner.vue.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/components/Spinner/Spinner.vue.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/components/Spinner/__stories__/Spinner.stories.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/components/Spinner/__stories__/Spinner.stories.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/components/Spinner/__tests__/Spinner.test.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/components/Spinner/__tests__/Spinner.test.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/components/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/components/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/components/main.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/components/main.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-static/typing/BaseButton.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-static/typing/BaseButton.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +102,7 @@
       <workItem from="1702512162072" duration="602000" />
       <workItem from="1702593429458" duration="4146000" />
       <workItem from="1702671977684" duration="2656000" />
-      <workItem from="1702675899048" duration="9877000" />
+      <workItem from="1702675899048" duration="11392000" />
     </task>
     <servers />
   </component>
