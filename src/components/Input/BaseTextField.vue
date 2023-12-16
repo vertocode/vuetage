@@ -53,14 +53,14 @@
         <Spinner class="base-text-field-spinner" size="small" :color-spinner="loadingColor" v-if="loading && !useBorderLoading"></Spinner>
       </slot>
       <slot name="rightIcon">
-        <i v-else-if="rightIcon" :class="rightIcon"></i>
+        <i v-if="!(loading && !useBorderLoading) && rightIcon" :class="rightIcon"></i>
       </slot>
     </div>
     <slot name="loadingBorder">
       <div class="base-text-field-loading-border" :style="{ ['background-color']: loadingColor }" v-if="loading && useBorderLoading"></div>
     </slot>
     <slot name="errorMessage" v-bind="{ error: errorMessage }">
-      <span class="error-message" v-else>{{ errorMessage }}</span>
+      <span class="error-message" v-if="!(loading && useBorderLoading)">{{ errorMessage }}</span>
     </slot>
   </div>
 </template>
