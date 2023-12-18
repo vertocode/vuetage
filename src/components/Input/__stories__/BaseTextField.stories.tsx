@@ -7,9 +7,6 @@ const meta: Meta = {
     component: BaseTextField,
     tags: ['input', 'textField'],
     argTypes: {
-        modelValue: {
-            control: 'text'
-        },
         bind: {
             control: 'object'
         },

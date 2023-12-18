@@ -1,5 +1,5 @@
 <template>
-  <div class="base-text-field" :class="{
+  <div :style="style" class="base-text-field" :class="{
     ['base-text-field-has-label']: label,
     [`base-text-field-${variant}`]: variant
   }">
@@ -144,8 +144,12 @@ const props = defineProps({
 		type: Array<() => string | boolean>,
 		default: []
 	},
+	style: {
+		type: String || Object,
+		default: {}
+	},
 	customStyle: {
-		type: String,
+		type: String || Object,
 		default: ''
 	},
 	customStyleLabel: {
