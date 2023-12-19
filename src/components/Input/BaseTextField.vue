@@ -14,7 +14,7 @@
         class="base-text-field-label"
         :style="customStyleLabel"
         :class="{
-          ['base-text-field-label-active']: (currentValue?.length || inputFocused) && !readonly,
+          ['base-text-field-label-active']: (modelValue?.length || inputFocused) && !readonly,
           ['base-text-field-label-has-left-icon']: leftIcon
         }"
     >
@@ -27,7 +27,7 @@
         name="base-text-field-input-name"
         type="text"
         class="base-text-field-input"
-        v-model="currentValue"
+        :value="modelValue"
         :class="{
             [`base-text-field-input-${variant}`]: variant,
             ['base-text-field-error']: hasError && !loading,
@@ -39,12 +39,12 @@
         }"
         :required="required"
         :style="[customStyle, { width, height }]"
-        :placeholder="(currentValue?.length || inputFocused) && !readonly ? placeholder : ''"
+        :placeholder="(modelValue?.length || inputFocused) && !readonly ? placeholder : ''"
         :disabled="disabled || (disableOnLoading && loading)"
         :readonly="readonly"
-        @input="emitInputValue"
-        @change="emitChangeValue"
-        @blur="emitBlurValue"
+        @input="eventEmitter === 'input' ? $emit('update:modelValue', $event.target.value) : null"
+        @change="eventEmitter === 'change' ? $emit('update:modelValue', $event.target.value) : null"
+        @blur="eventEmitter === 'blur' ? $emit('update:modelValue', $event.target.value) : null"
         @focus="inputFocused = true"
         v-bind="bind"
     >
@@ -167,11 +167,15 @@ const props = defineProps({
 	leftIcon: {
 		type: String,
 		default: ''
+	},
+	eventEmitter: {
+		type: String,
+		default: 'input',
+		validator: (value: string) => ['input', 'blur', 'change'].includes(value)
 	}
 })
 
 /* === State === */
-const currentValue = ref(props.modelValue)
 const inputFocused = ref(false)
 const hasError = ref(false)
 const errorMessage = ref('')
@@ -208,30 +212,25 @@ const validateRules = () => {
 	}
 	const errors = allRules
 		.value
-		.map((rule) => rule(currentValue.value))
+		.map((rule) => rule(props.modelValue))
 		.filter(result => typeof result === 'string' || result === false)
 	errorMessage.value = errors[0] as string
 	hasError.value = !!errors.length
+	emits('hasError', hasError.value)
 }
 
 /* === Emits === */
-const emits = defineEmits(['input:value', 'change:value', 'blur:value'])
-const emitInputValue = () => {
-	validateRules()
-	emits('input:value', currentValue)
-}
-const emitChangeValue = () => {
-	validateRules()
-	emits('change:value', currentValue)
-}
-const emitBlurValue = () => {
-	inputFocused.value = false
-	validateRules()
-	emits('blur:value', currentValue)
-}
+const emits = defineEmits([
+	'update:modelValue',
+	'hasError'
+])
 
 /* === Watchers === */
-watch(currentValue, () => {
+watch(() => props.modelValue, () => {
+	validateRules()
+})
+
+watch(() => props.modelValue, () => {
 	validateRules()
 })
 </script>
