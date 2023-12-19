@@ -3,7 +3,7 @@
     <BaseTextField
         v-model="value"
         loading-size="10px"
-        variant="default"
+        variant="outlined"
         left-icon="fa fa-search"
         placeholder="Type your text"
         label="Text Field"

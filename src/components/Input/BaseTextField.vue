@@ -46,6 +46,7 @@
         @change="eventEmitter === 'change' ? $emit('update:modelValue', $event.target.value) : null"
         @blur="eventEmitter === 'blur' ? $emit('update:modelValue', $event.target.value) : null"
         @focus="inputFocused = true"
+        @focusout="inputFocused = false"
         v-bind="bind"
     >
     <div class="base-text-field-right-icon">
