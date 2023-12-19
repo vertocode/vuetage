@@ -1,8 +1,16 @@
 <template>
+  <ErrorComponent v-if="modelValue === undefined">
+    <h1>Error</h1>
+    <p>
+      Please ensure that you specify a "v-model" <a href="https://vuejs.org/guide/essentials/template-refs" target="_blank">ref value template</a> in your
+      <a href="https://vuetage.vertocode.com/docs/components/base-text-field" target="_blank">
+        BaseTextField</a> component; it is a crucial prop for proper functionality.
+    </p>
+  </ErrorComponent>
   <div :style="style" class="base-text-field" :class="{
     ['base-text-field-has-label']: label,
     [`base-text-field-${variant}`]: variant
-  }">
+  }" v-else >
     <div class="base-text-field-left-icon">
       <slot name="leftIcon">
         <i v-if="leftIcon" :class="leftIcon"></i>
@@ -25,7 +33,7 @@
     <input
         data-testid="base-text-field-input"
         name="base-text-field-input-name"
-        type="text"
+        :type="type"
         class="base-text-field-input"
         :value="modelValue"
         :class="{
@@ -55,6 +63,7 @@
       </slot>
       <slot name="rightIcon">
         <i v-if="!(loading && !useBorderLoading) && rightIcon" :class="rightIcon"></i>
+        <i v-else-if="password" :class="`fa ${hidePassword ? 'fa-eye-slash' : 'fa-eye'}`" @click="hidePassword = !hidePassword"></i>
       </slot>
     </div>
     <slot name="loadingBorder">
@@ -69,12 +78,13 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
 import Spinner from '@/components/Spinner/Spinner.vue'
+import ErrorComponent from '@/components/Error/ErrorComponent.vue'
 
 /* === Props === */
 const props = defineProps({
 	modelValue: {
 		type: String,
-		default: null
+		required: true
 	},
 	bind: {
 		type: Object,
@@ -122,11 +132,11 @@ const props = defineProps({
 		default: false
 	},
 	maxLength: {
-		type: Number,
+		type: Number || String,
 		default: null
 	},
 	minLength: {
-		type: Number,
+		type: Number || String,
 		default: 0
 	},
 	required: {
@@ -173,6 +183,10 @@ const props = defineProps({
 		type: String,
 		default: 'input',
 		validator: (value: string) => ['input', 'blur', 'change'].includes(value)
+	},
+	password: {
+		type: Boolean,
+		default: false
 	}
 })
 
@@ -180,8 +194,16 @@ const props = defineProps({
 const inputFocused = ref(false)
 const hasError = ref(false)
 const errorMessage = ref('')
+const hidePassword = ref(true)
 
 /* === Computed === */
+const type = computed(() => {
+	if (props.password && hidePassword.value) {
+		return 'password'
+	}
+
+	return 'text'
+})
 const loadingBorderSize = computed(() => {
 	if (props.loadingSize === 'small') {
 		return '2px'
@@ -227,10 +249,6 @@ const emits = defineEmits([
 ])
 
 /* === Watchers === */
-watch(() => props.modelValue, () => {
-	validateRules()
-})
-
 watch(() => props.modelValue, () => {
 	validateRules()
 })

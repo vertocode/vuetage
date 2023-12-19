@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 300px;">
+  <div style="width: 200px;">
     <BaseTextField
         v-model="value"
         loading-size="10px"
@@ -10,6 +10,7 @@
         max-length="15"
         min-length="5"
         required
+        password
     />
     Value: {{ value }}
     <BaseButton @click="value += '- updated'">++ String</BaseButton>

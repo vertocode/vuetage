@@ -1,6 +1,7 @@
 import type  { Meta, StoryObj } from '@storybook/vue3'
 import { BaseButton, BaseTextField } from '@/components'
 import { userEvent, within } from '@storybook/testing-library'
+import { ref } from 'vue'
 
 const meta: Meta = {
     title: 'Input/BaseTextField',
@@ -86,7 +87,10 @@ const Template: Story = {
     render: (args) => ({
         components: { BaseTextField },
         setup() {
+            const modelValue = ref('')
+
             return {
+                modelValue,
                 args: {
                     placeholder: 'Type your text',
                     label: 'Label',
@@ -94,7 +98,7 @@ const Template: Story = {
                 }
             }
         },
-        template: '<div style="width: 200px"><BaseTextField v-bind="args">Default</BaseTextField></div>'
+        template: '<div style="width: 200px"><BaseTextField v-model="modelValue" v-bind="args">Default</BaseTextField></div>'
     }),
     args: {
         ...BaseButton.args
@@ -265,6 +269,19 @@ CustomRule.play = async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const input = canvas.getByTestId('base-text-field-input')
     await userEvent.type(input, `Custom rule`)
+}
+
+export const Password = {
+    ...Template,
+    args: {
+        ...Template.args,
+        password: true
+    }
+}
+CustomRule.play = async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.type(input, `Password`)
 }
 
 export const WithLeftIcon = {
