@@ -50,11 +50,16 @@
         :placeholder="(modelValue?.length || inputFocused) && !readonly ? placeholder : ''"
         :disabled="disabled || (disableOnLoading && loading)"
         :readonly="readonly"
-        @input="eventEmitter === 'input' ? $emit('update:modelValue', $event.target.value) : null"
-        @change="eventEmitter === 'change' ? $emit('update:modelValue', $event.target.value) : null"
-        @blur="eventEmitter === 'blur' ? $emit('update:modelValue', $event.target.value) : null"
-        @focus="inputFocused = true"
-        @focusout="inputFocused = false"
+        @input="emitUpdateModelValue($event.target.value)"
+        @change="emitUpdateModelValue($event.target.value)"
+        @blur="emitUpdateModelValue($event.target.value)"
+        @focus="emitFocus($event)"
+        @focusout="emitFocusOut($event)"
+        @click="emits('click', $event)"
+        @dblclick="emits('dblclick', $event)"
+        @mousedown="emits('mousedown', $event)"
+        @mouseup="emits('mouseup', $event)"
+        @mouseenter="emits('mouseenter', $event)"
         v-bind="bind"
     >
     <div class="base-text-field-right-icon">
@@ -245,8 +250,41 @@ const validateRules = () => {
 /* === Emits === */
 const emits = defineEmits([
 	'update:modelValue',
-	'hasError'
+	'hasError',
+  'input',
+  'change',
+  'blur',
+  'focus',
+  'focusout',
+  'click',
+  'dblclick',
+  'mousedown',
+  'mouseup',
+  'mouseenter',
 ])
+
+const emitUpdateModelValue = (value: string) => {
+  if (props.eventEmitter === 'input') {
+    emits('update:modelValue', value)
+    emits('input', value)
+  } else if (props.eventEmitter === 'change') {
+    emits('update:modelValue', value)
+    emits('change', value)
+  } else if (props.eventEmitter === 'blur') {
+    emits('update:modelValue', value)
+    emits('blur', value)
+  }
+}
+
+const emitFocus = (event: Event) => {
+  inputFocused.value = true
+  emits('focus', event)
+}
+
+const emitFocusOut = (event: Event) => {
+  inputFocused.value = false
+  emits('focusout', event)
+}
 
 /* === Watchers === */
 watch(() => props.modelValue, () => {

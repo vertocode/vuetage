@@ -4,6 +4,7 @@
         v-model="value"
         loading-size="10px"
         variant="outlined"
+        @click="console.log($event)"
         left-icon="fa fa-search"
         placeholder="Type your text"
         label="Text Field"
