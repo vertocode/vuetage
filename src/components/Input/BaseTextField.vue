@@ -251,39 +251,39 @@ const validateRules = () => {
 const emits = defineEmits([
 	'update:modelValue',
 	'hasError',
-  'input',
-  'change',
-  'blur',
-  'focus',
-  'focusout',
-  'click',
-  'dblclick',
-  'mousedown',
-  'mouseup',
-  'mouseenter',
+	'input',
+	'change',
+	'blur',
+	'focus',
+	'focusout',
+	'click',
+	'dblclick',
+	'mousedown',
+	'mouseup',
+	'mouseenter',
 ])
 
 const emitUpdateModelValue = (value: string) => {
-  if (props.eventEmitter === 'input') {
-    emits('update:modelValue', value)
-    emits('input', value)
-  } else if (props.eventEmitter === 'change') {
-    emits('update:modelValue', value)
-    emits('change', value)
-  } else if (props.eventEmitter === 'blur') {
-    emits('update:modelValue', value)
-    emits('blur', value)
-  }
+	if (props.eventEmitter === 'input') {
+		emits('update:modelValue', value)
+		emits('input', value)
+	} else if (props.eventEmitter === 'change') {
+		emits('update:modelValue', value)
+		emits('change', value)
+	} else if (props.eventEmitter === 'blur') {
+		emits('update:modelValue', value)
+		emits('blur', value)
+	}
 }
 
 const emitFocus = (event: Event) => {
-  inputFocused.value = true
-  emits('focus', event)
+	inputFocused.value = true
+	emits('focus', event)
 }
 
 const emitFocusOut = (event: Event) => {
-  inputFocused.value = false
-  emits('focusout', event)
+	inputFocused.value = false
+	emits('focusout', event)
 }
 
 /* === Watchers === */
