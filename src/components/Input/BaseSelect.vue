@@ -7,31 +7,28 @@
         :model-value="textField"
         readonly
         :label="label"
+        variant="underlined"
         @click="showOptions = !showOptions"
     >
       <template #rightIcon>
-        <span class="right-icon">
+        <span class="right-icon" @click="showOptions = !showOptions">
           <i class="fa fa-caret-down"></i>
         </span>
       </template>
     </BaseTextField>
-    <div class="base-select-field-options" v-if="showOptions">
-      <div
-          class="base-select-field-options-option"
-          v-for="option in options"
-      >
-       {{ option }}
-      </div>
-    </div>
+    <BaseMenu :show="showOptions">
+      <BaseItem @click="selectOption(option)" v-for="(option, index) in options" :key="index">{{ option.text }}</BaseItem>
+    </BaseMenu>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { BaseTextField } from '@/components'
+import { BaseTextField, BaseItem, BaseMenu } from '@/components'
 
 import { Option, Props } from '@/typing/BaseSelect'
 
+// <!-- TODO: Make all props from text field to BaseSelect too -->
 defineProps<Props>()
 
 /* States */
@@ -42,17 +39,24 @@ const showOptions = ref(false)
 const openOptions = () => {
   showOptions.value = true
 }
+
+const selectOption = (option: Option) => {
+  console.log(option)
+}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import '@/components/variables.scss';
+
 .base-select-field {
-  .base-select {
+  position: relative;
+  :deep(.base-select) {
     min-width: 70px;
     cursor: pointer;
   }
 
-  &-options {
-
+  :deep(.right-icon) {
+    cursor: pointer;
   }
 }
 </style>

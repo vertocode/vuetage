@@ -1,4 +1,6 @@
 export { default as BaseButton } from './Button/BaseButton.vue'
 export { default as BaseTextField } from './Input/BaseTextField.vue'
 export { default as BaseSelect } from './Input/BaseSelect.vue'
+export { default as BaseItem } from './List/BaseItem.vue'
+export { default as BaseMenu } from './Menu/BaseMenu.vue'
 export { default as Spinner } from './Spinner/Spinner.vue'
