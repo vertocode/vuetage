@@ -43,7 +43,8 @@
             ['base-text-field-input-has-spinner']: loading && !useBorderLoading,
             ['base-text-field-input-has-base-color']: variant === 'default',
             ['base-text-field-input-has-dark-color']: variant === 'dark',
-            ['base-text-field-input-has-left-icon']: leftIcon
+            ['base-text-field-input-has-left-icon']: leftIcon,
+            ['base-text-field-input-has-right-icon']: rightIcon
         }"
         :required="required"
         :style="[customStyle, { width, height }]"
@@ -88,7 +89,7 @@ import ErrorComponent from '@/components/Error/ErrorComponent.vue'
 /* === Props === */
 const props = defineProps({
 	modelValue: {
-		type: String,
+		type: String || null,
 		required: true
 	},
 	bind: {
@@ -375,6 +376,11 @@ watch(() => props.modelValue, () => {
       padding-left: $size-large-1x;
       box-sizing: border-box;
     }
+
+    &-has-right-icon {
+      padding-right: $size-large-1x;
+      box-sizing: border-box;
+    }
   }
 
   &-border {
@@ -406,8 +412,8 @@ watch(() => props.modelValue, () => {
 
   &-right-icon {
     position: absolute;
-    top: 0.35em;
-    right: 0.4em;
+    top: 0.4em;
+    right: 0.3em;
   }
 
   &-error {

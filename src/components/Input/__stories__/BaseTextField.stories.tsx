@@ -1,5 +1,5 @@
 import type  { Meta, StoryObj } from '@storybook/vue3'
-import { BaseButton, BaseTextField } from '@/components'
+import { BaseTextField } from '@/components'
 import { userEvent, within } from '@storybook/testing-library'
 import { ref } from 'vue'
 
@@ -101,7 +101,7 @@ const Template: Story = {
         template: '<div style="width: 200px"><BaseTextField v-model="modelValue" v-bind="args">Default</BaseTextField></div>'
     }),
     args: {
-        ...BaseButton.args
+        ...BaseTextField.args
     }
 }
 
