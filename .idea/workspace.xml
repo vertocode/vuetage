@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/List/BaseItem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/__stories__/BaseSelect.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/__stories__/BaseSelect.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typing/BaseSelect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseSelect.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +120,8 @@
       <workItem from="1703284556261" duration="2598000" />
       <workItem from="1703355762080" duration="1359000" />
       <workItem from="1703370856103" duration="4911000" />
-      <workItem from="1703621977095" duration="4615000" />
+      <workItem from="1703621977095" duration="4695000" />
+      <workItem from="1703638864686" duration="906000" />
     </task>
     <servers />
   </component>

@@ -45,7 +45,7 @@ export const OptionWithGroups = {
         options: [
             {
                 group: 'Phones',
-                options: [
+                items: [
                     { text: 'iPhone 12', value: 'iphone-12' },
                     { text: 'iPhone 11', value: 'iphone-11' },
                     { text: 'iPhone X', value: 'iphone-x' }
@@ -53,7 +53,7 @@ export const OptionWithGroups = {
             },
             {
                 group: 'Laptops',
-                options: [
+                items: [
                     { text: 'MacBook Pro', value: 'macbook-pro' },
                     { text: 'MacBook Air', value: 'macbook-air' },
                     { text: 'MacBook', value: 'macbook' }

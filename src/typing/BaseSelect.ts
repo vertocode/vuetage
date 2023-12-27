@@ -7,7 +7,7 @@ export type Option = NormalOption[] | GroupOption[]
 
 export interface GroupOption {
     group: string
-    options: NormalOption[]
+    items: NormalOption[]
 }
 
 export interface NormalOption {

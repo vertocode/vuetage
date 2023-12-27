@@ -17,14 +17,21 @@
       </template>
     </BaseTextField>
     <BaseMenu :show="showOptions">
-      <BaseItem @click="selectOption(option)" v-for="(option, index) in options" :key="index">{{ option.text }}</BaseItem>
+      <div v-for="(option, index) in options" :key="index">
+        <BaseGroup v-if="option?.group" :title="option?.group">
+          <BaseItem v-for="(item, index) in option.items" :key="index" @click="selectOption(item)">
+            {{ item.text }}
+          </BaseItem>
+        </BaseGroup>
+        <BaseItem v-else @click="selectOption(option)">{{ option.text }}</BaseItem>
+      </div>
     </BaseMenu>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { BaseTextField, BaseItem, BaseMenu } from '@/components'
+import { BaseTextField, BaseItem, BaseMenu, BaseGroup } from '@/components'
 
 import { Option, Props } from '@/typing/BaseSelect'
 
@@ -32,15 +39,17 @@ import { Option, Props } from '@/typing/BaseSelect'
 defineProps<Props>()
 
 /* States */
-const textField = ref('')
-const showOptions = ref(false)
+const selectedOptions = ref<Option[]>([])
+const textField = ref<string>('')
+const showOptions = ref<boolean>(false)
 
 /* Methods */
-const openOptions = () => {
+const openOptions = (): void => {
   showOptions.value = true
 }
 
-const selectOption = (option: Option) => {
+const selectOption = (option: Option): void => {
+  selectedOptions.value.push(option)
   console.log(option)
 }
 </script>
