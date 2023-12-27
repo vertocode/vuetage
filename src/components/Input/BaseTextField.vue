@@ -22,7 +22,7 @@
         class="base-text-field-label"
         :style="customStyleLabel"
         :class="{
-          ['base-text-field-label-active']: (modelValue?.length || inputFocused) && !readonly,
+          ['base-text-field-label-active']: ((modelValue?.length || inputFocused) && !readonly) || (readonly && modelValue?.length),
           ['base-text-field-label-has-left-icon']: leftIcon
         }"
     >
@@ -43,8 +43,8 @@
             ['base-text-field-input-has-spinner']: loading && !useBorderLoading,
             ['base-text-field-input-has-base-color']: variant === 'default',
             ['base-text-field-input-has-dark-color']: variant === 'dark',
-            ['base-text-field-input-has-left-icon']: leftIcon,
-            ['base-text-field-input-has-right-icon']: rightIcon
+            ['base-text-field-input-has-left-icon']: leftIcon || !!slots?.leftIcon,
+            ['base-text-field-input-has-right-icon']: rightIcon || !!slots?.rightIcon
         }"
         :required="required"
         :style="[customStyle, { width, height }]"
@@ -82,7 +82,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, useSlots } from 'vue'
 import Spinner from '@/components/Spinner/Spinner.vue'
 import ErrorComponent from '@/components/Error/ErrorComponent.vue'
 
@@ -126,7 +126,7 @@ const props = defineProps({
 		default: false
 	},
 	label: {
-		type: String,
+		type: String || null || undefined,
 		default: null
 	},
 	placeholder: {
@@ -291,6 +291,9 @@ const emitFocusOut = (event: Event) => {
 watch(() => props.modelValue, () => {
 	validateRules()
 })
+
+/* === Slots === */
+const slots = useSlots()
 </script>
 
 <style scoped lang="scss">

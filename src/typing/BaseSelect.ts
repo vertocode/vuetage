@@ -1,5 +1,7 @@
 export interface Props {
-    label: string
+    label?: string
+    multiple: boolean
+    selectedOptions?: NormalOption[]
     options: Option[]
 }
 
@@ -11,6 +13,7 @@ export interface GroupOption {
 }
 
 export interface NormalOption {
+    group?: string
     value: string
     text: string
 }

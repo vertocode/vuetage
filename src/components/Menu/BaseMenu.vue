@@ -25,6 +25,7 @@ interface Props {
   right?: string | number
   borderColor?: string
   zIndex?: string | number
+  maxHeight: string
   boxShadow?: string
   hideCloseButton?: boolean
 }
@@ -35,6 +36,7 @@ withDefaults(defineProps<Props>(), {
   top: '2em',
   left: '0',
   right: '0',
+  maxHeight: '200px',
   borderColor: '#eaeaea',
   zIndex: 100,
   boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
@@ -55,8 +57,10 @@ withDefaults(defineProps<Props>(), {
   box-shadow: v-bind(boxShadow);
   border: 1px solid v-bind(borderColor);
   background-color: v-bind(backgroundColor);
+  max-height: v-bind(maxHeight);
   overflow: hidden;
   transition: all 0.3s ease;
+  overflow-y: auto;
 
   .menu-content {
     padding: 0 2px;

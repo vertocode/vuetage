@@ -62,3 +62,18 @@ export const OptionWithGroups = {
         ]
     }
 }
+
+export const Multiple = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: [
+            { text: 'Option 1', value: 'option-1' },
+            { text: 'Option 2', value: 'option-2' },
+            { text: 'Option 3', value: 'option-3' },
+            { text: 'Option 4', value: 'option-4' },
+            { text: 'Option 5', value: 'option-5' }
+        ],
+        multiple: true
+    }
+}
