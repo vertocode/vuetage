@@ -19,11 +19,22 @@
     <BaseMenu :show="showOptions">
       <div v-for="(option, index) in options" :key="index">
         <BaseGroup v-if="option?.group" :title="option?.group">
-          <BaseItem :active="getIsActive(item)" v-for="(item, index) in option.items" :key="index" @click="selectOption(item)">
+          <BaseItem
+              :active="getIsActive(item)"
+              v-for="(item, index) in option.items"
+              :key="index"
+              @click="selectOption(item)"
+          >
             {{ item.text }}
           </BaseItem>
         </BaseGroup>
-        <BaseItem v-else :active="getIsActive(option)" @click="selectOption(option as NormalOption)">{{ option.text }}</BaseItem>
+        <BaseItem
+            v-else
+            :active="getIsActive(option as NormalOption)"
+            @click="selectOption(option as NormalOption)"
+        >
+          {{ option.text }}
+        </BaseItem>
       </div>
     </BaseMenu>
   </div>
@@ -37,8 +48,8 @@ import { NormalOption, Props } from '@/typing/BaseSelect'
 
 // <!-- TODO: Make all props from text field to BaseSelect too -->
 const props = withDefaults(defineProps<Props>(), {
-  selectedOptions: () => [],
-  multiple: false
+	selectedOptions: () => [],
+	multiple: false
 })
 
 /* States */
@@ -48,21 +59,21 @@ const showOptions = ref<boolean>(false)
 
 /* Methods */
 const getIsActive = (option: NormalOption): boolean => {
-  return selectedOptions.value.map(({ value }) => value).includes(option.value)
+	return selectedOptions.value.map(({ value }) => value).includes(option.value)
 }
 
 const selectOption = (option: NormalOption): void => {
-  if (props.multiple) {
-    if (getIsActive(option)) {
-      const index = selectedOptions.value.map(({ value }) => value).indexOf(option.value)
-      selectedOptions.value.splice(index, 1)
-    } else {
-      selectedOptions.value.push(option)
-    }
-  } else {
-    selectedOptions.value = [option]
-  }
-  textField.value = selectedOptions.value.map((option) => option.text).join(', ')
+	if (props.multiple) {
+		if (getIsActive(option)) {
+			const index = selectedOptions.value.map(({ value }) => value).indexOf(option.value)
+			selectedOptions.value.splice(index, 1)
+		} else {
+			selectedOptions.value.push(option)
+		}
+	} else {
+		selectedOptions.value = [option]
+	}
+	textField.value = selectedOptions.value.map((option) => option.text).join(', ')
 }
 </script>
 

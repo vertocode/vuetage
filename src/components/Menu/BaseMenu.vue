@@ -3,7 +3,7 @@
     <div class="menu-content">
       <div class="header">
         <span class="title" v-if="title">{{ title }}</span>
-        <button v-if="!hideCloseButton" class="close-button" @click="closeMenu">
+        <button v-if="!hideCloseButton" class="close-button" @click="$emit('close')">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -31,16 +31,16 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  show: false,
-  backgroundColor: '#ffffff',
-  top: '2em',
-  left: '0',
-  right: '0',
-  maxHeight: '200px',
-  borderColor: '#eaeaea',
-  zIndex: 100,
-  boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-  hideCloseButton: true
+	show: false,
+	backgroundColor: '#ffffff',
+	top: '2em',
+	left: '0',
+	right: '0',
+	maxHeight: '200px',
+	borderColor: '#eaeaea',
+	zIndex: 100,
+	boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+	hideCloseButton: true
 })
 </script>
 

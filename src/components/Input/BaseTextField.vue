@@ -22,7 +22,7 @@
         class="base-text-field-label"
         :style="customStyleLabel"
         :class="{
-          ['base-text-field-label-active']: ((modelValue?.length || inputFocused) && !readonly) || (readonly && modelValue?.length),
+          ['base-text-field-label-active']: ((hasText || inputFocused) && !readonly) || (readonly && hasText),
           ['base-text-field-label-has-left-icon']: leftIcon
         }"
     >
@@ -48,7 +48,7 @@
         }"
         :required="required"
         :style="[customStyle, { width, height }]"
-        :placeholder="(modelValue?.length || inputFocused) && !readonly ? placeholder : ''"
+        :placeholder="(hasText || inputFocused) && !readonly && placeholder ? placeholder : ''"
         :disabled="disabled || (disableOnLoading && loading)"
         :readonly="readonly"
         @input="emitUpdateModelValue($event.target.value)"
@@ -85,116 +85,34 @@
 import { ref, watch, computed, useSlots } from 'vue'
 import Spinner from '@/components/Spinner/Spinner.vue'
 import ErrorComponent from '@/components/Error/ErrorComponent.vue'
+import { Props } from '@/typing/BaseTextField'
 
-// TODO: Change the syntax to use "defineProps<Props>()".
 /* === Props === */
-const props = defineProps({
-	modelValue: {
-		type: String || null,
-		required: true
-	},
-	bind: {
-		type: Object,
-		default: null
-	},
-	variant: {
-		type: String,
-		default: 'default',
-		validator: (value: string) => ['default', 'outlined', 'underlined', 'dark'].includes(value),
-	},
-	useBorderLoading: {
-		type: Boolean,
-		default: false
-	},
-	loadingColor: {
-		type: String,
-		default: '#3498db'
-	},
-	loadingSize: {
-		type: String,
-		default: 'small'
-	},
-	disabled: {
-		type: Boolean,
-		default: false
-	},
-	readonly: {
-		type: Boolean,
-		default: false
-	},
-	loading: {
-		type: Boolean,
-		default: false
-	},
-	label: {
-		type: String || null || undefined,
-		default: null
-	},
-	placeholder: {
-		type: String,
-		default: null
-	},
-	disableOnLoading: {
-		type: Boolean,
-		default: false
-	},
-	maxLength: {
-		type: Number || String,
-		default: null
-	},
-	minLength: {
-		type: Number || String,
-		default: 0
-	},
-	required: {
-		type: Boolean,
-		default: false
-	},
-	width: {
-		type: String,
-		default: '100%'
-	},
-	height: {
-		type: String,
-		default: '30px'
-	},
-	rules: {
-		type: Array<() => string | boolean>,
-		default: []
-	},
-	style: {
-		type: String || Object,
-		default: ''
-	},
-	customStyle: {
-		type: String || Object,
-		default: ''
-	},
-	customStyleLabel: {
-		type: String || Object,
-		default: ''
-	},
-	disableRequiredRule: {
-		type: Boolean,
-		default: false
-	},
-	rightIcon: {
-		type: String,
-		default: ''
-	},
-	leftIcon: {
-		type: String,
-		default: ''
-	},
-	eventEmitter: {
-		type: String,
-		default: 'input',
-		validator: (value: string) => ['input', 'blur', 'change'].includes(value)
-	},
-	password: {
-		type: Boolean,
-		default: false
-	}
+const props = withDefaults(defineProps<Props>(), {
+	rules: () => [],
+	variant: 'default',
+	useBorderLoading: false,
+	loadingColor: '#3498db',
+	loadingSize: 'small',
+	disabled: false,
+	readonly: false,
+	loading: false,
+	label: null,
+	placeholder: null,
+	disableOnLoading: false,
+	maxLength: null,
+	minLength: 0,
+	required: false,
+	width: '100%',
+	height: '30px',
+	style: '',
+	customStyle: '',
+	customStyleLabel: '',
+	disableRequiredRule: false,
+	rightIcon: '',
+	leftIcon: '',
+	eventEmitter: 'input',
+	password: false,
 })
 
 /* === State === */
@@ -211,6 +129,7 @@ const type = computed(() => {
 
 	return 'text'
 })
+
 const loadingBorderSize = computed(() => {
 	if (props.loadingSize === 'small') {
 		return '2px'
@@ -218,22 +137,25 @@ const loadingBorderSize = computed(() => {
 
 	return props.loadingSize
 })
+
 const allRules = computed(() => {
 	const rules = []
 	if (props.required && !props.disableRequiredRule) {
-		rules.push((value: string) => !!value && !!value.length && value !== '' || 'Required field')
+		rules.push((value: string | null) => !!value && !!value.length && value !== '' || 'Required field')
 	}
 
 	if (props.minLength) {
-		rules.push((value: string) => value.length >= props.minLength || `Min ${props.minLength} characters`)
+		rules.push((value: string) => value.length >= (props.minLength as number) || `Min ${props.minLength} characters`)
 	}
 
 	if (props.maxLength) {
-		rules.push((value: string) => value.length <= props.maxLength || `Max ${props.maxLength} characters`)
+		rules.push((value: string) => value.length <= (props.maxLength as number) || `Max ${props.maxLength} characters`)
 	}
 
 	return [...rules, ...props.rules]
 })
+
+const hasText = computed(() => !!(props.modelValue as string)?.length)
 
 /* === Methods === */
 const validateRules = () => {
@@ -242,7 +164,7 @@ const validateRules = () => {
 	}
 	const errors = allRules
 		.value
-		.map((rule) => rule(props.modelValue))
+		.map((rule) => rule(props.modelValue as string))
 		.filter(result => typeof result === 'string' || result === false)
 	errorMessage.value = errors[0] as string
 	hasError.value = !!errors.length

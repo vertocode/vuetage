@@ -8,6 +8,25 @@ const meta: Meta = {
     argTypes: {}
 }
 
+const groupOptions = [
+    {
+        group: 'Phones',
+        items: [
+            { text: 'iPhone 12', value: 'iphone-12' },
+            { text: 'iPhone 11', value: 'iphone-11' },
+            { text: 'iPhone X', value: 'iphone-x' }
+        ]
+    },
+    {
+        group: 'Laptops',
+        items: [
+            { text: 'MacBook Pro', value: 'macbook-pro' },
+            { text: 'MacBook Air', value: 'macbook-air' },
+            { text: 'MacBook', value: 'macbook' }
+        ]
+    }
+]
+
 export default meta
 type Story = StoryObj<typeof meta>
 
@@ -42,24 +61,7 @@ export const OptionWithGroups = {
     ...Template,
     args: {
         ...Template.args,
-        options: [
-            {
-                group: 'Phones',
-                items: [
-                    { text: 'iPhone 12', value: 'iphone-12' },
-                    { text: 'iPhone 11', value: 'iphone-11' },
-                    { text: 'iPhone X', value: 'iphone-x' }
-                ]
-            },
-            {
-                group: 'Laptops',
-                items: [
-                    { text: 'MacBook Pro', value: 'macbook-pro' },
-                    { text: 'MacBook Air', value: 'macbook-air' },
-                    { text: 'MacBook', value: 'macbook' }
-                ]
-            }
-        ]
+        options: groupOptions
     }
 }
 
@@ -74,7 +76,16 @@ export const Multiple = {
             { text: 'Option 4', value: 'option-4' },
             { text: 'Option 5', value: 'option-5' }
         ],
-        multiple: true,
-        selectedOptions: [{ text: 'Option 1', value: 'option-1' }, { text: 'Option 3', value: 'option-3'}]
+        multiple: true
     }
 }
+
+export const Outlined = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'outlined'
+    }
+}
+
