@@ -9,11 +9,6 @@
       <change beforePath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/__stories__/BaseSelect.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/__stories__/BaseSelect.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/BaseItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/BaseSelect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseSelect.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +119,8 @@
       <workItem from="1703370856103" duration="4911000" />
       <workItem from="1703621977095" duration="4695000" />
       <workItem from="1703638864686" duration="1000000" />
-      <workItem from="1703710846593" duration="5167000" />
+      <workItem from="1703710846593" duration="5846000" />
+      <workItem from="1703797052647" duration="1491000" />
     </task>
     <servers />
   </component>

@@ -19,21 +19,21 @@
     <BaseMenu :show="showOptions">
       <div v-for="(option, index) in options" :key="index">
         <BaseGroup v-if="option?.group" :title="option?.group">
-          <BaseItem :active="selectedOptions.includes(item)" v-for="(item, index) in option.items" :key="index" @click="selectOption(item)">
+          <BaseItem :active="getIsActive(item)" v-for="(item, index) in option.items" :key="index" @click="selectOption(item)">
             {{ item.text }}
           </BaseItem>
         </BaseGroup>
-        <BaseItem v-else :active="selectedOptions.includes(option)" @click="selectOption(option as NormalOption)">{{ option.text }}</BaseItem>
+        <BaseItem v-else :active="getIsActive(option)" @click="selectOption(option as NormalOption)">{{ option.text }}</BaseItem>
       </div>
     </BaseMenu>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { BaseTextField, BaseItem, BaseMenu, BaseGroup } from '@/components'
 
-import { NormalOption, GroupOption, Props } from '@/typing/BaseSelect'
+import { NormalOption, Props } from '@/typing/BaseSelect'
 
 // <!-- TODO: Make all props from text field to BaseSelect too -->
 const props = withDefaults(defineProps<Props>(), {
@@ -43,19 +43,18 @@ const props = withDefaults(defineProps<Props>(), {
 
 /* States */
 const selectedOptions = ref<NormalOption[]>(props.selectedOptions)
-const textField = ref<string>('')
+const textField = ref<string>(props.selectedOptions.map((option) => option.text).join(', ') || '')
 const showOptions = ref<boolean>(false)
 
 /* Methods */
-const openOptions = (): void => {
-  showOptions.value = true
+const getIsActive = (option: NormalOption): boolean => {
+  return selectedOptions.value.map(({ value }) => value).includes(option.value)
 }
 
 const selectOption = (option: NormalOption): void => {
   if (props.multiple) {
-    // If the option is already selected, when the user clicks on it, it will be removed.
-    if (selectedOptions.value.some(selectedOption => selectedOption === option)) {
-      const index = selectedOptions.value.indexOf(option)
+    if (getIsActive(option)) {
+      const index = selectedOptions.value.map(({ value }) => value).indexOf(option.value)
       selectedOptions.value.splice(index, 1)
     } else {
       selectedOptions.value.push(option)

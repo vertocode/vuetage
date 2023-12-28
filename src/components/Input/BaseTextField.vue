@@ -86,6 +86,7 @@ import { ref, watch, computed, useSlots } from 'vue'
 import Spinner from '@/components/Spinner/Spinner.vue'
 import ErrorComponent from '@/components/Error/ErrorComponent.vue'
 
+// TODO: Change the syntax to use "defineProps<Props>()".
 /* === Props === */
 const props = defineProps({
 	modelValue: {
@@ -163,7 +164,7 @@ const props = defineProps({
 	},
 	style: {
 		type: String || Object,
-		default: {}
+		default: ''
 	},
 	customStyle: {
 		type: String || Object,

@@ -74,6 +74,7 @@ export const Multiple = {
             { text: 'Option 4', value: 'option-4' },
             { text: 'Option 5', value: 'option-5' }
         ],
-        multiple: true
+        multiple: true,
+        selectedOptions: [{ text: 'Option 1', value: 'option-1' }, { text: 'Option 3', value: 'option-3'}]
     }
 }
