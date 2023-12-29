@@ -12,7 +12,7 @@
     >
       <template #rightIcon>
         <slot name="rightIcon" v-bind="{ show: showOptions }">
-          <span class="right-icon" @click="showOptions = !showOptions">
+          <span v-if="!(loading && !useBorderLoading)" class="right-icon" @click="showOptions = !showOptions">
             <i :class="rightIcon" v-if="rightIcon"></i>
             <i
                 class="fa fa-caret-down"
@@ -76,6 +76,7 @@ const baseTextFieldProps = computed(() => ({
   useBorderLoading: props.useBorderLoading,
   loadingColor: props.loadingColor,
   loadingSize: props.loadingSize,
+  loading: props.loading,
   disabled: props.disabled,
   width: props.width,
   height: props.height,

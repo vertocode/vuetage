@@ -117,3 +117,54 @@ export const CloseOnSelect = {
     }
 }
 
+export const Loading = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'underlined',
+        loading: true
+    }
+}
+
+export const useBorderLoading = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'underlined',
+        loading: true,
+        useBorderLoading: true
+    }
+}
+
+export const Disabled = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'outlined',
+        disabled: true
+    }
+}
+
+export const leftIcon = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'outlined',
+        leftIcon: 'fa fa-search'
+    }
+}
+
+export const rightIcon = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'outlined',
+        rightIcon: 'fa fa-search'
+    }
+}
+
