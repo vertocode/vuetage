@@ -7,13 +7,17 @@
         }"
         readonly
         v-model="textField"
-        :label="label"
+        v-bind="baseTextFieldProps"
         @click="showOptions = !showOptions"
     >
       <template #rightIcon>
-        <span class="right-icon" @click="showOptions = !showOptions">
-          <i class="fa fa-caret-down"></i>
-        </span>
+        <slot name="rightIcon" v-bind="{ show: showOptions }">
+          <span class="right-icon" @click="showOptions = !showOptions">
+            <i :class="rightIcon" v-if="rightIcon"></i>
+            <i class="fa fa-caret-down" style="transform: rotate(180deg)" v-else-if="showOptions"></i>
+            <i class="fa fa-caret-down" v-else></i>
+          </span>
+        </slot>
       </template>
     </BaseTextField>
     <BaseMenu :show="showOptions">
@@ -41,12 +45,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { BaseTextField, BaseItem, BaseMenu, BaseGroup } from '@/components'
 
 import { NormalOption, Props } from '@/typing/BaseSelect'
 
-// <!-- TODO: Make all props from text field to BaseSelect too -->
 const props = withDefaults(defineProps<Props>(), {
 	selectedOptions: () => [],
 	multiple: false
@@ -56,6 +59,23 @@ const props = withDefaults(defineProps<Props>(), {
 const selectedOptions = ref<NormalOption[]>(props.selectedOptions)
 const textField = ref<string>(props.selectedOptions.map((option) => option.text).join(', ') || '')
 const showOptions = ref<boolean>(false)
+
+/* Computed properties */
+const baseTextFieldProps = computed(() => ({
+  label: props.label,
+  variant: props.variant,
+  useBorderLoading: props.useBorderLoading,
+  loadingColor: props.loadingColor,
+  loadingSize: props.loadingSize,
+  disabled: props.disabled,
+  width: props.width,
+  height: props.height,
+  style: props.inputFieldStyle,
+  customStyle: props.inputStyle,
+  customStyleLabel: props.customStyleLabel,
+  rightIcon: props.rightIcon,
+  leftIcon: props.leftIcon
+}))
 
 /* Methods */
 const getIsActive = (option: NormalOption): boolean => {
