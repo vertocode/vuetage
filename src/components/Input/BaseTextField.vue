@@ -274,6 +274,7 @@ const slots = useSlots()
 
     &-has-base-color {
       background-color: $base-color;
+      border-radius: 3px;
       color: $label-color;
 
       &:focus {

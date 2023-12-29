@@ -6,7 +6,7 @@ export interface Props extends BaseTextFieldProps {
     multiple?: boolean
     inputFieldStyle?: StyleValue | undefined
     inputStyle?: StyleValue | undefined
-    closeOnSelect?: boolean
+    closeOnSelect?: boolean | null
     selectedOptions?: NormalOption[]
     options: Option[]
 }

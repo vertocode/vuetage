@@ -33,7 +33,7 @@ interface Props {
 withDefaults(defineProps<Props>(), {
 	show: false,
 	backgroundColor: '#ffffff',
-	top: '2em',
+	top: '1.9em',
 	left: '0',
 	right: '0',
 	maxHeight: '200px',

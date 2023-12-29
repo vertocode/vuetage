@@ -61,7 +61,8 @@ import { NormalOption, Props } from '@/typing/BaseSelect'
 
 const props = withDefaults(defineProps<Props>(), {
 	selectedOptions: () => [],
-	multiple: false
+	multiple: false,
+  closeOnSelect: null
 })
 
 /* States */
@@ -100,14 +101,16 @@ const selectOption = (option: NormalOption): void => {
 		} else {
 			selectedOptions.value.push(option)
 		}
+    if (props.closeOnSelect) {
+      showOptions.value = false
+    }
 	} else {
 		selectedOptions.value = [option]
+    if (props.closeOnSelect || props.closeOnSelect === null) {
+      showOptions.value = false
+    }
 	}
 	textField.value = selectedOptions.value.map((option) => option.text).join(', ')
-
-  if (props.closeOnSelect) {
-    showOptions.value = false
-  }
 }
 </script>
 
