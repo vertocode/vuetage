@@ -89,3 +89,31 @@ export const Outlined = {
     }
 }
 
+export const Underlined = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'underlined'
+    }
+}
+
+export const Dark = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'dark'
+    }
+}
+
+export const CloseOnSelect = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'underlined',
+        closeOnSelect: true
+    }
+}
+

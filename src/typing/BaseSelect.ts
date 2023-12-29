@@ -3,9 +3,10 @@ import { StyleValue } from 'vue'
 
 export interface Props extends BaseTextFieldProps {
     label?: string
-    multiple: boolean
-    inputFieldStyle: StyleValue | undefined
-    inputStyle: StyleValue | undefined
+    multiple?: boolean
+    inputFieldStyle?: StyleValue | undefined
+    inputStyle?: StyleValue | undefined
+    closeOnSelect?: boolean
     selectedOptions?: NormalOption[]
     options: Option[]
 }

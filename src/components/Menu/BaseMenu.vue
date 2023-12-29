@@ -25,7 +25,7 @@ interface Props {
   right?: string | number
   borderColor?: string
   zIndex?: string | number
-  maxHeight: string
+  maxHeight?: string
   boxShadow?: string
   hideCloseButton?: boolean
 }

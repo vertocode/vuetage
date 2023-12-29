@@ -14,8 +14,17 @@
         <slot name="rightIcon" v-bind="{ show: showOptions }">
           <span class="right-icon" @click="showOptions = !showOptions">
             <i :class="rightIcon" v-if="rightIcon"></i>
-            <i class="fa fa-caret-down" style="transform: rotate(180deg)" v-else-if="showOptions"></i>
-            <i class="fa fa-caret-down" v-else></i>
+            <i
+                class="fa fa-caret-down"
+                style="transform: rotate(180deg)"
+                :style="{ color: variant === 'dark' ? 'white' : 'black' }"
+                v-else-if="showOptions"
+            ></i>
+            <i
+                class="fa fa-caret-down"
+                :style="{ color: variant === 'dark' ? 'white' : 'black' }"
+                v-else
+            ></i>
           </span>
         </slot>
       </template>
@@ -94,6 +103,10 @@ const selectOption = (option: NormalOption): void => {
 		selectedOptions.value = [option]
 	}
 	textField.value = selectedOptions.value.map((option) => option.text).join(', ')
+
+  if (props.closeOnSelect) {
+    showOptions.value = false
+  }
 }
 </script>
 
