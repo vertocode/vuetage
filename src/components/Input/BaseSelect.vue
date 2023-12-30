@@ -29,27 +29,32 @@
         </slot>
       </template>
     </BaseTextField>
-    <BaseMenu :show="showOptions">
-      <div v-for="(option, index) in options" :key="index">
-        <BaseGroup v-if="option?.group" :title="option?.group">
-          <BaseItem
-              :active="getIsActive(item)"
-              v-for="(item, index) in option.items"
-              :key="index"
-              @click="selectOption(item)"
-          >
-            {{ item.text }}
-          </BaseItem>
-        </BaseGroup>
-        <BaseItem
-            v-else
-            :active="getIsActive(option as NormalOption)"
-            @click="selectOption(option as NormalOption)"
-        >
-          {{ option.text }}
-        </BaseItem>
-      </div>
-    </BaseMenu>
+    <slot name="menu" v-bind="{ show: showOptions, options }">
+      <BaseMenu :show="showOptions" :custom-style="menuStyle">
+        <div v-for="(option, index) in options" :key="index">
+          <BaseGroup v-if="option?.group" :title="option?.group">
+            <slot name="item" v-bind="{ option, index }">
+              <BaseItem
+                  :active="getIsActive(item)"
+                  v-for="(item, index) in option.items"
+                  :key="index"
+                  @click="selectOption(item)"
+              >
+                {{ item.text }}
+              </BaseItem>
+            </slot>
+          </BaseGroup>
+          <slot name="item" v-else v-bind="{ option, index }">
+            <BaseItem
+                :active="getIsActive(option as NormalOption)"
+                @click="selectOption(option as NormalOption)"
+            >
+              {{ option.text }}
+            </BaseItem>
+          </slot>
+        </div>
+      </BaseMenu>
+    </slot>
   </div>
 </template>
 
@@ -83,7 +88,7 @@ const baseTextFieldProps = computed(() => ({
   height: props.height,
   style: props.inputFieldStyle,
   customStyle: props.inputStyle,
-  customStyleLabel: props.customStyleLabel,
+  customStyleLabel: props.labelStyle,
   rightIcon: props.rightIcon,
   leftIcon: props.leftIcon
 }))

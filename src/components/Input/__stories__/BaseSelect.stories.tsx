@@ -138,6 +138,17 @@ export const useBorderLoading = {
     }
 }
 
+export const LoadingColor = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'underlined',
+        loading: true,
+        loadingColor: 'green'
+    }
+}
+
 export const Disabled = {
     ...Template,
     args: {
@@ -165,6 +176,45 @@ export const rightIcon = {
         options: groupOptions,
         variant: 'outlined',
         rightIcon: 'fa fa-search'
+    }
+}
+
+export const inputStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        inputStyle: 'background-color: #90ee90; color: green;'
+    }
+}
+
+export const labelStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        inputStyle: 'color: green;',
+        labelStyle: 'color: red; font-weight: bold'
+    }
+}
+
+export const menuStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        inputStyle: 'background-color: #90ee90; color: green;',
+        labelStyle: 'color: red; font-weight: bold',
+        menuStyle: 'background-color: #90ee90; padding: 1.5em;'
+    }
+}
+
+export const menuTitle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        menuTitle: 'Menu Title'
     }
 }
 

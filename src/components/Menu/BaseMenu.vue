@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show" class="base-menu">
+  <div v-if="show" class="base-menu" :style="customStyle">
     <div class="menu-content">
       <div class="header">
         <span class="title" v-if="title">{{ title }}</span>
@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import { StyleValue } from 'vue'
 import { defineProps, withDefaults } from 'vue'
 
 interface Props {
@@ -28,6 +29,7 @@ interface Props {
   maxHeight?: string
   boxShadow?: string
   hideCloseButton?: boolean
+  customStyle?: StyleValue | undefined
 }
 
 withDefaults(defineProps<Props>(), {
