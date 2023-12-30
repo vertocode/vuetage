@@ -8,6 +8,7 @@ export interface Props extends BaseTextFieldProps {
     inputStyle?: StyleValue | undefined
     labelStyle?: StyleValue | undefined
     menuStyle?: StyleValue | undefined
+    itemStyle?: StyleValue | undefined
     closeOnSelect?: boolean | null
     selectedOptions?: NormalOption[]
     options: Option[]

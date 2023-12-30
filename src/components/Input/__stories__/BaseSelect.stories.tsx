@@ -209,12 +209,17 @@ export const menuStyle = {
     }
 }
 
-export const menuTitle = {
+export const itemStyle = {
     ...Template,
     args: {
         ...Template.args,
         options: groupOptions,
-        menuTitle: 'Menu Title'
+        itemStyle: {
+            'background-color': '#90ee90',
+            hover: {
+                'background-color': '#00ff00'
+            }
+        }
     }
 }
 

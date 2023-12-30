@@ -2,14 +2,27 @@
   <div
       class="base-item"
       :class="{ active }"
+      :style="[
+          customStyle,
+          isHovered
+            ? customStyle?.hover
+            : {}
+      ]"
+      @mouseenter="isHovered = true"
+      @mouseout="isHovered = false"
   >
-    <slot></slot>
+    <slot v-bind="{ active }"></slot>
   </div>
 </template>
 
 <script setup lang="ts">
+import { StyleValue, ref } from 'vue'
+
+const isHovered = ref(false)
+
 interface Props {
   active?: boolean
+  customStyle?: StyleValue | undefined
 }
 defineProps<Props>()
 </script>

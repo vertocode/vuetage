@@ -35,6 +35,7 @@
           <BaseGroup v-if="option?.group" :title="option?.group">
             <slot name="item" v-bind="{ option, index }">
               <BaseItem
+                  :custom-style="itemStyle"
                   :active="getIsActive(item)"
                   v-for="(item, index) in option.items"
                   :key="index"
@@ -46,6 +47,7 @@
           </BaseGroup>
           <slot name="item" v-else v-bind="{ option, index }">
             <BaseItem
+                :custom-style="itemStyle"
                 :active="getIsActive(option as NormalOption)"
                 @click="selectOption(option as NormalOption)"
             >
