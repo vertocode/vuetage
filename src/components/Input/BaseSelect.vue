@@ -32,7 +32,11 @@
     <slot name="menu" v-bind="{ show: showOptions, options }">
       <BaseMenu :show="showOptions" :custom-style="menuStyle">
         <div v-for="(option, index) in options" :key="index">
-          <BaseGroup v-if="option?.group" :title="option?.group">
+          <BaseGroup
+              :custom-style="groupStyle"
+              v-if="option?.group"
+              :title="option?.group"
+          >
             <slot name="item" v-bind="{ option, index }">
               <BaseItem
                   :custom-style="itemStyle"

@@ -1,6 +1,16 @@
 <template>
   <div class="base-group">
-    <div class="header">
+    <div
+        class="header"
+        :style="[
+          customStyle,
+          isHovered
+            ? customStyle?.hover
+            : {}
+        ]"
+        @mouseenter="isHovered = true"
+        @mouseout="isHovered = false"
+    >
       <div class="title">{{ title }}</div>
     </div>
     <div class="items"></div>
@@ -9,9 +19,14 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps, StyleValue, ref } from 'vue'
 
-defineProps<{ title: string }>()
+defineProps<{
+  title: string
+  customStyle?: StyleValue | undefined
+}>()
+
+const isHovered = ref(false)
 </script>
 
 <style lang="scss" scoped>

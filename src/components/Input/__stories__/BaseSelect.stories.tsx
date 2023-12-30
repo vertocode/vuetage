@@ -223,3 +223,17 @@ export const itemStyle = {
     }
 }
 
+export const groupStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        groupStyle: {
+            'background-color': '#90ee90',
+            hover: {
+                'background-color': '#00ff00'
+            }
+        }
+    }
+}
+
