@@ -19,11 +19,12 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, StyleValue, ref } from 'vue'
+import { defineProps, ref } from 'vue'
+import type { CustomStyle } from '@/typing/Style'
 
 defineProps<{
   title: string
-  customStyle?: StyleValue | undefined
+  customStyle?: CustomStyle
 }>()
 
 const isHovered = ref(false)

@@ -73,7 +73,7 @@ import { NormalOption, Props } from '@/typing/BaseSelect'
 const props = withDefaults(defineProps<Props>(), {
 	selectedOptions: () => [],
 	multiple: false,
-  closeOnSelect: null
+	closeOnSelect: null
 })
 
 /* States */
@@ -83,20 +83,20 @@ const showOptions = ref<boolean>(false)
 
 /* Computed properties */
 const baseTextFieldProps = computed(() => ({
-  label: props.label,
-  variant: props.variant,
-  useBorderLoading: props.useBorderLoading,
-  loadingColor: props.loadingColor,
-  loadingSize: props.loadingSize,
-  loading: props.loading,
-  disabled: props.disabled,
-  width: props.width,
-  height: props.height,
-  style: props.inputFieldStyle,
-  customStyle: props.inputStyle,
-  customStyleLabel: props.labelStyle,
-  rightIcon: props.rightIcon,
-  leftIcon: props.leftIcon
+	label: props.label,
+	variant: props.variant,
+	useBorderLoading: props.useBorderLoading,
+	loadingColor: props.loadingColor,
+	loadingSize: props.loadingSize,
+	loading: props.loading,
+	disabled: props.disabled,
+	width: props.width,
+	height: props.height,
+	style: props.inputFieldStyle,
+	customStyle: props.inputStyle,
+	customStyleLabel: props.labelStyle,
+	rightIcon: props.rightIcon,
+	leftIcon: props.leftIcon
 }))
 
 /* Methods */
@@ -112,14 +112,14 @@ const selectOption = (option: NormalOption): void => {
 		} else {
 			selectedOptions.value.push(option)
 		}
-    if (props.closeOnSelect) {
-      showOptions.value = false
-    }
+		if (props.closeOnSelect) {
+			showOptions.value = false
+		}
 	} else {
 		selectedOptions.value = [option]
-    if (props.closeOnSelect || props.closeOnSelect === null) {
-      showOptions.value = false
-    }
+		if (props.closeOnSelect || props.closeOnSelect === null) {
+			showOptions.value = false
+		}
 	}
 	textField.value = selectedOptions.value.map((option) => option.text).join(', ')
 }
