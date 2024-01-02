@@ -15,12 +15,20 @@ export default {
 	install: (app: App) => {
 		app.component('BaseButton', BaseButton)
 		app.component('BaseTextField', BaseTextField)
-		app.component('BaseTextField', BaseSelect)
+		app.component('BaseSelect', BaseSelect)
 		app.component('BaseItem', BaseItem)
-		app.component('BaseItem', BaseGroup)
+		app.component('BaseGroup', BaseGroup)
 		app.component('BaseMenu', BaseMenu)
 		app.component('Spinner', Spinner)
 	}
 }
 
-export { BaseButton, Spinner, BaseTextField }
+export {
+	Spinner,
+	BaseButton,
+	BaseTextField,
+	BaseSelect,
+	BaseItem,
+	BaseGroup,
+	BaseMenu
+}
