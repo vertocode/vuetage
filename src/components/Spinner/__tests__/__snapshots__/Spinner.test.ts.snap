@@ -1,7 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should match content snapshot using default template > __snapshots__/Spinner.snap 1`] = `
-"<div class=\\"spinner spinner-null\\" style=\\"border-top-color: #fff;\\">
-  <div class=\\"spinner-inner\\"></div>
+"<div class=\\"spinner spinner-custom\\">
+  <div></div>
+  <div></div>
+  <div></div>
 </div>"
 `;
