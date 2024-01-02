@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/__stories__/BaseSelect.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/__stories__/BaseSelect.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/BaseSelect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseSelect.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Spinner/Spinner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Spinner/__stories__/Spinner.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Spinner/__stories__/Spinner.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +122,9 @@
       <workItem from="1703638864686" duration="1000000" />
       <workItem from="1703710846593" duration="5846000" />
       <workItem from="1703797052647" duration="6585000" />
-      <workItem from="1703892501036" duration="3749000" />
+      <workItem from="1703892501036" duration="7969000" />
+      <workItem from="1704145283620" duration="1738000" />
+      <workItem from="1704233370683" duration="2020000" />
     </task>
     <servers />
   </component>

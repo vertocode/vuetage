@@ -3,13 +3,12 @@
       class="spinner"
       :class="[
           customSpinnerClass,
-          `spinner-${size}`
+          `spinner-${!!customSize ? 'custom' : size}`
       ]"
-      :style="{
-        borderTopColor: colorSpinner
-      }"
   >
-    <div class="spinner-inner" :class="customSpinnerInnerClass"></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </template>
 
@@ -24,7 +23,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	colorSpinner: '#fff',
+	colorSpinner: 'black',
 	size: null
 })
 
@@ -33,22 +32,36 @@ const customSize = computed(() => {
 		return null
 	}
 
-	return props.size
+	return props.size || '2em'
 })
 </script>
 
 <style lang="scss">
 .spinner {
-  border: 4px solid transparent;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  width: v-bind(customSize);
-  height: v-bind(customSize);
+  display: inline-block;
+  position: relative;
 
-  &-inner {
-    width: 100%;
-    height: 100%;
+  div {
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border: 4px solid v-bind(colorSpinner);
     border-radius: 50%;
+    animation: spin 1.2s cubic-bezier(0.5, 0, 0.3, 1) infinite;
+    border-color: v-bind(colorSpinner) transparent transparent transparent;
+
+    :nth-child(1) {
+      animation-delay: -0.45s;
+    }
+
+    :nth-child(2) {
+      animation-delay: -0.3s;
+    }
+
+    :nth-child(3) {
+      animation-delay: -0.15s;
+    }
   }
 
   &-small {
@@ -65,10 +78,19 @@ const customSize = computed(() => {
     width: 6em;
     height: 6em;
   }
+
+  &-custom {
+    width: v-bind(customSize);
+    height: v-bind(customSize);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

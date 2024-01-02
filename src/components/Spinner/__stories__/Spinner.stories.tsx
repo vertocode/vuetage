@@ -42,7 +42,6 @@ export const Small: Story = {
     }
 }
 Small.args = {
-    colorSpinner: '#1EA7FD',
     size: 'small'
 }
 
@@ -59,7 +58,6 @@ export const Medium: Story = {
     }
 }
 Medium.args = {
-    colorSpinner: '#1EA7FD',
     size: 'medium'
 }
 
@@ -76,6 +74,22 @@ export const Large: Story = {
     }
 }
 Large.args = {
-    colorSpinner: '#1EA7FD',
     size: 'large'
+}
+
+export const ColorSpinner: Story = {
+    render: (args) => ({
+        components: { Spinner },
+        setup() {
+            return { args }
+        },
+        template: '<Spinner v-bind="args"/>'
+    }),
+    args: {
+        ...Spinner.args
+    }
+}
+ColorSpinner.args = {
+    colorSpinner: '#1EA7FD',
+    size: 'medium'
 }

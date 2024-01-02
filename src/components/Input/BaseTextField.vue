@@ -92,7 +92,7 @@ const props = withDefaults(defineProps<Props>(), {
 	rules: () => [],
 	variant: 'default',
 	useBorderLoading: false,
-	loadingColor: '#3498db',
+	loadingColor: 'black',
 	loadingSize: 'small',
 	disabled: false,
 	readonly: false,
@@ -325,10 +325,8 @@ const slots = useSlots()
   &-loading-border {
     height: v-bind(loadingBorderSize);
     border-color: v-bind(loadingColor);
-    border-style: solid;
-    border-radius: 0.4em;
     transform-origin: left;
-    animation: loadingBorder 3s linear infinite;
+    animation: loadingBorder 5s linear infinite;
   }
 
   &-left-icon {
@@ -339,7 +337,12 @@ const slots = useSlots()
 
   &-right-icon {
     position: absolute;
-    top: 0.4em;
+    top: 0.5em;
+    right: 0.5em;
+  }
+
+  &-spinner {
+    top: -0.23em;
     right: 0.3em;
   }
 
