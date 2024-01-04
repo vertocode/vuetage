@@ -38,22 +38,43 @@ yarn add -D vuetage
 After installing the Vuetage library, you can import the components you need in your Vue project.
 
 ```js
-import { BaseButton } from 'vuetage'
+import { BaseButton, BaseSelect, BaseTextField } from 'vuetage'
 ```
 
 Make sure to include the component's markup in your Vue template:
 
 ```vue
 <template>
-  <div>
-    <BaseButton
-      :disabled="isDisabled"
-      :loading="isLoading"
-      @click="clickFunction"
-    >
-      Base Button
-    </BaseButton>
-  </div>
+  <form @submit.prevent style="width: 240px; margin: 2em auto;">
+    <div class="inputs-container">
+      <BaseTextField
+          label="Name"
+          placeholder="Enter your name"
+          v-model="name"
+      />
+      <BaseTextField
+          label="Email"
+          placeholder="Enter your email"
+          v-model="email"
+      />
+      <BaseSelect
+          label="Country"
+          :options="countries"
+          v-model="country"
+      />
+    </div>
+    <div class="submit-button">
+      <BaseButton
+          rightIcon="fa fa-rocket"
+          size="small"
+          :disabled="isDisabled"
+          :loading="isLoading"
+          @click="submit"
+      >
+        Submit form
+      </BaseButton>
+    </div>
+  </form>
 </template>
 ```
 
@@ -63,7 +84,7 @@ Make sure to include the component's markup in your Vue template:
 
 The Result of this code will be:
 
-![Imgur](https://i.imgur.com/pC2AHq6m.png)
+![Imgur](https://i.imgur.com/HdgLOzLm.png)
 
 For a more comprehensive understanding of each component's capabilities and usage, consult the [documentation](https://vuetage.vertocode.com).
 

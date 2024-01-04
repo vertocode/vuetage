@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show" class="base-menu" :style="customStyle">
+  <div v-if="show" class="base-menu" :style="customStyle as StyleValue">
     <div class="menu-content">
       <div class="header">
         <span class="title" v-if="title">{{ title }}</span>
@@ -13,8 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import { StyleValue } from 'vue'
-import { defineProps, withDefaults } from 'vue'
+import { defineProps, withDefaults, StyleValue } from 'vue'
+import { CustomStyle } from '@/typing/Style'
 
 interface Props {
   show: boolean
@@ -29,7 +29,7 @@ interface Props {
   maxHeight?: string
   boxShadow?: string
   hideCloseButton?: boolean
-  customStyle?: StyleValue | undefined
+  customStyle?: CustomStyle
 }
 
 withDefaults(defineProps<Props>(), {

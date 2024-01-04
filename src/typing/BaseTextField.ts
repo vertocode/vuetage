@@ -1,7 +1,8 @@
 import { StyleValue } from 'vue'
 
 export interface Props {
-    modelValue: string | number | null
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    modelValue: any
     bind?: object
     variant?: Variants
     useBorderLoading?: boolean

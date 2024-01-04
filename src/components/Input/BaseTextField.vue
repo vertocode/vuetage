@@ -103,7 +103,7 @@ const props = withDefaults(defineProps<Props>(), {
 	maxLength: null,
 	minLength: 0,
 	required: false,
-	width: '100%',
+	width: '',
 	height: '30px',
 	style: '',
 	customStyle: '',
@@ -251,6 +251,8 @@ const slots = useSlots()
   margin-bottom: $size-tiny-3x;
 
   [disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
     background-color: $disabled-color;
   }
 
@@ -261,8 +263,8 @@ const slots = useSlots()
   &-input {
     height: 2em;
     border: none;
-    padding-left: $size-tiny-3x;
     border-bottom: 1px solid $label-color;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
     &-underlined {
       outline: none;
@@ -375,7 +377,7 @@ const slots = useSlots()
 
     &-has-left-icon {
       transition: top 200ms, padding-left 1s;
-      padding-left: $size-medium-3x;
+      padding-left: $size-medium-2x;
     }
 
     &-active {

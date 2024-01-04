@@ -1,21 +1,19 @@
 import { Props as BaseTextFieldProps } from './BaseTextField'
-import { StyleValue } from 'vue'
+import { CustomStyle } from '@/typing/Style'
 
 export interface Props extends BaseTextFieldProps {
     label?: string
     multiple?: boolean
-    inputFieldStyle?: StyleValue | undefined
-    inputStyle?: StyleValue | undefined
-    labelStyle?: StyleValue | undefined
-    menuStyle?: StyleValue | undefined
-    itemStyle?: StyleValue | undefined
-    groupStyle?: StyleValue | undefined
+    inputFieldStyle?: CustomStyle
+    inputStyle?: CustomStyle
+    labelStyle?: CustomStyle
+    menuStyle?: CustomStyle
+    itemStyle?: CustomStyle
+    groupStyle?: CustomStyle
     closeOnSelect?: boolean | null
     selectedOptions?: NormalOption[]
-    options: Option[]
+    options: NormalOption[] | GroupOption[]
 }
-
-export type Option = NormalOption[] | GroupOption[]
 
 export interface GroupOption {
     group: string
@@ -23,7 +21,6 @@ export interface GroupOption {
 }
 
 export interface NormalOption {
-    group?: string
     value: string
     text: string
 }

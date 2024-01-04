@@ -1,25 +1,67 @@
 <template>
-  <div style="width: 200px;">
-    <BaseTextField
-        v-model="value"
-        loading-size="10px"
-        variant="outlined"
-        @click="console.log($event)"
-        left-icon="fa fa-search"
-        placeholder="Type your text"
-        label="Text Field"
-        max-length="15"
-        min-length="5"
-        required
-        password
-    />
-    Value: {{ value }}
-    <BaseButton @click="value += '- updated'">++ String</BaseButton>
+  <form @submit.prevent style="width: 240px; margin: 2em auto;">
+    <div class="inputs-container">
+      <BaseTextField
+          label="Name"
+          placeholder="Enter your name"
+          v-model="data.name"
+      />
+      <BaseTextField
+          label="Email"
+          placeholder="Enter your email"
+          v-model="data.email"
+      />
+      <BaseSelect
+          close-on-select
+          label="Country"
+          :options="countries"
+          v-model="data.country"
+      />
+    </div>
+    <div class="submit-button">
+      <BaseButton
+          rightIcon="fa fa-rocket"
+          size="small"
+          :disabled="isDisabled"
+          :loading="isLoading"
+          @click="submit"
+      >
+        Submit form
+      </BaseButton>
+    </div>
+  </form>
+
+  <div class="result">
+    <h3>Result</h3>
+    <pre>{{ data }}</pre>
   </div>
 </template>
 <script setup lang="ts">
 import { BaseTextField, BaseButton } from '@/components'
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
+import { BaseSelect } from '@/components'
+import { NormalOption } from '@/typing/BaseSelect'
 
-const value = ref('')
+const isDisabled = ref(false)
+const isLoading = ref(false)
+const submit = () => {
+	isLoading.value = true
+	setTimeout(() => {
+		isLoading.value = false
+	}, 2000)
+}
+
+const data = reactive({
+	name: '',
+	email: '',
+	country: {
+		text: '',
+		value: ''
+	}
+})
+const countries: NormalOption[] = [
+	{ text: 'United States', value: 'us' },
+	{ text: 'Canada', value: 'ca' },
+	{ text: 'Mexico', value: 'mx' },
+]
 </script>

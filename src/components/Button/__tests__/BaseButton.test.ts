@@ -55,7 +55,6 @@ it('should have attribute disabled when the disabled props is true', () => {
 			disabled: true
 		}
 	})
-	console.log(wrapper.html())
 
 	const button = wrapper.find('.base-button')
 	expect(button.attributes('disabled')).toBe('')

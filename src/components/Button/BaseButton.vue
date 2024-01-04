@@ -53,6 +53,7 @@ const props = withDefaults(defineProps<Props>(), {
 	rightIcon: null,
 	loading: false,
 	customStyle: undefined,
+	colorSpinner: 'white',
 	useBGTransition: true,
 	useHover: true
 })

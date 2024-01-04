@@ -8,21 +8,27 @@
         readonly
         v-model="textField"
         v-bind="baseTextFieldProps"
-        @click="showOptions = !showOptions"
+        @click="handleMenu"
     >
       <template #rightIcon>
-        <slot name="rightIcon" v-bind="{ show: showOptions }">
-          <span v-if="!(loading && !useBorderLoading)" class="right-icon" @click="showOptions = !showOptions">
+        <slot name="rightIcon" v-bind="{ show: showOptions, disabled }">
+          <span v-if="!(loading && !useBorderLoading)" class="right-icon" @click="handleMenu">
             <i :class="rightIcon" v-if="rightIcon"></i>
             <i
                 class="fa fa-caret-down"
-                style="transform: rotate(180deg)"
-                :style="{ color: variant === 'dark' ? 'white' : 'black' }"
+                style="transform: rotate(180deg);"
+                :style="{
+                  color: variant === 'dark' ? 'white' : 'black',
+                  opacity: disabled ? 0.5 : 1
+                }"
                 v-else-if="showOptions"
             ></i>
             <i
                 class="fa fa-caret-down"
-                :style="{ color: variant === 'dark' ? 'white' : 'black' }"
+                :style="{
+                  color: variant === 'dark' ? 'white' : 'black',
+                  opacity: disabled ? 0.5 : 1
+                }"
                 v-else
             ></i>
           </span>
@@ -65,21 +71,35 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { BaseTextField, BaseItem, BaseMenu, BaseGroup } from '@/components'
 
 import { NormalOption, Props } from '@/typing/BaseSelect'
 
 const props = withDefaults(defineProps<Props>(), {
-	selectedOptions: () => [],
 	multiple: false,
 	closeOnSelect: null
 })
 
 /* States */
-const selectedOptions = ref<NormalOption[]>(props.selectedOptions)
-const textField = ref<string>(props.selectedOptions.map((option) => option.text).join(', ') || '')
+const selectedOptions = ref<NormalOption[]>([])
+const textField = computed(() => {
+	return selectedOptions.value.map((option) => option.text).join(', ')
+})
+
 const showOptions = ref<boolean>(false)
+
+/* Emits */
+const emits = defineEmits(['update:modelValue'])
+
+/* Watchers */
+watch(
+	() => selectedOptions.value,
+	() => {
+		const emitValue = props.multiple ? selectedOptions.value : selectedOptions.value.at(0)
+		emits('update:modelValue', emitValue)
+	}
+)
 
 /* Computed properties */
 const baseTextFieldProps = computed(() => ({
@@ -99,9 +119,24 @@ const baseTextFieldProps = computed(() => ({
 	leftIcon: props.leftIcon
 }))
 
+const cursorStyle = computed(() => {
+	if (props.disabled) {
+		return 'not-allowed'
+	}
+
+	return 'pointer'
+})
+
 /* Methods */
 const getIsActive = (option: NormalOption): boolean => {
 	return selectedOptions.value.map(({ value }) => value).includes(option.value)
+}
+
+const handleMenu = () => {
+	if (props.disabled) {
+		return
+	}
+	showOptions.value = !showOptions.value
 }
 
 const selectOption = (option: NormalOption): void => {
@@ -121,8 +156,18 @@ const selectOption = (option: NormalOption): void => {
 			showOptions.value = false
 		}
 	}
-	textField.value = selectedOptions.value.map((option) => option.text).join(', ')
 }
+
+/* Lifecycle hooks */
+onMounted(() => {
+	if (props.modelValue) {
+		if (props.multiple) {
+			selectedOptions.value = props.modelValue
+		} else {
+			selectedOptions.value = [props.modelValue]
+		}
+	}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -132,11 +177,11 @@ const selectOption = (option: NormalOption): void => {
   position: relative;
   :deep(.base-select) {
     min-width: 70px;
-    cursor: pointer;
+    cursor: v-bind(cursorStyle);
   }
 
   :deep(.right-icon) {
-    cursor: pointer;
+    cursor: v-bind(cursorStyle);
   }
 }
 </style>
