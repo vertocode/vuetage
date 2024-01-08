@@ -11,7 +11,7 @@
         <slot name="spinner">
           <Spinner
               data-test-id="spinner"
-              size="small"
+              size="1.4em"
               :color-spinner="colorSpinner"
           />
         </slot>
@@ -20,7 +20,7 @@
       <span v-else class="base-button-content">
         <slot name="leftIcon">
          <i
-             v-if="leftIcon"
+             v-if="leftIcon && !hideLeftIcon"
              :class="leftIcon"
              data-test-id="left-icon"
          ></i>
@@ -30,7 +30,12 @@
 
         <slot name="rightIcon">
           <i
-              v-if="rightIcon"
+              v-if="disabled && !hideRightIcon"
+              class="fa fa-lock"
+              data-test-id="right-icon-lock"
+          ></i>
+          <i
+              v-else-if="rightIcon && !hideRightIcon"
               :class="rightIcon"
               data-test-id="right-icon"
           ></i>
@@ -55,7 +60,9 @@ const props = withDefaults(defineProps<Props>(), {
 	customStyle: undefined,
 	colorSpinner: 'white',
 	useBGTransition: true,
-	useHover: true
+	useHover: true,
+  hideRightIcon: false,
+  hideLeftIcon: false
 })
 
 const titleMessage = computed(() => {
@@ -218,8 +225,10 @@ const classes = computed(() => {
 
   &[disabled] {
     background-color: gray;
+    color: rgba(255, 255, 255, 0.7);
     border-color: gray;
-    cursor: auto;
+    cursor: not-allowed;
+
     &.base-button-hover:hover {
       background-color: gray;
       border-color: gray;
@@ -235,6 +244,7 @@ const classes = computed(() => {
 
     icon {
       margin-top: 5px;
+      align-self: end;
     }
   }
 }

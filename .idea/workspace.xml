@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Form/__stories__/FormExample.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/__tests__/BaseButton.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/__tests__/BaseButton.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/BaseSelect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseSelect.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/BaseTextField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseTextField.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/vuetage.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/vuetage.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Spinner/Spinner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typing/BaseButton.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseButton.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +56,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Form/__stories__" />
       <recent name="$PROJECT_DIR$/src/components/List" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/Spinner/__stories__" />
       <recent name="$PROJECT_DIR$/src/components/Button/__stories__" />
-      <recent name="$PROJECT_DIR$/src/components/Button/__tests__" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (1)">
@@ -76,8 +72,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html (1)" />
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.index.html (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +128,9 @@
       <workItem from="1703892501036" duration="7969000" />
       <workItem from="1704145283620" duration="1738000" />
       <workItem from="1704233370683" duration="4872000" />
-      <workItem from="1704403068409" duration="5007000" />
+      <workItem from="1704403068409" duration="5640000" />
+      <workItem from="1704491443042" duration="4555000" />
+      <workItem from="1704746928891" duration="2139000" />
     </task>
     <servers />
   </component>

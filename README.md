@@ -46,7 +46,6 @@ Make sure to include the component's markup in your Vue template:
 ```vue
 <template>
   <form @submit.prevent style="width: 240px; margin: 2em auto;">
-    <div class="inputs-container">
       <BaseTextField
           label="Name"
           placeholder="Enter your name"
@@ -62,8 +61,6 @@ Make sure to include the component's markup in your Vue template:
           :options="countries"
           v-model="country"
       />
-    </div>
-    <div class="submit-button">
       <BaseButton
           rightIcon="fa fa-rocket"
           size="small"
@@ -73,7 +70,6 @@ Make sure to include the component's markup in your Vue template:
       >
         Submit form
       </BaseButton>
-    </div>
   </form>
 </template>
 ```
@@ -85,6 +81,8 @@ Make sure to include the component's markup in your Vue template:
 The Result of this code will be:
 
 ![Imgur](https://i.imgur.com/HdgLOzLm.png)
+
+If you want to see it in action, you can check it on [storybook](https://vuetage-components.vertocode.com/?path=/story/doc-formexample--form-example).
 
 For a more comprehensive understanding of each component's capabilities and usage, consult the [documentation](https://vuetage.vertocode.com).
 

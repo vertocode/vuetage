@@ -1,34 +1,30 @@
 <template>
   <form @submit.prevent style="width: 240px; margin: 2em auto;">
-    <div class="inputs-container">
-      <BaseTextField
-          label="Name"
-          placeholder="Enter your name"
-          v-model="data.name"
-      />
-      <BaseTextField
-          label="Email"
-          placeholder="Enter your email"
-          v-model="data.email"
-      />
-      <BaseSelect
-          close-on-select
-          label="Country"
-          :options="countries"
-          v-model="data.country"
-      />
-    </div>
-    <div class="submit-button">
-      <BaseButton
-          rightIcon="fa fa-rocket"
-          size="small"
-          :disabled="isDisabled"
-          :loading="isLoading"
-          @click="submit"
-      >
-        Submit form
-      </BaseButton>
-    </div>
+    <BaseTextField
+        label="Name"
+        placeholder="Enter your name"
+        v-model="data.name"
+    />
+    <BaseTextField
+        label="Email"
+        placeholder="Enter your email"
+        v-model="data.email"
+    />
+    <BaseSelect
+        close-on-select
+        label="Country"
+        :options="countries"
+        v-model="data.country"
+    />
+    <BaseButton
+        rightIcon="fa fa-rocket"
+        size="small"
+        :disabled="isDisabled"
+        :loading="isLoading"
+        @click="submit"
+    >
+      Submit form
+    </BaseButton>
   </form>
 
   <div class="result">

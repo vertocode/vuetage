@@ -13,6 +13,8 @@ export interface Props {
     colorSpinner?: string
     useBGTransition?: boolean
     useHover?: boolean
+    hideRightIcon?: boolean
+    hideLeftIcon?: boolean
 }
 
 type Variant =
