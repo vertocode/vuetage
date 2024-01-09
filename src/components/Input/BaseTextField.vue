@@ -263,6 +263,8 @@ const slots = useSlots()
   &-input {
     height: 2em;
     border: none;
+    box-sizing: border-box;
+    padding-left: $size-tiny-3x;
     border-bottom: 1px solid $label-color;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 

@@ -56,26 +56,26 @@ $border-dark-hover: #2f2f2f;
 $outline-primary: #transparent;
 $outline-primary-color: #007bff;
 $border-outline-primary: #007bff;
-$outline-primary-hover: #007bff;
-$outline-primary-color-hover: #fff;
+$outline-primary-hover: rgba(0, 123, 255, 0.2);
+$outline-primary-color-hover: #007bff;
 
 // Outline Success
 $outline-success: #transparent;
 $outline-success-color: #28a745;
 $border-outline-success: #28a745;
-$outline-success-hover: #28a745;
-$outline-success-color-hover: #fff;
+$outline-success-hover: rgba(40, 167, 69, 0.2);
+$outline-success-color-hover: #28a745;
 
 // Outline Danger
 $outline-danger: #transparent;
 $border-outline-danger: #dc3545;
 $outline-danger-color: #dc3545;
-$outline-danger-hover: #dc3545;
-$outline-danger-color-hover: #fff;
+$outline-danger-hover: rgba(220, 53, 69, 0.2);
+$outline-danger-color-hover: #dc3545;
 
 // Outline Dark
 $outline-dark: #transparent;
 $border-outline-dark: black;
 $outline-dark-color: black;
-$outline-dark-hover: #969696;
-$outline-dark-color-hover: #fff;
+$outline-dark-hover: rgba(150, 150, 150, 0.5);
+$outline-dark-color-hover: black;

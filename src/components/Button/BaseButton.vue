@@ -61,8 +61,8 @@ const props = withDefaults(defineProps<Props>(), {
 	colorSpinner: 'white',
 	useBGTransition: true,
 	useHover: true,
-  hideRightIcon: false,
-  hideLeftIcon: false
+	hideRightIcon: false,
+	hideLeftIcon: false
 })
 
 const titleMessage = computed(() => {
