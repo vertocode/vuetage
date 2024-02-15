@@ -1,4 +1,4 @@
-import { CustomStyle } from "@/typing/Style"
+import { CustomStyle } from '@/typing/Style'
 
 export interface Props {
     title: string

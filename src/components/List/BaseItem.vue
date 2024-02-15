@@ -17,14 +17,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { CustomStyle } from '@/typing/Style'
+import { Props } from '@/typing/BaseItem'
 
 const isHovered = ref(false)
 
-interface Props {
-  active?: boolean
-  customStyle?: CustomStyle
-}
 defineProps<Props>()
 </script>
 
