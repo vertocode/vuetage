@@ -75,10 +75,10 @@
     <slot name="loadingBorder">
       <div class="base-text-field-loading-border" :style="{ ['background-color']: loadingColor }" v-if="loading && useBorderLoading"></div>
     </slot>
-    <slot name="errorMessage" v-bind="{ error: errorMessage }">
-      <span class="error-message" v-if="!(loading && useBorderLoading)">{{ errorMessage }}</span>
-    </slot>
   </div>
+  <slot name="errorMessage" v-bind="{ error: errorMessage }">
+    <span class="error-message" v-if="!(loading && useBorderLoading)">{{ errorMessage }}</span>
+  </slot>
 </template>
 
 <script setup lang="ts">
@@ -248,7 +248,6 @@ const slots = useSlots()
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: $size-tiny-3x;
 
   [disabled] {
     opacity: 0.7;
@@ -364,16 +363,6 @@ const slots = useSlots()
     }
   }
 
-  .error-message {
-    font-family: 'Arial', serif;
-    color: $error-color;
-    font-size: 0.7em;
-    margin-top: $size-tiny-1x;
-    margin-left: $size-tiny-3x;
-    font-weight: bolder;
-    display: inline-block;
-  }
-
   &-label {
     color: $label-color;
     pointer-events: none;
@@ -395,5 +384,14 @@ const slots = useSlots()
       font-weight: bold;
     }
   }
+}
+
+.error-message {
+  font-family: 'Arial', serif;
+  color: $error-color;
+  font-size: 0.7em;
+  margin-left: $size-tiny-3x;
+  font-weight: bolder;
+  display: inline-block;
 }
 </style>
