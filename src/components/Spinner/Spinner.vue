@@ -1,15 +1,11 @@
 <template>
-  <div
+  <span
       class="spinner"
       :class="[
           customSpinnerClass,
           `spinner-${!!customSize ? 'custom' : size}`
       ]"
-  >
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  ></span>
 </template>
 
 <script setup lang="ts">
@@ -40,50 +36,38 @@ const customSize = computed(() => {
 .spinner {
   display: inline-block;
   position: relative;
-
-  div {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    height: 80%;
-    border: 4px solid v-bind(colorSpinner);
-    border-radius: 50%;
-    animation: spin 1.2s cubic-bezier(0.5, 0, 0.3, 1) infinite;
-    border-color: v-bind(colorSpinner) transparent transparent transparent;
-
-    :nth-child(1) {
-      animation-delay: -0.45s;
-    }
-
-    :nth-child(2) {
-      animation-delay: -0.3s;
-    }
-
-    :nth-child(3) {
-      animation-delay: -0.15s;
-    }
-  }
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: spin 1s linear infinite;
 
   &-small {
-    width: 0.7em;
-    height: 0.7em;
+    border: 3px solid v-bind(colorSpinner);
+    width: 1em;
+    height: 1em;
+    border-bottom-color: transparent;
   }
 
   &-medium {
+    border: 5px solid v-bind(colorSpinner);
     width: 4em;
     height: 4em;
+    border-bottom-color: transparent;
   }
 
   &-large {
+    border: 7px solid v-bind(colorSpinner);
     width: 6em;
     height: 6em;
+    border-bottom-color: transparent;
   }
 
   &-custom {
+    border: calc(v-bind(customSize) / 6) solid v-bind(colorSpinner);
     width: v-bind(customSize);
     height: v-bind(customSize);
+    border-bottom-color: transparent;
   }
 }
 
