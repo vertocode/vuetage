@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Spinner/Spinner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,7 @@
       <workItem from="1704491443042" duration="4555000" />
       <workItem from="1704746928891" duration="2358000" />
       <workItem from="1704834269828" duration="1808000" />
-      <workItem from="1707959660905" duration="3121000" />
+      <workItem from="1707959660905" duration="3467000" />
     </task>
     <servers />
   </component>
