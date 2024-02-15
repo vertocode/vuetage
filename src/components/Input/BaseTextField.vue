@@ -350,11 +350,6 @@ const slots = useSlots()
     align-items: center;
   }
 
-  &-spinner {
-    top: -0.23em;
-    right: 0.3em;
-  }
-
   &-error {
     border-color: $error-color;
 
