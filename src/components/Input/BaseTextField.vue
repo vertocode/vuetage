@@ -288,8 +288,9 @@ const slots = useSlots()
 
     &-has-dark-color {
       background-color: $dark-base-color;
-      border-bottom: 1px solid $dark-label-color;
-      color: $dark-label-color;
+      border: 1px solid $dark-label-color;
+      border-radius: 3px;
+      color: $label-color;
 
       &:focus {
         outline: none;
