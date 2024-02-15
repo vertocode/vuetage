@@ -8,12 +8,11 @@ export { default as BaseMenu } from './Menu/BaseMenu.vue'
 export { default as Spinner } from './Spinner/Spinner.vue'
 
 // Export types
-export type {
-	Props as BaseButtonProps
-} from '../typing/BaseButton'
-export type {
-	Props as BaseTextFieldProps
-} from '../typing/BaseTextField'
+export type { Props as BaseButtonProps } from '../typing/BaseButton'
+export type { Props as BaseTextFieldProps } from '../typing/BaseTextField'
+export type { Props as BaseGroupProps } from '../typing/BaseGroup'
+export type { Props as BaseItemProps } from '../typing/BaseItem'
+export type { Props as BaseMenuProps } from '../typing/BaseMenu'
 export type {
 	Props as BaseSelectProps,
 	GroupOption,

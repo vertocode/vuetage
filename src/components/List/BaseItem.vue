@@ -16,12 +16,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { Props } from '@/typing/BaseItem'
 
 const isHovered = ref(false)
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+const activeTextColor = computed(() => {
+  return props?.activeTextColor || '#666'
+})
+
+const activeBgColor = computed(() => {
+  return props?.activeBgColor || '#CCCCCC'
+})
+
+const cursor = computed(() => {
+  return props?.cursor || 'pointer'
+})
 </script>
 
 <style lang="scss" scoped>
@@ -29,7 +41,7 @@ defineProps<Props>()
 
 .base-item {
   padding: 10px;
-  cursor: pointer;
+  cursor: v-bind(cursor);
   font-size: 0.9em;
 
   &:hover {
@@ -37,8 +49,8 @@ defineProps<Props>()
   }
 
   &.active {
-    background-color: $active-bg-color;
-    color: $active-text-color;
+    background-color: v-bind(activeBgColor);
+    color: v-bind(activeTextColor);
   }
 }
 </style>
