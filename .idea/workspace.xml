@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/typing/BaseGroup.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +31,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -126,7 +130,8 @@
       <workItem from="1704491443042" duration="4555000" />
       <workItem from="1704746928891" duration="2358000" />
       <workItem from="1704834269828" duration="1808000" />
-      <workItem from="1707959660905" duration="5960000" />
+      <workItem from="1707959660905" duration="6134000" />
+      <workItem from="1708038277430" duration="1128000" />
     </task>
     <servers />
   </component>

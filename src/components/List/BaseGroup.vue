@@ -11,21 +11,23 @@
         @mouseenter="isHovered = true"
         @mouseout="isHovered = false"
     >
-      <div class="title">{{ title }}</div>
+      <slot name="title">
+        <i v-if="leftIcon" :class="leftIcon"></i>
+        <div class="title">{{ title }}</div>
+        <i v-if="rightIcon" :class="rightIcon"></i>
+      </slot>
     </div>
-    <div class="items"></div>
-    <slot></slot>
+    <div class="items">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineProps, ref } from 'vue'
-import type { CustomStyle } from '@/typing/Style'
+import type { Props } from '@/typing/BaseGroup'
 
-defineProps<{
-  title: string
-  customStyle?: CustomStyle
-}>()
+defineProps<Props>()
 
 const isHovered = ref(false)
 </script>
@@ -36,8 +38,8 @@ const isHovered = ref(false)
 .base-group {
   .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 1em;
     padding: 10px;
     border-bottom: 1px solid $base-color;
 
