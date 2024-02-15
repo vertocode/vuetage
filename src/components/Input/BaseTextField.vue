@@ -335,14 +335,20 @@ const slots = useSlots()
 
   &-left-icon {
     position: absolute;
-    top: 0.35em;
+    top: 0;
+    bottom: 0;
     left: 0.4em;
+    display: flex;
+    align-items: center;
   }
 
   &-right-icon {
     position: absolute;
-    top: 0.5em;
+    top: 0;
+    bottom: 0;
     right: 0.5em;
+    display: flex;
+    align-items: center;
   }
 
   &-spinner {

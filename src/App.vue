@@ -31,9 +31,21 @@
     <h3>Result</h3>
     <pre>{{ data }}</pre>
   </div>
+
+  <div class="loading">
+    <BaseButton2
+        loading
+    >
+      loading
+    </BaseButton2>
+  </div>
 </template>
 <script setup lang="ts">
 import { BaseTextField, BaseButton } from '@/components'
+
+// test after building to check if it also works.
+import { BaseButton as BaseButton2 } from '../dist/vuetage.es.js'
+
 import { ref, reactive } from 'vue'
 import { BaseSelect } from '@/components'
 import { NormalOption } from '@/typing/BaseSelect'
