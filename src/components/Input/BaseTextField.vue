@@ -304,7 +304,7 @@ const slots = useSlots()
     }
 
     &-has-left-icon {
-      padding-left: $size-large-1x;
+      padding-left: 30px;
       box-sizing: border-box;
     }
 
@@ -370,7 +370,7 @@ const slots = useSlots()
 
     &-has-left-icon {
       transition: top 200ms, padding-left 1s;
-      padding-left: $size-medium-2x;
+      padding-left: 25px;
     }
 
     &-active {
