@@ -3,6 +3,9 @@ import { CustomStyle } from '@/typing/Style'
 export interface Props {
     show: boolean
     title?: string
+    leftIcon?: string
+    rightIcon?: string
+    closeIcon?: string
     backgroundColor?: string
     top?: string | number
     left?: string | number
@@ -12,6 +15,6 @@ export interface Props {
     zIndex?: string | number
     maxHeight?: string
     boxShadow?: string
-    hideCloseButton?: boolean
+    showCloseButton?: boolean
     customStyle?: CustomStyle
 }

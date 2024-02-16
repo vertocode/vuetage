@@ -2,10 +2,18 @@
   <div v-if="show" class="base-menu" :style="customStyle as StyleValue">
     <div class="menu-content">
       <div class="header">
-        <span class="title" v-if="title">{{ title }}</span>
-        <button v-if="!hideCloseButton" class="close-button" @click="$emit('close')">
-          <i class="fas fa-times"></i>
-        </button>
+        <span class="title" v-if="title">
+          <slot name="title">
+            <i v-if="leftIcon" :class="leftIcon"></i>
+            {{ title }}
+            <i v-if="rightIcon" :class="rightIcon"></i>
+          </slot>
+        </span>
+        <slot name="close-button">
+          <button v-if="showCloseButton" class="close-button" @click="$emit('close')">
+            <i :class="closeIcon"></i>
+          </button>
+        </slot>
       </div>
       <slot></slot>
     </div>
@@ -26,7 +34,8 @@ withDefaults(defineProps<Props>(), {
 	borderColor: '#eaeaea',
 	zIndex: 100,
 	boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-	hideCloseButton: true
+  showCloseButton: false,
+  closeIcon: 'fas fa-times',
 })
 </script>
 
@@ -47,6 +56,7 @@ withDefaults(defineProps<Props>(), {
   overflow: hidden;
   transition: all 0.3s ease;
   overflow-y: auto;
+  padding: 1em;
 
   .menu-content {
     padding: 0 2px;
@@ -60,6 +70,9 @@ withDefaults(defineProps<Props>(), {
         font-size: 1.2em;
         font-weight: bold;
         margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        gap: .5em;
       }
 
       .close-button {
@@ -69,10 +82,6 @@ withDefaults(defineProps<Props>(), {
         font-size: 1.5em;
         color: #555;
         transition: color 0.3s ease;
-
-        &:hover {
-          color: $base-color;
-        }
       }
     }
   }
