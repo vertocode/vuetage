@@ -383,7 +383,6 @@ const slots = useSlots()
 }
 
 .error-message {
-  font-family: 'Arial', serif;
   color: $error-color;
   font-size: 0.7em;
   margin-left: $size-tiny-3x;

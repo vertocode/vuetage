@@ -107,8 +107,6 @@ const classes = computed(() => {
   border-radius: $size-tiny-1x;
   line-height: 1;
   cursor: pointer;
-  font-weight: 700;
-  font-family: 'Nuvito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
