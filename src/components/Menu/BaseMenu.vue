@@ -34,8 +34,8 @@ withDefaults(defineProps<Props>(), {
 	borderColor: '#eaeaea',
 	zIndex: 100,
 	boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-  showCloseButton: false,
-  closeIcon: 'fas fa-times',
+	showCloseButton: false,
+	closeIcon: 'fas fa-times',
 })
 </script>
 

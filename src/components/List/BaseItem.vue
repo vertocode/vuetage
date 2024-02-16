@@ -26,15 +26,15 @@ const isHovered = ref(false)
 const props = defineProps<Props>()
 
 const activeTextColor = computed(() => {
-  return props?.activeTextColor || '#666'
+	return props?.activeTextColor || '#666'
 })
 
 const activeBgColor = computed(() => {
-  return props?.activeBgColor || '#CCCCCC'
+	return props?.activeBgColor || '#CCCCCC'
 })
 
 const cursor = computed(() => {
-  return props?.cursor || 'pointer'
+	return props?.cursor || 'pointer'
 })
 </script>
 
