@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/List/__stories__/BaseGroup.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/List/__stories__/BaseItem.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/List/BaseItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/BaseItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/__stories__/BaseGroup.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/__stories__/BaseGroup.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,7 @@
       <workItem from="1704746928891" duration="2358000" />
       <workItem from="1704834269828" duration="1808000" />
       <workItem from="1707959660905" duration="6134000" />
-      <workItem from="1708038277430" duration="2945000" />
+      <workItem from="1708038277430" duration="3650000" />
     </task>
     <servers />
   </component>

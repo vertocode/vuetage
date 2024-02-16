@@ -11,7 +11,9 @@
       @mouseenter="isHovered = true"
       @mouseout="isHovered = false"
   >
+    <i v-if="leftIcon" :class="leftIcon"></i>
     <slot v-bind="{ active }"></slot>
+    <i v-if="rightIcon" :class="rightIcon"></i>
   </div>
 </template>
 
@@ -43,6 +45,9 @@ const cursor = computed(() => {
   padding: 10px;
   cursor: v-bind(cursor);
   font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
 
   &:hover {
     background-color: $base-color;

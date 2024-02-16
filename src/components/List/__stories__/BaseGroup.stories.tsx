@@ -90,3 +90,16 @@ export const RightIcon = {
         </div>`
     })
 }
+
+export const CustomStyle = {
+    render: () => ({
+        components: { BaseGroup, BaseItem },
+        template: `<div style="width: 200px;">
+          <BaseGroup title="Any custom Style" custom-style="background-color: red; color: white; borderRadius: 15px;">
+            <BaseItem>Item 1</BaseItem>
+            <BaseItem active>Item 2</BaseItem>
+            <BaseItem>Item 3</BaseItem>
+          </BaseGroup>
+        </div>`
+    })
+}
