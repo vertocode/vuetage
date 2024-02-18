@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/install-state.gz" beforeDir="false" afterPath="$PROJECT_DIR$/.yarn/install-state.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/BaseItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/BaseGroup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseGroup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/BaseItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseItem.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/BaseMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseMenu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/BaseTextField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseTextField.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +134,7 @@
       <workItem from="1707959660905" duration="6134000" />
       <workItem from="1708038277430" duration="7784000" />
       <workItem from="1708126118890" duration="7560000" />
-      <workItem from="1708225651308" duration="5869000" />
+      <workItem from="1708225651308" duration="6073000" />
     </task>
     <servers />
   </component>
