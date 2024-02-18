@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show" class="base-menu" :style="customStyle as StyleValue">
+  <div v-if="show" class="base-menu" :class="customClass" :style="customStyle as StyleValue">
     <div class="menu-content">
       <div class="header">
         <span class="title" v-if="title">

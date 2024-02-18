@@ -36,16 +36,19 @@
         :type="type"
         class="base-text-field-input"
         :value="modelValue"
-        :class="{
-            [`base-text-field-input-${variant}`]: variant,
-            ['base-text-field-error']: hasError && !loading,
-            ['base-text-field-border']: variant === 'outlined',
-            ['base-text-field-input-has-spinner']: loading && !useBorderLoading,
-            ['base-text-field-input-has-base-color']: variant === 'default',
-            ['base-text-field-input-has-dark-color']: variant === 'dark',
-            ['base-text-field-input-has-left-icon']: leftIcon || !!slots?.leftIcon,
-            ['base-text-field-input-has-right-icon']: rightIcon || !!slots?.rightIcon
-        }"
+        :class="[
+          {
+              [`base-text-field-input-${variant}`]: variant,
+              ['base-text-field-error']: hasError && !loading,
+              ['base-text-field-border']: variant === 'outlined',
+              ['base-text-field-input-has-spinner']: loading && !useBorderLoading,
+              ['base-text-field-input-has-base-color']: variant === 'default',
+              ['base-text-field-input-has-dark-color']: variant === 'dark',
+              ['base-text-field-input-has-left-icon']: leftIcon || !!slots?.leftIcon,
+              ['base-text-field-input-has-right-icon']: rightIcon || !!slots?.rightIcon
+          },
+          customClass
+        ]"
         :required="required"
         :style="[customStyle, { width, height }]"
         :placeholder="(hasText || inputFocused) && !readonly && placeholder ? placeholder : ''"

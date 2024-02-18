@@ -27,7 +27,7 @@
     </BaseButton>
   </form>
 
-  <div class="result">
+  <div class="result bg-green-100">
     <h3>Result</h3>
     <pre>{{ data }}</pre>
   </div>

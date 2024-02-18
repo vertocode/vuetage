@@ -115,6 +115,7 @@ const baseTextFieldProps = computed(() => ({
 	style: props.inputFieldStyle,
 	customStyle: props.inputStyle,
 	customStyleLabel: props.labelStyle,
+	customClass: props.customClass,
 	rightIcon: props.rightIcon,
 	leftIcon: props.leftIcon
 }))

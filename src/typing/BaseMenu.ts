@@ -16,5 +16,6 @@ export interface Props {
     maxHeight?: string
     boxShadow?: string
     showCloseButton?: boolean
+    customClass?: string
     customStyle?: CustomStyle
 }

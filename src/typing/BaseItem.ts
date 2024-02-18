@@ -8,4 +8,5 @@ export interface Props {
     customStyle?: CustomStyle
     leftIcon?: string
     rightIcon?: string
+    customClass?: string
 }

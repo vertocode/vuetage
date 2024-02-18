@@ -1,7 +1,7 @@
 <template>
   <div
       class="base-item"
-      :class="{ active }"
+      :class="[{ active }, customClass]"
       :style="[
           customStyle,
           isHovered

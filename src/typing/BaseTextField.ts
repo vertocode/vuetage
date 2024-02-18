@@ -28,6 +28,7 @@ export interface Props {
     leftIcon?: string
     eventEmitter?: EventEmitters
     password?: boolean
+    customClass?: string
 }
 
 type Variants = 'default' | 'outline' | 'underlined' | 'dark'

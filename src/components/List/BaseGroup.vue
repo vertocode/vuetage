@@ -1,6 +1,7 @@
 <template>
   <div class="base-group">
     <div
+        :class="customClass"
         class="header"
         :style="[
           customStyle,
