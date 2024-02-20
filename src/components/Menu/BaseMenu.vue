@@ -56,7 +56,6 @@ withDefaults(defineProps<Props>(), {
   overflow: hidden;
   transition: all 0.3s ease;
   overflow-y: auto;
-  padding: 1em;
 
   .menu-content {
     padding: 0 2px;

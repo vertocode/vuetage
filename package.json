@@ -48,7 +48,10 @@
     "@storybook/testing-library": "^0.2.2",
     "@storybook/vue3": "^7.5.3",
     "@storybook/vue3-vite": "^7.5.3",
+    "@types/bun": "latest",
     "@types/node": "^20.8.10",
+    "@types/react": "^18.2.57",
+    "@types/vue": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "@vitejs/plugin-vue": "^4.4.0",
@@ -100,6 +103,5 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  },
-  "packageManager": "yarn@4.0.2"
+  }
 }

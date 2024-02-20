@@ -19,7 +19,7 @@ export interface Props {
     required?: boolean
     width?: string
     height?: string
-    rules?: Array<() => string | boolean>
+    rules?: Array<(value: string) => string | boolean>
     style?: StyleValue | undefined
     customStyle?: StyleValue | undefined
     customStyleLabel?: StyleValue | undefined

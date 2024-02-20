@@ -119,13 +119,13 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 /* === State === */
-const inputFocused = ref(false)
-const hasError = ref(false)
-const errorMessage = ref('')
-const hidePassword = ref(true)
+const inputFocused = ref<boolean>(false)
+const hasError = ref<boolean>(false)
+const errorMessage = ref<string>('')
+const hidePassword = ref<boolean>(true)
 
 /* === Computed === */
-const type = computed(() => {
+const type = computed((): string => {
 	if (props.password && hidePassword.value) {
 		return 'password'
 	}
@@ -133,7 +133,7 @@ const type = computed(() => {
 	return 'text'
 })
 
-const loadingBorderSize = computed(() => {
+const loadingBorderSize = computed((): string => {
 	if (props.loadingSize === 'small') {
 		return '2px'
 	}
@@ -141,8 +141,8 @@ const loadingBorderSize = computed(() => {
 	return props.loadingSize
 })
 
-const allRules = computed(() => {
-	const rules = []
+const allRules = computed((): Array<(value: string) => string | boolean>  => {
+	const rules: Array<(value: string) => string | boolean> = []
 	if (props.required && !props.disableRequiredRule) {
 		rules.push((value: string | null) => !!value && !!value.length && value !== '' || 'Required field')
 	}
@@ -158,10 +158,10 @@ const allRules = computed(() => {
 	return [...rules, ...props.rules]
 })
 
-const hasText = computed(() => !!(props.modelValue as string)?.length)
+const hasText = computed((): boolean => !!(props.modelValue as string)?.length)
 
 /* === Methods === */
-const validateRules = () => {
+const validateRules = (): void => {
 	if (props.readonly) {
 		return
 	}
@@ -175,20 +175,20 @@ const validateRules = () => {
 }
 
 /* === Emits === */
-const emits = defineEmits([
-	'update:modelValue',
-	'hasError',
-	'input',
-	'change',
-	'blur',
-	'focus',
-	'focusout',
-	'click',
-	'dblclick',
-	'mousedown',
-	'mouseup',
-	'mouseenter',
-])
+const emits = defineEmits<{
+  (e: 'update:modelValue', value: string): void
+  (e: 'hasError', hasError: boolean): void
+  (e: 'input', input: string): void
+  (e: 'change', value: string): void
+  (e: 'blur', value: string): void
+  (e: 'focus', event: Event): void
+  (e: 'focusout', event: Event): void
+  (e: 'click', event: MouseEvent): void
+  (e: 'dblclick', event: MouseEvent): void
+  (e: 'mousedown', event: MouseEvent): void
+  (e: 'mouseup', event: MouseEvent): void
+  (e: 'mouseenter', event: MouseEvent): void
+}>()
 
 const emitUpdateModelValue = (value: string) => {
 	if (props.eventEmitter === 'input') {

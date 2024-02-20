@@ -27,10 +27,10 @@ Vuetage is a library of custom Vue components designed to simplify and enhance y
 
 You can install the Vuetage library using your prefer package manager.
 
-### Yarn
+### [Bun](https://bun.sh/)
 
 ```bash
-yarn add -D vuetage
+bun i -D vuetage
 ```
 
 ## Usage

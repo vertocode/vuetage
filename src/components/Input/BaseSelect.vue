@@ -43,7 +43,7 @@
               v-if="option?.group"
               :title="option?.group"
           >
-            <slot v-bind="{ option, index }">
+            <slot name="item" v-bind="{ option, index }">
               <BaseItem
                   :custom-style="itemStyle"
                   :active="getIsActive(item)"
