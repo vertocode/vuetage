@@ -6,6 +6,8 @@ import { CustomStyle } from "@/typing/Style"
 export interface Props extends BaseTextFieldProps {
     options: NormalOption[] | GroupOption[]
     label?: string
+    autoFilter?: boolean
+    caseSensitiveFilter?: boolean
     multiple?: boolean
     inputFieldStyle?: StyleValue
     inputStyle?: StyleValue

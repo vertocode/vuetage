@@ -14,7 +14,7 @@
     </BaseTextField>
     <slot name="menu">
       <BaseMenu :show="showMenu" :custom-style="menuStyle">
-        <div v-for="(option, index) in options" :key="index" @mousedown="handleSlotMouseDown">
+        <div v-for="(option, index) in filteredOptions" :key="index" @mousedown="handleSlotMouseDown">
           <BaseGroup
             :custom-style="groupStyle"
             v-if="option?.group"
@@ -49,10 +49,12 @@
 import { ref, watch, computed } from 'vue'
 import { BaseTextField, BaseMenu, BaseGroup, BaseItem } from '@/components'
 import type { Props, Emits } from '@/typing/BaseAutocomplete'
-import type { NormalOption } from '@/typing/Option'
+import type { NormalOption, GroupOption } from '@/typing/Option'
 
 const props = withDefaults(defineProps<Props>(), {
-  multiple: false
+  multiple: false,
+  autoFilter: true,
+  caseSensitiveFilter: true
 })
 
 /* States */
@@ -81,6 +83,28 @@ const baseTextFieldProps = computed(() => ({
   rightIcon: props.rightIcon,
   leftIcon: props.leftIcon,
 }))
+
+const filteredOptions = computed((): NormalOption[] | GroupOption[] => {
+  if (!props.autoFilter) return props.options
+
+  const filterOption = (option: NormalOption): boolean => {
+    if (props.caseSensitiveFilter) {
+      return option.text.toLowerCase().includes(textField.value.toLowerCase())
+    }
+
+    return option.text.includes(textField.value)
+  }
+
+  return props.options.filter((option: NormalOption | GroupOption) => {
+    if (option?.group) {
+      return option.items.filter((item: NormalOption) => {
+        return filterOption(item)
+      })
+    }
+
+    return filterOption(option)
+  })
+})
 
 /* Methods */
 const handleMenu = (): void => {
