@@ -74,7 +74,8 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { BaseTextField, BaseItem, BaseMenu, BaseGroup } from '@/components'
 
-import { NormalOption, Props } from '@/typing/BaseSelect'
+import type { NormalOption } from "@/typing/Option";
+import type { Props } from '@/typing/BaseSelect'
 
 const props = withDefaults(defineProps<Props>(), {
 	multiple: false,
@@ -83,11 +84,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 /* States */
 const selectedOptions = ref<NormalOption[]>([])
+const showOptions = ref<boolean>(false)
 const textField = computed(() => {
 	return selectedOptions.value.map((option) => option.text).join(', ')
 })
-
-const showOptions = ref<boolean>(false)
 
 /* Emits */
 const emits = defineEmits(['update:modelValue'])
@@ -133,10 +133,9 @@ const getIsActive = (option: NormalOption): boolean => {
 	return selectedOptions.value.map(({ value }) => value).includes(option.value)
 }
 
-const handleMenu = () => {
-	if (props.disabled) {
-		return
-	}
+const handleMenu = (): void => {
+	if (props.disabled) return
+
 	showOptions.value = !showOptions.value
 }
 

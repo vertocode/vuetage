@@ -5,20 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/TODO.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Input/BaseAutocomplete.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Input/__stories__/BaseAutocomplete.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/typing/BaseAutocomplete.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/typing/Option.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/install-state.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/releases/yarn-4.0.2.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarnrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarnrc.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/CONTRIBUTION.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typing/BaseSelect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseSelect.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/typing/BaseTextField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseTextField.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +147,10 @@
       <workItem from="1708126118890" duration="7560000" />
       <workItem from="1708225651308" duration="6248000" />
       <workItem from="1708370727254" duration="3750000" />
-      <workItem from="1708441055692" duration="3678000" />
+      <workItem from="1708441055692" duration="7125000" />
+      <workItem from="1708883833873" duration="748000" />
+      <workItem from="1708912873979" duration="453000" />
+      <workItem from="1709060958355" duration="2445000" />
     </task>
     <servers />
   </component>

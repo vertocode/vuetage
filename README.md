@@ -92,4 +92,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contributing
 
-Contributions from the community are highly valued. Please review our [CONTRIBUTION](docs/CONTRIBUTION.md) for more information.
+Contributions from the community are highly valued. Please review our [CONTRIBUTION](https://vuetage.vertocode.com/docs/contribute) for more information.
