@@ -27,7 +27,12 @@
                 :key="index"
                 @click="selectOption(item)"
               >
-                {{ item.text }}
+                  <span v-html="renderFilteredText({
+                     text: item.text,
+                     autoFilter,
+                     textField
+                  })"
+                  ></span>
               </BaseItem>
             </slot>
           </BaseGroup>
@@ -36,7 +41,12 @@
               :custom-style="itemStyle"
               @click="selectOption(option)"
             >
-              {{ option.text }}
+              <span v-html="renderFilteredText({
+                 text: option.text,
+                 autoFilter,
+                 textField
+              })"
+              ></span>
             </BaseItem>
           </slot>
         </div>
@@ -48,6 +58,7 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
 import { BaseTextField, BaseMenu, BaseGroup, BaseItem } from '@/components'
+import { renderFilteredText } from '@/utils/text'
 import type { Props, Emits } from '@/typing/BaseAutocomplete'
 import type { NormalOption, GroupOption } from '@/typing/Option'
 
