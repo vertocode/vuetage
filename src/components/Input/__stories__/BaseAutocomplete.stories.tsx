@@ -18,7 +18,8 @@ const Template: Story = {
             return {
                 args: {
                     ...args,
-                    label: 'Label'
+                    label: 'Label',
+                    modelValue: ''
                 }
             }
         },

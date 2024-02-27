@@ -14,7 +14,12 @@
     </BaseTextField>
     <slot name="menu">
       <BaseMenu :show="showMenu" :custom-style="menuStyle">
-        <div v-for="(option, index) in filteredOptions" :key="index" @mousedown="handleSlotMouseDown">
+        <div
+            v-if="filteredOptions.length"
+            v-for="(option, index) in filteredOptions"
+            :key="index"
+            @mousedown="handleSlotMouseDown"
+        >
           <BaseGroup
             :custom-style="groupStyle"
             v-if="option?.group"
@@ -50,6 +55,14 @@
             </BaseItem>
           </slot>
         </div>
+        <slot v-else name="no-options">
+          <div class="no-options">
+            <p>Nothing found! Consider clearing the filter to see all options.</p>
+            <div class="button-field">
+              <BaseButton size="5em" @click="textField = ''" variant="outline-primary">Clear</BaseButton>
+            </div>
+          </div>
+        </slot>
       </BaseMenu>
     </slot>
   </div>
@@ -57,7 +70,7 @@
 
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
-import { BaseTextField, BaseMenu, BaseGroup, BaseItem } from '@/components'
+import { BaseTextField, BaseMenu, BaseGroup, BaseItem, BaseButton } from '@/components'
 import { renderFilteredText } from '@/utils/text'
 import type { Props, Emits } from '@/typing/BaseAutocomplete'
 import type { NormalOption, GroupOption } from '@/typing/Option'
@@ -69,7 +82,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 /* States */
-const textField = ref<string>('')
+const textField = ref<string>(props.modelValue || '')
 const showMenu = ref<boolean>(false)
 
 // When we click on any option, it will be true. If it's true, the menu will not be closed until it is false,
@@ -168,6 +181,21 @@ watch(
 
 .base-autocomplete-field {
   position: relative;
-}
 
+  .no-options {
+    margin-top: 10px;
+    text-align: center;
+
+    p {
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .button-field {
+      width: max-content;
+      margin: 1em auto;
+    }
+  }
+}
 </style>

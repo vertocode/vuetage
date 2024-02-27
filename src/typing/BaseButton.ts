@@ -3,7 +3,7 @@ import { StyleValue } from 'vue'
 export interface Props {
     disabled?: boolean
     tooltipMessage?: string | null
-    size?: Size
+    size?: Size | string
     variant?: Variant
     leftIcon?: string
     rightIcon?: string | null

@@ -6,6 +6,7 @@
         :disabled="disabled"
         :style="customStyle"
         :title="titleMessage"
+        @click="$emit('click')"
     >
       <span v-if="loading">
         <slot name="spinner">
@@ -78,7 +79,7 @@ const sizeClass = computed(() => {
 	case 'large':
 		return 'btn-large'
 	default:
-		throw new Error('"size" props value passed is not valid.')
+    return 'btn-custom-size'
 	}
 })
 
@@ -219,6 +220,10 @@ const classes = computed(() => {
     min-width: 12em;
     font-size: 1rem;
     padding: 15px 30px;
+  }
+
+  &.btn-custom-size {
+    width: v-bind(size);
   }
 
   &[disabled] {
