@@ -29,9 +29,10 @@
           >
             <slot name="item" v-bind="{ option, index }">
               <BaseItem
-                :custom-style="itemStyle"
                 v-for="(item, index) in option.items"
                 :key="index"
+                :custom-style="itemStyle"
+                :active="getIsActive(item)"
                 @click="selectOption(item)"
               >
                   <span v-html="renderFilteredText({
@@ -46,6 +47,7 @@
           <slot name="item" v-else v-bind="{ option, index }">
             <BaseItem
               :custom-style="itemStyle"
+              :active="getIsActive(option)"
               @click="selectOption(option)"
             >
               <span v-html="renderFilteredText({
@@ -87,6 +89,9 @@ const props = withDefaults(defineProps<Props>(), {
 const textField = ref<string>(props.modelValue || '')
 const showMenu = ref<boolean>(false)
 const isFocused = ref<boolean>(false)
+
+// This is the active option when the user is pressing the key down, up, or tab to choose an option
+const activeOption = ref<string>('')
 
 // When we click on any option, it will be true. If it's true, the menu will not be closed until it is false,
 // This logic is useful to select the option before close the menu, and at the same time close the menu when the "focusout" event be triggered
@@ -138,6 +143,10 @@ const handleMenu = (): void => {
   if (props.disabled) return
 
   showMenu.value = true
+}
+
+const getIsActive = (option: NormalOption): boolean => {
+  return activeOption.value === option.text
 }
 
 const selectOption = (option: NormalOption): void => {
