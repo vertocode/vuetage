@@ -188,6 +188,9 @@ const handleFocusOut = (): void => {
 }
 
 const handleEnter = () => {
+  if (activeOption.value) {
+    textField.value = activeOption.value
+  }
   maySelectOption()
 }
 
@@ -236,6 +239,15 @@ watch(
       showMenu.value = false
     }
   }
+)
+
+watch(
+    () => showMenu.value,
+    () => {
+      if (!showMenu.value) {
+        activeOption.value = ''
+      }
+    }
 )
 
 watch(
