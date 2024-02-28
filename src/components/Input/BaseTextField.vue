@@ -64,6 +64,7 @@
         @mousedown="emits('mousedown', $event)"
         @mouseup="emits('mouseup', $event)"
         @mouseenter="emits('mouseenter', $event)"
+        @keydown.enter="emits('enter', $event)"
         v-bind="bind"
     >
     <div class="base-text-field-right-icon">
@@ -183,6 +184,7 @@ const emits = defineEmits<{
   (e: 'blur', value: string): void
   (e: 'focus', event: Event): void
   (e: 'focusout', event: Event): void
+  (e: 'enter', event: Event): void
   (e: 'click', event: MouseEvent): void
   (e: 'dblclick', event: MouseEvent): void
   (e: 'mousedown', event: MouseEvent): void

@@ -7,6 +7,7 @@
       }"
       v-model="textField"
       v-bind="baseTextFieldProps"
+      @enter="handleEnter"
       @focus="handleFocus"
       @focusout="handleFocusOut"
       @click="handleMenu"
@@ -141,7 +142,6 @@ const handleMenu = (): void => {
 
 const selectOption = (option: NormalOption): void => {
   if (props.disabled) return
-  console.log('select  option')
   textField.value = option.text
   clickedOption.value = true
   showMenu.value = false
@@ -172,6 +172,15 @@ const handleFocusOut = (): void => {
   showMenu.value = false
 }
 
+const handleEnter = () => {
+  const option: NormalOption = props.options.find((option) => option.text === textField.value)
+  if (option) {
+    selectOption(option)
+  } else {
+    textField.value = ''
+  }
+}
+
 /* Emits */
 const emits = defineEmits<Emits>()
 
@@ -194,7 +203,6 @@ watch(
 watch(
     () => isFocused.value,
     () => {
-      console.log('isFocused.value: ', isFocused.value)
       if (isFocused.value) {
         showMenu.value = true
       }
