@@ -69,7 +69,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { BaseTextField, BaseMenu, BaseGroup, BaseItem, BaseButton } from '@/components'
 import { renderFilteredText } from '@/utils/text'
 import type { Props, Emits } from '@/typing/BaseAutocomplete'
@@ -139,8 +139,9 @@ const handleMenu = (): void => {
 
 const selectOption = (option: NormalOption): void => {
   if (props.disabled) return
+  console.log('select  option')
   textField.value = option.text
-
+  clickedOption.value = true
   showMenu.value = false
 }
 
@@ -149,10 +150,12 @@ const handleSlotMouseDown = (): void => {
 }
 
 const handleFocusOut = (): void => {
+  console.log('antes')
   if (clickedOption.value) {
     clickedOption.value = false
     return
   }
+  console.log('after')
 
   const option: NormalOption = props.options.find((option) => option.text === textField.value)
   if (option) {
@@ -169,9 +172,17 @@ const emits = defineEmits<Emits>()
 
 /* Watchers */
 watch(
-  () => textField,
+  () => textField.value,
   () => {
     emits('update:modelValue', textField.value)
+
+    // If there is a search not already selected, the menu will be opened
+    if (textField.value) {
+      showMenu.value = !clickedOption.value
+      clickedOption.value = false
+    } else {
+      showMenu.value = false
+    }
   }
 )
 </script>
