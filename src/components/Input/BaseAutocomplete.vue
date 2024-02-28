@@ -195,7 +195,31 @@ const handleEnter = () => {
 }
 
 const handleUp = () => {
-  console.log('up')
+  if (activeOption.value) {
+    const currentActiveOptionIndex = filteredOptions.value.findIndex((option) => option.text === activeOption.value)
+    const option = filteredOptions.value[currentActiveOptionIndex - 1]
+
+    if (option?.group) {
+      const { text } = option.items[option.items.length - 1] || {}
+      if (!text) return
+      activeOption.value = text
+    } else {
+      const { text } = option || {}
+      if (!text) return
+      activeOption.value = text
+    }
+  } else {
+    const option = filteredOptions.value[filteredOptions.value.length - 1]
+    if (option?.group) {
+      const { text } = option.items[option.items.length - 1] || {}
+      if (!text) return
+      activeOption.value = text
+    } else {
+      const { text } = option || {}
+      if (!text) return
+      activeOption.value = text
+    }
+  }
 }
 
 const handleDown = () => {
