@@ -147,6 +147,15 @@ const selectOption = (option: NormalOption): void => {
   showMenu.value = false
 }
 
+const maySelectOption = (): void => {
+  const option: NormalOption = props.options.find((option) => option.text === textField.value)
+  if (option) {
+    selectOption(option)
+  } else {
+    textField.value = ''
+  }
+}
+
 const handleSlotMouseDown = (): void => {
   clickedOption.value = true
 }
@@ -162,23 +171,13 @@ const handleFocusOut = (): void => {
     return
   }
 
-  const option: NormalOption = props.options.find((option) => option.text === textField.value)
-  if (option) {
-    selectOption(option)
-  } else {
-    textField.value = ''
-  }
+  maySelectOption()
 
   showMenu.value = false
 }
 
 const handleEnter = () => {
-  const option: NormalOption = props.options.find((option) => option.text === textField.value)
-  if (option) {
-    selectOption(option)
-  } else {
-    textField.value = ''
-  }
+  maySelectOption()
 }
 
 /* Emits */
