@@ -8,6 +8,8 @@
       v-model="textField"
       v-bind="baseTextFieldProps"
       @enter="handleEnter"
+      @up="handleUp"
+      @down="handleDown"
       @focus="handleFocus"
       @focusout="handleFocusOut"
       @click="handleMenu"
@@ -187,6 +189,34 @@ const handleFocusOut = (): void => {
 
 const handleEnter = () => {
   maySelectOption()
+}
+
+const handleUp = () => {
+  console.log('up')
+}
+
+const handleDown = () => {
+  if (activeOption.value) {
+    const currentActiveOptionIndex = filteredOptions.value.findIndex((option) => option.text === activeOption.value)
+    const option = filteredOptions.value[currentActiveOptionIndex + 1]
+
+    if (option?.group) {
+      const { text } = option.items[0] || {}
+      if (!text) return
+      activeOption.value = text
+    } else {
+      const { text } = option || {}
+      if (!text) return
+      activeOption.value = text
+    }
+  } else {
+    const option = filteredOptions.value[0]
+    if (option?.group) {
+      activeOption.value =option.items[0].text
+    } else {
+      activeOption.value = option.text
+    }
+  }
 }
 
 /* Emits */
