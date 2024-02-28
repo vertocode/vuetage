@@ -7,6 +7,7 @@
       }"
       v-model="textField"
       v-bind="baseTextFieldProps"
+      @focus="handleFocus"
       @focusout="handleFocusOut"
       @click="handleMenu"
     >
@@ -84,6 +85,7 @@ const props = withDefaults(defineProps<Props>(), {
 /* States */
 const textField = ref<string>(props.modelValue || '')
 const showMenu = ref<boolean>(false)
+const isFocused = ref<boolean>(false)
 
 // When we click on any option, it will be true. If it's true, the menu will not be closed until it is false,
 // This logic is useful to select the option before close the menu, and at the same time close the menu when the "focusout" event be triggered
@@ -149,13 +151,16 @@ const handleSlotMouseDown = (): void => {
   clickedOption.value = true
 }
 
+const handleFocus = () => {
+  isFocused.value = true
+}
+
 const handleFocusOut = (): void => {
-  console.log('antes')
+  isFocused.value = false
   if (clickedOption.value) {
     clickedOption.value = false
     return
   }
-  console.log('after')
 
   const option: NormalOption = props.options.find((option) => option.text === textField.value)
   if (option) {
@@ -184,6 +189,16 @@ watch(
       showMenu.value = false
     }
   }
+)
+
+watch(
+    () => isFocused.value,
+    () => {
+      console.log('isFocused.value: ', isFocused.value)
+      if (isFocused.value) {
+        showMenu.value = true
+      }
+    }
 )
 </script>
 
