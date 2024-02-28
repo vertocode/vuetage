@@ -1,6 +1,6 @@
 import { Props as BaseTextFieldProps } from './BaseTextField'
 import { CustomStyle } from '@/typing/Style'
-import {NormalOption, GroupOption} from "@/typing/Option";
+import { NormalOption, GroupOption } from '@/typing/Option'
 
 export interface Props extends BaseTextFieldProps {
     options: NormalOption[] | GroupOption[]

@@ -74,7 +74,7 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { BaseTextField, BaseItem, BaseMenu, BaseGroup } from '@/components'
 
-import type { NormalOption } from "@/typing/Option";
+import type { NormalOption } from '@/typing/Option'
 import type { Props } from '@/typing/BaseSelect'
 
 const props = withDefaults(defineProps<Props>(), {

@@ -79,7 +79,7 @@ const sizeClass = computed(() => {
 	case 'large':
 		return 'btn-large'
 	default:
-    return 'btn-custom-size'
+		return 'btn-custom-size'
 	}
 })
 

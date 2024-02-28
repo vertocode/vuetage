@@ -19,7 +19,6 @@
     <slot name="menu">
       <BaseMenu :show="showMenu" :custom-style="menuStyle">
         <div
-            v-if="filteredOptions.length"
             v-for="(option, index) in filteredOptions"
             :key="index"
             @mousedown="handleSlotMouseDown"
@@ -61,7 +60,7 @@
             </BaseItem>
           </slot>
         </div>
-        <slot v-else name="no-options">
+        <slot v-if="!filteredOptions.length" name="no-options">
           <div class="no-options">
             <p>Nothing found! Consider clearing the filter to see all options.</p>
             <div class="button-field">
@@ -82,9 +81,9 @@ import type { Props, Emits } from '@/typing/BaseAutocomplete'
 import type { NormalOption, GroupOption } from '@/typing/Option'
 
 const props = withDefaults(defineProps<Props>(), {
-  multiple: false,
-  autoFilter: true,
-  caseSensitiveFilter: true
+	multiple: false,
+	autoFilter: true,
+	caseSensitiveFilter: true
 })
 
 /* States */
@@ -101,149 +100,149 @@ const clickedOption = ref<boolean>(false)
 
 /* Computed properties */
 const baseTextFieldProps = computed(() => ({
-  label: props.label,
-  variant: props.variant,
-  useBorderLoading: props.useBorderLoading,
-  loadingColor: props.loadingColor,
-  loadingSize: props.loadingSize,
-  loading: props.loading,
-  disabled: props.disabled,
-  width: props.width,
-  height: props.height,
-  style: props.inputFieldStyle,
-  customStyle: props.inputStyle,
-  customStyleLabel: props.labelStyle,
-  customClass: props.customClass,
-  rightIcon: props.rightIcon,
-  leftIcon: props.leftIcon,
+	label: props.label,
+	variant: props.variant,
+	useBorderLoading: props.useBorderLoading,
+	loadingColor: props.loadingColor,
+	loadingSize: props.loadingSize,
+	loading: props.loading,
+	disabled: props.disabled,
+	width: props.width,
+	height: props.height,
+	style: props.inputFieldStyle,
+	customStyle: props.inputStyle,
+	customStyleLabel: props.labelStyle,
+	customClass: props.customClass,
+	rightIcon: props.rightIcon,
+	leftIcon: props.leftIcon,
 }))
 
 const filteredOptions = computed((): NormalOption[] | GroupOption[] => {
-  if (!props.autoFilter) return props.options
+	if (!props.autoFilter) return props.options
 
-  const filterOption = (option: NormalOption): boolean => {
-    if (props.caseSensitiveFilter) {
-      return option.text.toLowerCase().includes(textField.value.toLowerCase())
-    }
+	const filterOption = (option: NormalOption): boolean => {
+		if (props.caseSensitiveFilter) {
+			return option.text.toLowerCase().includes(textField.value.toLowerCase())
+		}
 
-    return option.text.includes(textField.value)
-  }
+		return option.text.includes(textField.value)
+	}
 
-  return props.options.filter((option: NormalOption | GroupOption) => {
-    if (option?.group) {
-      return option.items.filter((item: NormalOption) => {
-        return filterOption(item)
-      })
-    }
+	return props.options.filter((option: NormalOption | GroupOption) => {
+		if (option?.group) {
+			return option.items.filter((item: NormalOption) => {
+				return filterOption(item)
+			})
+		}
 
-    return filterOption(option)
-  })
+		return filterOption(option)
+	})
 })
 
 /* Methods */
 const handleMenu = (): void => {
-  if (props.disabled) return
+	if (props.disabled) return
 
-  showMenu.value = true
+	showMenu.value = true
 }
 
 const getIsActive = (option: NormalOption): boolean => {
-  return activeOption.value === option.text
+	return activeOption.value === option.text
 }
 
 const selectOption = (option: NormalOption): void => {
-  if (props.disabled) return
-  textField.value = option.text
-  clickedOption.value = true
-  showMenu.value = false
+	if (props.disabled) return
+	textField.value = option.text
+	clickedOption.value = true
+	showMenu.value = false
 }
 
 const maySelectOption = (): void => {
-  const option: NormalOption = props.options.find((option) => option.text === textField.value)
-  if (option) {
-    selectOption(option)
-  } else {
-    textField.value = ''
-  }
+	const option: NormalOption = props.options.find((option) => option.text === textField.value)
+	if (option) {
+		selectOption(option)
+	} else {
+		textField.value = ''
+	}
 }
 
 const handleSlotMouseDown = (): void => {
-  clickedOption.value = true
+	clickedOption.value = true
 }
 
 const handleFocus = () => {
-  isFocused.value = true
+	isFocused.value = true
 }
 
 const handleFocusOut = (): void => {
-  isFocused.value = false
-  if (clickedOption.value) {
-    clickedOption.value = false
-    return
-  }
+	isFocused.value = false
+	if (clickedOption.value) {
+		clickedOption.value = false
+		return
+	}
 
-  maySelectOption()
+	maySelectOption()
 
-  showMenu.value = false
+	showMenu.value = false
 }
 
 const handleEnter = () => {
-  if (activeOption.value) {
-    textField.value = activeOption.value
-  }
-  maySelectOption()
+	if (activeOption.value) {
+		textField.value = activeOption.value
+	}
+	maySelectOption()
 }
 
 const handleUp = () => {
-  if (activeOption.value) {
-    const currentActiveOptionIndex = filteredOptions.value.findIndex((option) => option.text === activeOption.value)
-    const option = filteredOptions.value[currentActiveOptionIndex - 1]
+	if (activeOption.value) {
+		const currentActiveOptionIndex = filteredOptions.value.findIndex((option) => option.text === activeOption.value)
+		const option = filteredOptions.value[currentActiveOptionIndex - 1]
 
-    if (option?.group) {
-      const { text } = option.items[option.items.length - 1] || {}
-      if (!text) return
-      activeOption.value = text
-    } else {
-      const { text } = option || {}
-      if (!text) return
-      activeOption.value = text
-    }
-  } else {
-    const option = filteredOptions.value[filteredOptions.value.length - 1]
-    if (option?.group) {
-      const { text } = option.items[option.items.length - 1] || {}
-      if (!text) return
-      activeOption.value = text
-    } else {
-      const { text } = option || {}
-      if (!text) return
-      activeOption.value = text
-    }
-  }
+		if (option?.group) {
+			const { text } = option.items[option.items.length - 1] || {}
+			if (!text) return
+			activeOption.value = text
+		} else {
+			const { text } = option || {}
+			if (!text) return
+			activeOption.value = text
+		}
+	} else {
+		const option = filteredOptions.value[filteredOptions.value.length - 1]
+		if (option?.group) {
+			const { text } = option.items[option.items.length - 1] || {}
+			if (!text) return
+			activeOption.value = text
+		} else {
+			const { text } = option || {}
+			if (!text) return
+			activeOption.value = text
+		}
+	}
 }
 
 const handleDown = () => {
-  if (activeOption.value) {
-    const currentActiveOptionIndex = filteredOptions.value.findIndex((option) => option.text === activeOption.value)
-    const option = filteredOptions.value[currentActiveOptionIndex + 1]
+	if (activeOption.value) {
+		const currentActiveOptionIndex = filteredOptions.value.findIndex((option) => option.text === activeOption.value)
+		const option = filteredOptions.value[currentActiveOptionIndex + 1]
 
-    if (option?.group) {
-      const { text } = option.items[0] || {}
-      if (!text) return
-      activeOption.value = text
-    } else {
-      const { text } = option || {}
-      if (!text) return
-      activeOption.value = text
-    }
-  } else {
-    const option = filteredOptions.value[0]
-    if (option?.group) {
-      activeOption.value =option.items[0].text
-    } else {
-      activeOption.value = option.text
-    }
-  }
+		if (option?.group) {
+			const { text } = option.items[0] || {}
+			if (!text) return
+			activeOption.value = text
+		} else {
+			const { text } = option || {}
+			if (!text) return
+			activeOption.value = text
+		}
+	} else {
+		const option = filteredOptions.value[0]
+		if (option?.group) {
+			activeOption.value =option.items[0].text
+		} else {
+			activeOption.value = option.text
+		}
+	}
 }
 
 /* Emits */
@@ -251,36 +250,36 @@ const emits = defineEmits<Emits>()
 
 /* Watchers */
 watch(
-  () => textField.value,
-  () => {
-    emits('update:modelValue', textField.value)
+	() => textField.value,
+	() => {
+		emits('update:modelValue', textField.value)
 
-    // If there is a search not already selected, the menu will be opened
-    if (textField.value) {
-      showMenu.value = !clickedOption.value
-      clickedOption.value = false
-    } else {
-      showMenu.value = false
-    }
-  }
+		// If there is a search not already selected, the menu will be opened
+		if (textField.value) {
+			showMenu.value = !clickedOption.value
+			clickedOption.value = false
+		} else {
+			showMenu.value = false
+		}
+	}
 )
 
 watch(
-    () => showMenu.value,
-    () => {
-      if (!showMenu.value) {
-        activeOption.value = ''
-      }
-    }
+	() => showMenu.value,
+	() => {
+		if (!showMenu.value) {
+			activeOption.value = ''
+		}
+	}
 )
 
 watch(
-    () => isFocused.value,
-    () => {
-      if (isFocused.value) {
-        showMenu.value = true
-      }
-    }
+	() => isFocused.value,
+	() => {
+		if (isFocused.value) {
+			showMenu.value = true
+		}
+	}
 )
 </script>
 

@@ -1,7 +1,7 @@
 import { StyleValue } from 'vue'
 import { Props as BaseTextFieldProps } from '@/typing/BaseTextField'
-import {NormalOption, GroupOption} from "@/typing/Option";
-import { CustomStyle } from "@/typing/Style"
+import { NormalOption, GroupOption } from '@/typing/Option'
+import { CustomStyle } from '@/typing/Style'
 
 export interface Props extends BaseTextFieldProps {
     options: NormalOption[] | GroupOption[]
