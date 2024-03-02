@@ -1,22 +1,22 @@
 # [vuetage](https://vuetage.vertocode.com)
 
 <p align="center">
-  <img width="150" src="https://i.imgur.com/E8WdocW.png">
+  <img width="150" src="./docs/logo.png">
   <br>
   <a href="https://npm.im/vuetage">
-    <img src="https://badgen.net/npm/v/vuetage?color=blue">
+    <img src="https://badgen.net/npm/v/vuetage?color=green">
   </a>
   <a href="https://npm.im/vuetage">
-    <img src="https://badgen.net/npm/dw/vuetage?color=blue">
+    <img src="https://badgen.net/npm/dw/vuetage?color=green">
   </a>
   <a href="https://npm.im/vuetage">
-    <img src="https://badgen.net/npm/types/tslib">
+    <img src="https://badgen.net/npm/types/tslib?color=green">
   </a>
   <a href="https://bundlephobia.com/result?p=vuetage">
-    <img src="https://badgen.net/bundlephobia/minzip/vuetage?color=blue">
+    <img src="https://badgen.net/bundlephobia/minzip/vuetage?color=green">
   </a>
   <a href="https://bundlephobia.com/result?p=vuetage">
-    <img src="https://badgen.net/npm/license/vuetage">
+    <img src="https://badgen.net/npm/license/vuetage?color=green">
   </a>
 </p>
 
