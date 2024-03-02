@@ -1,11 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { BaseAutocomplete } from '@/components'
+import { userEvent, within } from '@storybook/testing-library'
 
 const meta: Meta = {
     title: 'Input/BaseAutocomplete',
     component: BaseAutocomplete,
     tags: ['input', 'autocomplete'],
     argTypes: {}
+}
+
+const openMenu = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByTestId('base-text-field-input')
+    await userEvent.click(input)
 }
 
 export default meta
@@ -51,6 +58,9 @@ export const MenuLoading = {
         ]
     }
 }
+MenuLoading.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
 
 export const MenuLoadingText = {
     ...Template,
@@ -60,4 +70,7 @@ export const MenuLoadingText = {
         menuLoadingText: 'Custom loading text',
         options: []
     }
+}
+MenuLoadingText.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
 }
