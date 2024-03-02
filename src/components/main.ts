@@ -5,6 +5,7 @@ import {
 	Spinner,
 	BaseButton,
 	BaseTextField,
+	BaseAutocomplete,
 	BaseSelect,
 	BaseItem,
 	BaseGroup,
@@ -16,6 +17,7 @@ export default {
 		app.component('BaseButton', BaseButton)
 		app.component('BaseTextField', BaseTextField)
 		app.component('BaseSelect', BaseSelect)
+		app.component('BaseAutocomplete', BaseAutocomplete)
 		app.component('BaseItem', BaseItem)
 		app.component('BaseGroup', BaseGroup)
 		app.component('BaseMenu', BaseMenu)
