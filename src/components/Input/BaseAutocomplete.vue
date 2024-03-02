@@ -207,20 +207,46 @@ const handleEnter = () => {
 }
 
 const handleUp = () => {
-	if (activeOption.value) {
-		const currentActiveOptionIndex = filteredOptions.value.findIndex((option) => option.text === activeOption.value)
-		const option = filteredOptions.value[currentActiveOptionIndex - 1]
+  if (activeOption.value) {
+    const { group, items } = filteredOptions.value.find((option) => {
+      if (option?.group) {
+        return option.items.some((item) => item?.text === activeOption.value)
+      }
 
-		if (option?.group) {
-			const { text } = option.items[option.items.length - 1] || {}
-			if (!text) return
-			activeOption.value = text
-		} else {
-			const { text } = option || {}
-			if (!text) return
-			activeOption.value = text
-		}
-	} else {
+      return option?.text === activeOption.value
+    }) || {}
+
+    if (!group && !items) {
+      activeOption.value = ''
+    }
+
+    const currentOptionIndex = group
+        ? items.findIndex((item) => item?.text === activeOption.value)
+        : filteredOptions.value.findIndex((option) => option?.text === activeOption.value)
+
+    const option = group
+        ? (() => {
+          const mayNextOption = filteredOptions.value.find((option) => option.group === group)?.items[currentOptionIndex - 1]
+
+          if (mayNextOption) {
+            return mayNextOption
+          }
+
+          const groupIndex = filteredOptions.value.findIndex((option) => option.group === group)
+          return filteredOptions.value[groupIndex - 1]?.items[filteredOptions.value[groupIndex - 1].items.length - 1]
+        })()
+        : filteredOptions.value[currentOptionIndex - 1]
+
+    if (group) {
+      const { text } = option || {}
+      if (!text) return
+      activeOption.value = text
+    } else {
+      const { text } = option || {}
+      if (!text) return
+      activeOption.value = text
+    }
+  } else {
 		const option = filteredOptions.value[filteredOptions.value.length - 1]
 		if (option?.group) {
 			const { text } = option.items[option.items.length - 1] || {}
