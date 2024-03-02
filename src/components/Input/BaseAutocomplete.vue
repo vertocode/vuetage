@@ -82,11 +82,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
-import { BaseTextField, BaseMenu, BaseGroup, BaseItem, BaseButton } from '@/components'
-import { renderFilteredText } from '@/utils/text'
-import type { Props, Emits } from '@/typing/BaseAutocomplete'
-import type { NormalOption, GroupOption } from '@/typing/Option'
+import {computed, ref, watch} from 'vue'
+import {BaseButton, BaseGroup, BaseItem, BaseMenu, BaseTextField} from '@/components'
+import {renderFilteredText} from '@/utils/text'
+import type {Emits, Props} from '@/typing/BaseAutocomplete'
+import type {GroupOption, NormalOption} from '@/typing/Option'
 import Spinner from "@/components/Spinner/Spinner.vue";
 
 const props = withDefaults(defineProps<Props>(), {
@@ -139,21 +139,17 @@ const filteredOptions = computed((): NormalOption[] | GroupOption[] => {
 		return option.text.includes(textField.value)
 	}
 
-  const returnOptions: NormalOption[] | GroupOption[] = props.options.map((option: NormalOption | GroupOption) => {
+  return props.options.map((option: NormalOption | GroupOption) => {
 		if ((option as GroupOption)?.group) {
 			const items: NormalOption[] =  (option as GroupOption).items.filter((item: NormalOption) => {
-				const result =  filterOption(item)
-        console.log(item.text, result)
-        return result
+        return filterOption(item)
 			})
 
       return { group: (option as GroupOption).group, items }
 		}
 
     return filterOption(option as NormalOption) ? option : null
-	}).filter((option) => option !== null)
-  console.log(returnOptions)
-  return returnOptions
+	}).filter((option) => option !== null) as NormalOption[] | GroupOption[]
 })
 
 /* Methods */
@@ -240,11 +236,38 @@ const handleUp = () => {
 
 const handleDown = () => {
 	if (activeOption.value) {
-		const currentActiveOptionIndex = filteredOptions.value.findIndex((option) => option.text === activeOption.value)
-		const option = filteredOptions.value[currentActiveOptionIndex + 1]
+      const { group, items } = filteredOptions.value.find((option) => {
+        if (option?.group) {
+          return option.items.some((item) => item?.text === activeOption.value)
+        }
 
-		if (option?.group) {
-			const { text } = option.items[0] || {}
+        return option?.text === activeOption.value
+      }) || {}
+
+    if (!group && !items) {
+      activeOption.value = ''
+    }
+
+    const currentOptionIndex = group
+        ? items.findIndex((item) => item?.text === activeOption.value)
+        : filteredOptions.value.findIndex((option) => option?.text === activeOption.value)
+
+		const option = group
+        ? (() => {
+          const mayNextOption = filteredOptions.value.find((option) => option.group === group)?.items[currentOptionIndex + 1]
+
+          if (mayNextOption) {
+           return mayNextOption
+          }
+
+          const groupIndex = filteredOptions.value.findIndex((option) => option.group === group)
+          return filteredOptions.value[groupIndex + 1]?.items[0]
+        })()
+        : filteredOptions.value[currentOptionIndex + 1]
+
+
+		if (group) {
+			const { text } = option || {}
 			if (!text) return
 			activeOption.value = text
 		} else {
@@ -253,9 +276,9 @@ const handleDown = () => {
 			activeOption.value = text
 		}
 	} else {
-		const option = filteredOptions.value[0]
+		const option = filteredOptions.value.filter(option => option?.group ? option.items.length > 0 : option)[0]
 		if (option?.group) {
-			activeOption.value =option.items[0].text
+			activeOption.value = option.items[0]?.text
 		} else {
 			activeOption.value = option.text
 		}
