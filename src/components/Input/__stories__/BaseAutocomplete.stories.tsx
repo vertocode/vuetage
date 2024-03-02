@@ -175,7 +175,7 @@ export const LeftIcon = {
         leftIcon: 'fa fa-search'
     }
 }
-MenuLoadingText.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+LeftIcon.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     await openMenu({ canvasElement })
 }
 
@@ -187,7 +187,7 @@ export const RightIcon = {
         rightIcon: 'fa fa-search'
     }
 }
-MenuLoadingText.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+RightIcon.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     await openMenu({ canvasElement })
 }
 
@@ -199,7 +199,7 @@ export const AutoFilterOff = {
         autoFilter: false
     }
 }
-MenuLoadingText.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+AutoFilterOff.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     await openMenu({ canvasElement })
 }
 
@@ -211,6 +211,79 @@ export const CaseSensitiveFilterOff = {
         caseSensitiveFilter: false
     }
 }
-MenuLoadingText.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+CaseSensitiveFilterOff.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const inputStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        inputStyle: 'background-color: #90ee90; color: green;'
+    }
+}
+inputStyle.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const labelStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        inputStyle: 'color: green;',
+        labelStyle: 'color: red; font-weight: bold'
+    }
+}
+labelStyle.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const menuStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        inputStyle: 'background-color: #90ee90; color: green;',
+        labelStyle: 'color: red; font-weight: bold',
+        menuStyle: 'background-color: #90ee90; padding: 1.5em;'
+    }
+}
+menuStyle.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const itemStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        itemStyle: {
+            'background-color': '#90ee90',
+            hover: {
+                'background-color': '#00ff00'
+            }
+        }
+    }
+}
+itemStyle.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const groupStyle = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        groupStyle: {
+            'background-color': '#90ee90',
+            hover: {
+                'background-color': '#00ff00'
+            }
+        }
+    }
+}
+groupStyle.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     await openMenu({ canvasElement })
 }
