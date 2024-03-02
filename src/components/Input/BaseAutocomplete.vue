@@ -60,11 +60,19 @@
             </BaseItem>
           </slot>
         </div>
-        <slot v-if="!filteredOptions.length" name="no-options">
+        <slot v-if="!filteredOptions.length && textField" name="no-options">
           <div class="no-options">
             <p>Nothing found! Consider clearing the filter to see all options.</p>
             <div class="button-field">
               <BaseButton size="5em" @click="textField = ''" variant="outline-primary">Clear</BaseButton>
+            </div>
+          </div>
+        </slot>
+        <slot name="menu-loading" v-if="props.menuLoading">
+          <div class="menu-loading">
+            <p class="loading-text">{{ menuLoadingText }}</p>
+            <div class="spinner-container">
+              <Spinner size="small"/>
             </div>
           </div>
         </slot>
@@ -79,11 +87,14 @@ import { BaseTextField, BaseMenu, BaseGroup, BaseItem, BaseButton } from '@/comp
 import { renderFilteredText } from '@/utils/text'
 import type { Props, Emits } from '@/typing/BaseAutocomplete'
 import type { NormalOption, GroupOption } from '@/typing/Option'
+import Spinner from "@/components/Spinner/Spinner.vue";
 
 const props = withDefaults(defineProps<Props>(), {
 	multiple: false,
 	autoFilter: true,
-	caseSensitiveFilter: true
+	caseSensitiveFilter: true,
+  menuLoading: false,
+  menuLoadingText: 'Loading more items'
 })
 
 /* States */
@@ -302,6 +313,26 @@ watch(
     .button-field {
       width: max-content;
       margin: 1em auto;
+    }
+  }
+
+  .menu-loading {
+    background-color: #F6F6F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    padding: 0 1em;
+
+    .loading-text {
+      font-size: .8em;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .spinner-container {
+      display: flex;
+      align-items: center;
     }
   }
 }

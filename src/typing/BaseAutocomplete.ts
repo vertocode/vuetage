@@ -9,6 +9,8 @@ export interface Props extends BaseTextFieldProps {
     autoFilter?: boolean
     caseSensitiveFilter?: boolean
     multiple?: boolean
+    menuLoading?: boolean
+    menuLoadingText?: string
     inputFieldStyle?: StyleValue
     inputStyle?: StyleValue
     labelStyle?: StyleValue

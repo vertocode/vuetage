@@ -38,3 +38,26 @@ export const Default = {
         ]
     }
 }
+
+export const MenuLoading = {
+    ...Template,
+    args: {
+        ...Template.args,
+        menuLoading: true,
+        options: [
+            { text: 'Option 1', value: 'option-1' },
+            { text: 'Option 2', value: 'option-2' },
+            { text: 'Option 3', value: 'option-3' }
+        ]
+    }
+}
+
+export const MenuLoadingText = {
+    ...Template,
+    args: {
+        ...Template.args,
+        menuLoading: true,
+        menuLoadingText: 'Custom loading text',
+        options: []
+    }
+}
