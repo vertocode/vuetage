@@ -25,7 +25,7 @@
         >
           <BaseGroup
             :custom-style="groupStyle"
-            v-if="option?.group"
+            v-if="option?.group && option?.items.length > 0"
             :title="option?.group"
           >
             <slot name="item" v-bind="{ option, index }">
@@ -45,7 +45,7 @@
               </BaseItem>
             </slot>
           </BaseGroup>
-          <slot name="item" v-else v-bind="{ option, index }">
+          <slot name="item" v-else-if="!option?.group" v-bind="{ option, index }">
             <BaseItem
               :custom-style="itemStyle"
               :active="getIsActive(option)"
@@ -139,15 +139,21 @@ const filteredOptions = computed((): NormalOption[] | GroupOption[] => {
 		return option.text.includes(textField.value)
 	}
 
-	return props.options.filter((option: NormalOption | GroupOption) => {
-		if (option?.group) {
-			return option.items.filter((item: NormalOption) => {
-				return filterOption(item)
+  const returnOptions: NormalOption[] | GroupOption[] = props.options.map((option: NormalOption | GroupOption) => {
+		if ((option as GroupOption)?.group) {
+			const items: NormalOption[] =  (option as GroupOption).items.filter((item: NormalOption) => {
+				const result =  filterOption(item)
+        console.log(item.text, result)
+        return result
 			})
+
+      return { group: (option as GroupOption).group, items }
 		}
 
-		return filterOption(option)
-	})
+    return filterOption(option as NormalOption) ? option : null
+	}).filter((option) => option !== null)
+  console.log(returnOptions)
+  return returnOptions
 })
 
 /* Methods */
