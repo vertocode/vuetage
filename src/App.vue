@@ -37,7 +37,7 @@ import { BaseTextField, BaseButton } from '@/components'
 
 import { ref, reactive } from 'vue'
 import { BaseSelect } from '@/components'
-import { NormalOption } from '@/typing/BaseSelect'
+import { NormalOption } from '@/typing/Option'
 
 const isDisabled = ref(false)
 const isLoading = ref(false)

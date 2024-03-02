@@ -82,19 +82,19 @@
 </template>
 
 <script setup lang="ts">
-import {computed, ref, watch} from 'vue'
-import {BaseButton, BaseGroup, BaseItem, BaseMenu, BaseTextField} from '@/components'
-import {renderFilteredText} from '@/utils/text'
-import type {Emits, Props} from '@/typing/BaseAutocomplete'
-import type {GroupOption, NormalOption} from '@/typing/Option'
-import Spinner from "@/components/Spinner/Spinner.vue";
+import { computed, ref, watch } from 'vue'
+import { BaseButton, BaseGroup, BaseItem, BaseMenu, BaseTextField } from '@/components'
+import { renderFilteredText } from '@/utils/text'
+import type { Emits, Props } from '@/typing/BaseAutocomplete'
+import type { GroupOption, NormalOption } from '@/typing/Option'
+import Spinner from '@/components/Spinner/Spinner.vue'
 
 const props = withDefaults(defineProps<Props>(), {
 	multiple: false,
 	autoFilter: true,
 	caseSensitiveFilter: true,
-  menuLoading: false,
-  menuLoadingText: 'Loading more items'
+	menuLoading: false,
+	menuLoadingText: 'Loading more items'
 })
 
 /* States */
@@ -128,7 +128,7 @@ const baseTextFieldProps = computed(() => ({
 	leftIcon: props.leftIcon,
 }))
 
-const filteredOptions = computed((): NormalOption[] | GroupOption[] => {
+const filteredOptions = computed<(NormalOption | GroupOption)[]>(() => {
 	if (!props.autoFilter) return props.options
 
 	const filterOption = (option: NormalOption): boolean => {
@@ -139,16 +139,16 @@ const filteredOptions = computed((): NormalOption[] | GroupOption[] => {
 		return option.text.includes(textField.value)
 	}
 
-  return props.options.map((option: NormalOption | GroupOption) => {
+	return props.options.map((option: NormalOption | GroupOption) => {
 		if ((option as GroupOption)?.group) {
 			const items: NormalOption[] =  (option as GroupOption).items.filter((item: NormalOption) => {
-        return filterOption(item)
+				return filterOption(item)
 			})
 
-      return { group: (option as GroupOption).group, items }
+			return { group: (option as GroupOption).group, items }
 		}
 
-    return filterOption(option as NormalOption) ? option : null
+		return filterOption(option as NormalOption) ? option : null
 	}).filter((option) => option !== null) as NormalOption[] | GroupOption[]
 })
 
@@ -171,12 +171,12 @@ const selectOption = (option: NormalOption): void => {
 }
 
 const maySelectOption = (): void => {
-	const option: NormalOption = props.options.flatMap(option => {
-    if ((option as GroupOption)?.group) {
-      return (option as GroupOption).items
-    }
-    return option
-  }).find((option) => option.text === textField.value)
+	const option: NormalOption | undefined = props.options.flatMap(option => {
+		if ((option as GroupOption)?.group) {
+			return (option as GroupOption).items
+		}
+		return option as NormalOption
+	}).find((option: NormalOption) => option.text === textField.value)
 	if (option) {
 		selectOption(option)
 	} else {
@@ -212,53 +212,55 @@ const handleEnter = () => {
 }
 
 const handleUp = () => {
-  if (activeOption.value) {
-    const { group, items } = filteredOptions.value.find((option) => {
-      if (option?.group) {
-        return option.items.some((item) => item?.text === activeOption.value)
-      }
+	if (activeOption.value) {
+		const { group, items } = filteredOptions.value.find((option: GroupOption | NormalOption) => {
+			if ((option as GroupOption)?.group) {
+				return (option as GroupOption).items.some((item: NormalOption) => item?.text === activeOption.value)
+			}
 
-      return option?.text === activeOption.value
-    }) || {}
+			return (option as NormalOption)?.text === activeOption.value
+		}) as GroupOption || {}
 
-    if (!group && !items) {
-      activeOption.value = ''
-    }
+		if (!group && !items) {
+			activeOption.value = ''
+		}
 
-    const currentOptionIndex = group
-        ? items.findIndex((item) => item?.text === activeOption.value)
-        : filteredOptions.value.findIndex((option) => option?.text === activeOption.value)
+		const currentOptionIndex = group
+			? items.findIndex((item: NormalOption) => item?.text === activeOption.value)
+			: (filteredOptions.value as NormalOption[]).findIndex((option: NormalOption) => option?.text === activeOption.value)
 
-    const option = group
-        ? (() => {
-          const mayNextOption = filteredOptions.value.find((option) => option.group === group)?.items[currentOptionIndex - 1]
+		const option = group
+			? (() => {
+				const options = (filteredOptions.value as GroupOption[])
+				const mayNextOption = options.find((option: GroupOption) => option.group === group)?.items[currentOptionIndex - 1]
 
-          if (mayNextOption) {
-            return mayNextOption
-          }
+				if (mayNextOption) {
+					return mayNextOption
+				}
 
-          const groupIndex = filteredOptions.value.findIndex((option) => option.group === group)
-          return filteredOptions.value[groupIndex - 1]?.items[filteredOptions.value[groupIndex - 1].items.length - 1]
-        })()
-        : filteredOptions.value[currentOptionIndex - 1]
+				const groupIndex = options.findIndex((option) => option.group === group)
+				return options[groupIndex - 1]?.items[options[groupIndex - 1].items.length - 1]
+			})()
+			: filteredOptions.value[currentOptionIndex - 1]
 
-    if (group) {
-      const { text } = option || {}
-      if (!text) return
-      activeOption.value = text
-    } else {
-      const { text } = option || {}
-      if (!text) return
-      activeOption.value = text
-    }
-  } else {
-		const option = filteredOptions.value[filteredOptions.value.length - 1]
-		if (option?.group) {
-			const { text } = option.items[option.items.length - 1] || {}
+		if (group) {
+			const { text } = option as NormalOption || {}
 			if (!text) return
 			activeOption.value = text
 		} else {
-			const { text } = option || {}
+			const { text } = option as NormalOption || {}
+			if (!text) return
+			activeOption.value = text
+		}
+	} else {
+		const option = filteredOptions.value[filteredOptions.value.length - 1]
+		if ((option as GroupOption)?.group) {
+			const groupOption = option as GroupOption
+			const { text } = groupOption.items[groupOption.items.length - 1] || {}
+			if (!text) return
+			activeOption.value = text
+		} else {
+			const { text } = option as NormalOption || {}
 			if (!text) return
 			activeOption.value = text
 		}
@@ -267,51 +269,58 @@ const handleUp = () => {
 
 const handleDown = () => {
 	if (activeOption.value) {
-      const { group, items } = filteredOptions.value.find((option) => {
-        if (option?.group) {
-          return option.items.some((item) => item?.text === activeOption.value)
-        }
+		const { group, items } = filteredOptions.value.find((option) => {
+			const groupOption = option as GroupOption
+			const normalOption = option as NormalOption
+			if (groupOption?.group) {
+				return groupOption.items.some((item) => item?.text === activeOption.value)
+			}
 
-        return option?.text === activeOption.value
-      }) || {}
+			return normalOption?.text === activeOption.value
+		}) as GroupOption || {}
 
-    if (!group && !items) {
-      activeOption.value = ''
-    }
+		if (!group && !items) {
+			activeOption.value = ''
+		}
 
-    const currentOptionIndex = group
-        ? items.findIndex((item) => item?.text === activeOption.value)
-        : filteredOptions.value.findIndex((option) => option?.text === activeOption.value)
+		const currentOptionIndex = group
+			? items.findIndex((item) => item?.text === activeOption.value)
+			: filteredOptions.value.findIndex((option) => (option as NormalOption)?.text === activeOption.value)
 
 		const option = group
-        ? (() => {
-          const mayNextOption = filteredOptions.value.find((option) => option.group === group)?.items[currentOptionIndex + 1]
+			? (() => {
+				const groupOptions = filteredOptions.value as GroupOption[]
+				const mayNextOption = groupOptions.find((option) => option.group === group)?.items[currentOptionIndex + 1]
 
-          if (mayNextOption) {
-           return mayNextOption
-          }
+				if (mayNextOption) {
+					return mayNextOption
+				}
 
-          const groupIndex = filteredOptions.value.findIndex((option) => option.group === group)
-          return filteredOptions.value[groupIndex + 1]?.items[0]
-        })()
-        : filteredOptions.value[currentOptionIndex + 1]
+				const groupIndex = groupOptions.findIndex((option) => option.group === group)
+				return groupOptions[groupIndex + 1]?.items[0]
+			})()
+			: filteredOptions.value[currentOptionIndex + 1]
 
 
 		if (group) {
-			const { text } = option || {}
+			const { text } = option as NormalOption || {}
 			if (!text) return
 			activeOption.value = text
 		} else {
-			const { text } = option || {}
+			const { text } = option as NormalOption || {}
 			if (!text) return
 			activeOption.value = text
 		}
 	} else {
-		const option = filteredOptions.value.filter(option => option?.group ? option.items.length > 0 : option)[0]
-		if (option?.group) {
-			activeOption.value = option.items[0]?.text
+		const option = filteredOptions.value.filter((option: GroupOption | NormalOption) => {
+			return (option as GroupOption)?.group ? (option as GroupOption).items.length > 0 : option
+		})[0]
+		const groupOption = option as GroupOption
+		const normalOption = option as NormalOption
+		if (groupOption.group) {
+			activeOption.value = groupOption.items[0]?.text
 		} else {
-			activeOption.value = option.text
+			activeOption.value = normalOption.text
 		}
 	}
 }

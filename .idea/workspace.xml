@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/__stories__/BaseAutocomplete.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/__stories__/BaseAutocomplete.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseAutocomplete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseAutocomplete.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +142,7 @@
       <workItem from="1708883833873" duration="748000" />
       <workItem from="1708912873979" duration="453000" />
       <workItem from="1709060958355" duration="10686000" />
-      <workItem from="1709394908992" duration="8607000" />
+      <workItem from="1709394908992" duration="10728000" />
     </task>
     <servers />
   </component>
