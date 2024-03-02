@@ -166,6 +166,7 @@ const getIsActive = (option: NormalOption): boolean => {
 const selectOption = (option: NormalOption): void => {
 	if (props.disabled) return
 	textField.value = option.text
+  emits('update:modelValue', option)
 	clickedOption.value = true
 	showMenu.value = false
 }
@@ -332,7 +333,7 @@ const emits = defineEmits<Emits>()
 watch(
 	() => textField.value,
 	() => {
-		emits('update:modelValue', textField.value)
+		emits('input', textField.value)
 
 		// If there is a search not already selected, the menu will be opened
 		if (textField.value) {

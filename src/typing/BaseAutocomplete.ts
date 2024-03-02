@@ -20,5 +20,6 @@ export interface Props extends BaseTextFieldProps {
 }
 
 export interface Emits {
-    (e: 'update:modelValue', value: string): void
+    (e: 'update:modelValue', value: NormalOption): void
+    (e: 'input', value: string): void
 }
