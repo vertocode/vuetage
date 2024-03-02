@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="" />
+    <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/__stories__/BaseAutocomplete.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/__stories__/BaseAutocomplete.stories.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,11 +56,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/src/components/Form/__stories__" />
       <recent name="$PROJECT_DIR$/src/components/List" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/Spinner/__stories__" />
-      <recent name="$PROJECT_DIR$/src/components/Button/__stories__" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (1)">
@@ -138,7 +141,7 @@
       <workItem from="1708883833873" duration="748000" />
       <workItem from="1708912873979" duration="453000" />
       <workItem from="1709060958355" duration="10686000" />
-      <workItem from="1709394908992" duration="7696000" />
+      <workItem from="1709394908992" duration="8464000" />
     </task>
     <servers />
   </component>

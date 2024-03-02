@@ -78,6 +78,61 @@ OptionWithGroups.play = async ({ canvasElement }: { canvasElement: HTMLElement }
     await openMenu({ canvasElement })
 }
 
+export const Outlined = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'outlined'
+    }
+}
+Outlined.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const Underlined = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'underlined'
+    }
+}
+Underlined.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const Dark = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        variant: 'dark'
+    }
+}
+Dark.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const Loading = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        loading: true
+    }
+}
+
+export const UseBorderLoading = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        loading: true,
+        useBorderLoading: true
+    }
+}
+
 export const MenuLoading = {
     ...Template,
     args: {
@@ -97,6 +152,63 @@ export const MenuLoadingText = {
         menuLoading: true,
         menuLoadingText: 'Custom loading text',
         options: []
+    }
+}
+MenuLoadingText.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const Disabled = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        disabled: true
+    }
+}
+
+export const LeftIcon = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        leftIcon: 'fa fa-search'
+    }
+}
+MenuLoadingText.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const RightIcon = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        rightIcon: 'fa fa-search'
+    }
+}
+MenuLoadingText.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const AutoFilterOff = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        autoFilter: false
+    }
+}
+MenuLoadingText.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    await openMenu({ canvasElement })
+}
+
+export const CaseSensitiveFilterOff = {
+    ...Template,
+    args: {
+        ...Template.args,
+        options: groupOptions,
+        caseSensitiveFilter: false
     }
 }
 MenuLoadingText.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
