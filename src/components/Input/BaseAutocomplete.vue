@@ -171,7 +171,12 @@ const selectOption = (option: NormalOption): void => {
 }
 
 const maySelectOption = (): void => {
-	const option: NormalOption = props.options.find((option) => option.text === textField.value)
+	const option: NormalOption = props.options.flatMap(option => {
+    if ((option as GroupOption)?.group) {
+      return (option as GroupOption).items
+    }
+    return option
+  }).find((option) => option.text === textField.value)
 	if (option) {
 		selectOption(option)
 	} else {
