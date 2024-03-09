@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vuetage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vuetage.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseAutocomplete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseAutocomplete.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/vuetage.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/vuetage.d.ts" afterDir="false" />
-    </list>
+    <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -160,7 +153,7 @@
       <workItem from="1709060958355" duration="10686000" />
       <workItem from="1709394908992" duration="12444000" />
       <workItem from="1709655753649" duration="111000" />
-      <workItem from="1710010324154" duration="1499000" />
+      <workItem from="1710010324154" duration="1801000" />
     </task>
     <servers />
   </component>
