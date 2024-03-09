@@ -166,7 +166,7 @@ const getIsActive = (option: NormalOption): boolean => {
 const selectOption = (option: NormalOption): void => {
 	if (props.disabled) return
 	textField.value = option.text
-  emits('update:modelValue', option)
+	emits('update:modelValue', option)
 	clickedOption.value = true
 	showMenu.value = false
 }

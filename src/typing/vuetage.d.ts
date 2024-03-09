@@ -1,5 +1,6 @@
 import { Props as BaseButtonProps } from '@/typing/BaseButton'
 import { Props as BaseSelectProps } from '@/typing/BaseSelect'
+import { Props as BaseAutocompleteProps } from '@/typing/BaseAutocomplete'
 import { Props as BaseTextFieldProps } from '@/typing/BaseTextField'
 import { Props as BaseGroupProps } from '@/typing/BaseGroup'
 import { Props as BaseItemProps } from '@/typing/BaseItem'
@@ -13,6 +14,8 @@ declare module 'vuetage' {
     export const BaseTextField: DefineComponent<BaseTextFieldProps>
 
     export const BaseSelect: DefineComponent<BaseSelectProps>
+
+    export const BaseAutocomplete: DefineComponent<BaseAutocompleteProps>
 
     export const BaseGroup: DefineComponent<BaseGroupProps>
 
