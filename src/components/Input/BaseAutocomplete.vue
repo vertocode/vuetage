@@ -13,9 +13,7 @@
       @focus="handleFocus"
       @focusout="handleFocusOut"
       @click="handleMenu"
-    >
-
-    </BaseTextField>
+    />
     <slot name="menu">
       <BaseMenu :show="showMenu" :custom-style="menuStyle">
         <div

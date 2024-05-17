@@ -29,6 +29,7 @@ export {
 	Spinner,
 	BaseButton,
 	BaseTextField,
+	BaseAutocomplete,
 	BaseSelect,
 	BaseItem,
 	BaseGroup,
