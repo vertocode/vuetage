@@ -5,7 +5,7 @@
         class: 'base-autocomplete',
         autocomplete: 'off'
       }"
-      v-model="textField"
+      v-model="textField.text"
       v-bind="baseTextFieldProps"
       @enter="handleEnter"
       @up="handleUp"
@@ -37,7 +37,7 @@
                   <span v-html="renderFilteredText({
                      text: item.text,
                      autoFilter,
-                     textField
+                     textField: textField.text
                   })"
                   ></span>
               </BaseItem>
@@ -52,17 +52,17 @@
               <span v-html="renderFilteredText({
                  text: option.text,
                  autoFilter,
-                 textField
+                 textField: textField.text
               })"
               ></span>
             </BaseItem>
           </slot>
         </div>
-        <slot v-if="!filteredOptions.length && textField" name="no-options">
+        <slot v-if="!filteredOptions?.length && textField" name="no-options">
           <div class="no-options">
             <p>Nothing found! Consider clearing the filter to see all options.</p>
             <div class="button-field">
-              <BaseButton size="5em" @click="textField = ''" variant="outline-primary">Clear</BaseButton>
+              <BaseButton size="5em" @click="textField = initialState" variant="outline-primary">Clear</BaseButton>
             </div>
           </div>
         </slot>
@@ -96,12 +96,13 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 /* States */
-const textField = ref<string>(props.modelValue || '')
+const initialState = { text: '', value: '' }
+const textField = ref<NormalOption>(props.modelValue || initialState)
 const showMenu = ref<boolean>(false)
 const isFocused = ref<boolean>(false)
 
 // This is the active option when the user is pressing the key down, up, or tab to choose an option
-const activeOption = ref<string>('')
+const activeOption = ref<NormalOption>({ text: '', value: '' })
 
 // When we click on any option, it will be true. If it's true, the menu will not be closed until it is false,
 // This logic is useful to select the option before close the menu, and at the same time close the menu when the "focusout" event be triggered
@@ -131,15 +132,15 @@ const filteredOptions = computed<(NormalOption | GroupOption)[]>(() => {
 
 	const filterOption = (option: NormalOption): boolean => {
 		if (props.caseSensitiveFilter) {
-			return option.text.toLowerCase().includes(textField.value.toLowerCase())
+			return option.text.toLowerCase().includes(textField.value.text.toLowerCase())
 		}
 
-		return option.text.includes(textField.value)
+		return option.text.includes(textField.value.text)
 	}
 
 	return props.options.map((option: NormalOption | GroupOption) => {
 		if ((option as GroupOption)?.group) {
-			const items: NormalOption[] =  (option as GroupOption).items.filter((item: NormalOption) => {
+			const items: NormalOption[] = (option as GroupOption).items.filter((item: NormalOption) => {
 				return filterOption(item)
 			})
 
@@ -158,13 +159,14 @@ const handleMenu = (): void => {
 }
 
 const getIsActive = (option: NormalOption): boolean => {
-	return activeOption.value === option.text
+	return activeOption.value.text === option.text
 }
 
 const selectOption = (option: NormalOption): void => {
 	if (props.disabled) return
-	textField.value = option.text
-	emits('update:modelValue', option)
+	const clonedOption = Object.assign({}, option)
+	textField.value = clonedOption
+	emits('update:modelValue', clonedOption)
 	clickedOption.value = true
 	showMenu.value = false
 }
@@ -175,11 +177,11 @@ const maySelectOption = (): void => {
 			return (option as GroupOption).items
 		}
 		return option as NormalOption
-	}).find((option: NormalOption) => option.text === textField.value)
+	}).find((option: NormalOption) => option.text === textField.value.text)
 	if (option) {
 		selectOption(option)
 	} else {
-		textField.value = ''
+		textField.value = initialState
 	}
 }
 
@@ -214,19 +216,19 @@ const handleUp = () => {
 	if (activeOption.value) {
 		const { group, items } = filteredOptions.value.find((option: GroupOption | NormalOption) => {
 			if ((option as GroupOption)?.group) {
-				return (option as GroupOption).items.some((item: NormalOption) => item?.text === activeOption.value)
+				return (option as GroupOption).items.some((item: NormalOption) => item?.text === activeOption.value.text)
 			}
 
-			return (option as NormalOption)?.text === activeOption.value
+			return (option as NormalOption)?.text === activeOption.value.text
 		}) as GroupOption || {}
 
 		if (!group && !items) {
-			activeOption.value = ''
+			activeOption.value = { text: '', value: '' }
 		}
 
 		const currentOptionIndex = group
-			? items.findIndex((item: NormalOption) => item?.text === activeOption.value)
-			: (filteredOptions.value as NormalOption[]).findIndex((option: NormalOption) => option?.text === activeOption.value)
+			? items.findIndex((item: NormalOption) => item?.text === activeOption.value.text)
+			: (filteredOptions.value as NormalOption[]).findIndex((option: NormalOption) => option?.text === activeOption.value.text)
 
 		const option = group
 			? (() => {
@@ -245,11 +247,11 @@ const handleUp = () => {
 		if (group) {
 			const { text } = option as NormalOption || {}
 			if (!text) return
-			activeOption.value = text
+			activeOption.value = option as NormalOption
 		} else {
 			const { text } = option as NormalOption || {}
 			if (!text) return
-			activeOption.value = text
+			activeOption.value = option as NormalOption
 		}
 	} else {
 		const option = filteredOptions.value[filteredOptions.value.length - 1]
@@ -257,34 +259,34 @@ const handleUp = () => {
 			const groupOption = option as GroupOption
 			const { text } = groupOption.items[groupOption.items.length - 1] || {}
 			if (!text) return
-			activeOption.value = text
+			activeOption.value = groupOption.items[groupOption.items.length - 1]
 		} else {
 			const { text } = option as NormalOption || {}
 			if (!text) return
-			activeOption.value = text
+			activeOption.value = option as NormalOption || {}
 		}
 	}
 }
 
 const handleDown = () => {
-	if (activeOption.value) {
+	if (activeOption.value.text) {
 		const { group, items } = filteredOptions.value.find((option) => {
 			const groupOption = option as GroupOption
 			const normalOption = option as NormalOption
 			if (groupOption?.group) {
-				return groupOption.items.some((item) => item?.text === activeOption.value)
+				return groupOption.items.some((item) => item?.text === activeOption.value.text)
 			}
 
-			return normalOption?.text === activeOption.value
+			return normalOption?.text === activeOption.value.text
 		}) as GroupOption || {}
 
 		if (!group && !items) {
-			activeOption.value = ''
+			activeOption.value = { text: '', value: '' }
 		}
 
 		const currentOptionIndex = group
-			? items.findIndex((item) => item?.text === activeOption.value)
-			: filteredOptions.value.findIndex((option) => (option as NormalOption)?.text === activeOption.value)
+			? items.findIndex((item) => item?.text === activeOption.value.text)
+			: filteredOptions.value.findIndex((option) => (option as NormalOption)?.text === activeOption.value.text)
 
 		const option = group
 			? (() => {
@@ -304,11 +306,11 @@ const handleDown = () => {
 		if (group) {
 			const { text } = option as NormalOption || {}
 			if (!text) return
-			activeOption.value = text
+			activeOption.value = option as NormalOption
 		} else {
 			const { text } = option as NormalOption || {}
 			if (!text) return
-			activeOption.value = text
+			activeOption.value = option as NormalOption
 		}
 	} else {
 		const option = filteredOptions.value.filter((option: GroupOption | NormalOption) => {
@@ -317,9 +319,9 @@ const handleDown = () => {
 		const groupOption = option as GroupOption
 		const normalOption = option as NormalOption
 		if (groupOption.group) {
-			activeOption.value = groupOption.items[0]?.text
+			activeOption.value = groupOption.items[0]
 		} else {
-			activeOption.value = normalOption.text
+			activeOption.value = normalOption
 		}
 	}
 }
@@ -347,7 +349,7 @@ watch(
 	() => showMenu.value,
 	() => {
 		if (!showMenu.value) {
-			activeOption.value = ''
+			activeOption.value = { text: '', value: '' }
 		}
 	}
 )

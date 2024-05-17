@@ -4,6 +4,7 @@ import { NormalOption, GroupOption } from '@/typing/Option'
 import { CustomStyle } from '@/typing/Style'
 
 export interface Props extends BaseTextFieldProps {
+    modelValue: NormalOption
     options: NormalOption[] | GroupOption[]
     label?: string
     autoFilter?: boolean
@@ -21,5 +22,5 @@ export interface Props extends BaseTextFieldProps {
 
 export interface Emits {
     (e: 'update:modelValue', value: NormalOption): void
-    (e: 'input', value: string): void
+    (e: 'input', value: NormalOption): void
 }
