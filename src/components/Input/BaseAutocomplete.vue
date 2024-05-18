@@ -339,6 +339,15 @@ watch(
 )
 
 watch(
+    () => activeOption.value,
+    () => {
+      if (activeOption.value.text) {
+        document.querySelector('.base-item.active')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+    }
+)
+
+watch(
 	() => showMenu.value,
 	() => {
 		if (!showMenu.value) {
