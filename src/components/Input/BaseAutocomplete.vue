@@ -222,10 +222,6 @@ const handleUp = () => {
 			return (option as NormalOption)?.text === activeOption.value.text
 		}) as GroupOption || {}
 
-		if (!group && !items) {
-			activeOption.value = { text: '', value: '' }
-		}
-
 		const currentOptionIndex = group
 			? items.findIndex((item: NormalOption) => item?.text === activeOption.value.text)
 			: (filteredOptions.value as NormalOption[]).findIndex((option: NormalOption) => option?.text === activeOption.value.text)
@@ -280,10 +276,6 @@ const handleDown = () => {
 			return normalOption?.text === activeOption.value.text
 		}) as GroupOption || {}
 
-		if (!group && !items) {
-			activeOption.value = { text: '', value: '' }
-		}
-
 		const currentOptionIndex = group
 			? items.findIndex((item) => item?.text === activeOption.value.text)
 			: filteredOptions.value.findIndex((option) => (option as NormalOption)?.text === activeOption.value.text)
@@ -336,10 +328,11 @@ watch(
 		emits('input', textField.value)
 
 		// If there is a search not already selected, the menu will be opened
-		if (textField.value) {
+		if (textField.value.text) {
 			showMenu.value = !clickedOption.value
 			clickedOption.value = false
 		} else {
+      emits('update:modelValue', initialState)
 			showMenu.value = false
 		}
 	}
