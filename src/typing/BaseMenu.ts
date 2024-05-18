@@ -3,6 +3,7 @@ import { CustomStyle } from '@/typing/Style'
 export interface Props {
     show: boolean
     title?: string
+    variant?: Variants
     leftIcon?: string
     rightIcon?: string
     closeIcon?: string
@@ -19,3 +20,5 @@ export interface Props {
     customClass?: string
     customStyle?: CustomStyle
 }
+
+type Variants = 'default' | 'outlined' | 'underlined' | 'dark'

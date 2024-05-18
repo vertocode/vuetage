@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show" class="base-menu" :class="customClass" :style="customStyle as StyleValue">
+  <div v-if="show" class="base-menu" :class="[customClass, `base-menu__${variant}`]" :style="customStyle as StyleValue">
     <div class="menu-content">
       <div class="header">
         <span class="title" v-if="title">
@@ -36,6 +36,7 @@ withDefaults(defineProps<Props>(), {
 	boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
 	showCloseButton: false,
 	closeIcon: 'fas fa-times',
+  variant: 'default'
 })
 </script>
 
@@ -56,6 +57,23 @@ withDefaults(defineProps<Props>(), {
   overflow: hidden;
   transition: all 0.3s ease;
   overflow-y: auto;
+
+  &__outlined {
+    border-radius: 0.4em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid $label-color;
+  }
+
+  &__underlined {
+    border-bottom: 0.5px solid v-bind(borderColor);
+    box-shadow: none;
+  }
+
+  &__dark {
+    background-color: $dark-base-color;
+    color: $dark-label-color;
+    border-color: $border-dark;
+  }
 
   .menu-content {
     padding: 0 2px;
@@ -84,5 +102,25 @@ withDefaults(defineProps<Props>(), {
       }
     }
   }
+}
+
+/* --- SCROLL STYLES --- */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 </style>

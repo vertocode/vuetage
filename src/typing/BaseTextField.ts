@@ -31,5 +31,5 @@ export interface Props {
     customClass?: string
 }
 
-type Variants = 'default' | 'outline' | 'underlined' | 'dark'
+type Variants = 'default' | 'outlined' | 'underlined' | 'dark'
 type EventEmitters = 'input' | 'change' | 'blur'

@@ -15,7 +15,7 @@
       @click="handleMenu"
     />
     <slot name="menu">
-      <BaseMenu :show="showMenu" :custom-style="menuStyle">
+      <BaseMenu :variant="props.variant" :show="showMenu" :custom-style="menuStyle">
         <div
             v-for="(option, index) in filteredOptions"
             :key="index"

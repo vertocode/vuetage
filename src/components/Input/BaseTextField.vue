@@ -261,7 +261,7 @@ const slots = useSlots()
   [disabled] {
     opacity: 0.7;
     cursor: not-allowed;
-    background-color: $disabled-color;
+    background-color: lighten($disabled-color, 10%);
   }
 
   &-has-label {
@@ -272,38 +272,38 @@ const slots = useSlots()
     height: 2em;
     border: none;
     box-sizing: border-box;
-    padding-left: $size-tiny-3x;
-    border-bottom: 1px solid $label-color;
+    padding: $size-small-3x $size-tiny-3x;
+    border-bottom: 1px solid lighten($label-color, 10%);
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
     &-underlined {
       outline: none;
 
       &:focus {
-       border-color:  $label-color;
+       border-color: lighten($label-color, 20%);
       }
     }
 
     &-has-base-color {
-      background-color: $base-color;
+      background-color: lighten($base-color, 5%);
       border-radius: 3px;
-      color: $label-color;
+      color: darken($label-color, 10%);
 
       &:focus {
         outline: none;
-        border-color: $dark-label-color;
+        border-color: darken($dark-label-color, 10%);;
       }
     }
 
     &-has-dark-color {
-      background-color: $dark-base-color;
-      border: 1px solid $dark-label-color;
+      background-color: lighten($dark-base-color, 5%);
+      border: 1px solid lighten($dark-label-color, 10%);
       border-radius: 3px;
-      color: $label-color;
+      color: lighten($label-color, 10%);
 
       &:focus {
         outline: none;
-        border-color: $label-color;
+        border-color: lighten($label-color, 10%);
       }
     }
 
@@ -325,10 +325,10 @@ const slots = useSlots()
 
   &-border {
     &:not(.has-dark-color) {
-      border: 1px solid $label-color;
+      border: 1px solid lighten($label-color, 10%);
     }
     &:not(.has-base-color) {
-      border: 1px solid $dark-label-color;
+      border: 1px solid lighten($dark-label-color, 10%);
     }
     border-radius: 0.4em;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -361,15 +361,15 @@ const slots = useSlots()
   }
 
   &-error {
-    border-color: $error-color;
+    border-color: lighten($error-color, 10%);
 
     &:focus {
-      border-color: $error-color;
+      border-color: lighten($error-color, 20%);
     }
   }
 
   &-label {
-    color: $label-color;
+    color: darken($label-color, 10%);
     pointer-events: none;
     font-size: $size-small-1x;
     position: absolute;
