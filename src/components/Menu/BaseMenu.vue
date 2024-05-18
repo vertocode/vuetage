@@ -36,7 +36,7 @@ withDefaults(defineProps<Props>(), {
 	boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
 	showCloseButton: false,
 	closeIcon: 'fas fa-times',
-  variant: 'default'
+	variant: 'default'
 })
 </script>
 

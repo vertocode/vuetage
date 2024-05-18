@@ -332,19 +332,19 @@ watch(
 			showMenu.value = !clickedOption.value
 			clickedOption.value = false
 		} else {
-      emits('update:modelValue', initialState)
+			emits('update:modelValue', initialState)
 			showMenu.value = false
 		}
 	}
 )
 
 watch(
-    () => activeOption.value,
-    () => {
-      if (activeOption.value.text) {
-        document.querySelector('.base-item.active')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      }
-    }
+	() => activeOption.value,
+	() => {
+		if (activeOption.value.text) {
+			document.querySelector('.base-item.active')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+		}
+	}
 )
 
 watch(
