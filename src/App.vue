@@ -60,7 +60,10 @@ const data = reactive({
 		text: '',
 		value: ''
 	},
-	state: ''
+	state: {
+		text: '',
+		value: ''
+	}
 })
 const countries: NormalOption[] = [
 	{ text: 'United States', value: 'us' },

@@ -375,7 +375,7 @@ const slots = useSlots()
     position: absolute;
     transition: top 100ms, left 1s;
     left: $size-tiny-3x;
-    top: 0.6em;
+    top: .85em;
 
     &-has-left-icon {
       transition: top 200ms, padding-left 1s;
