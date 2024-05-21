@@ -11,72 +11,75 @@
     ['base-text-field-has-label']: label,
     [`base-text-field-${variant}`]: variant
   }" v-else >
-    <div class="base-text-field-left-icon">
-      <slot name="leftIcon">
-        <i v-if="leftIcon" :class="leftIcon"></i>
-      </slot>
-    </div>
-    <label
-        v-if="label"
-        for="base-text-field-input-name"
-        class="base-text-field-label"
-        :style="customStyleLabel"
-        :class="{
-          ['base-text-field-label-active']: ((hasText || inputFocused) && !readonly) || (readonly && hasText),
-          ['base-text-field-label-has-left-icon']: leftIcon
-        }"
-    >
-      <slot name="label">
-        {{ label }}
-      </slot>
-    </label>
-    <input
-        data-testid="base-text-field-input"
-        name="base-text-field-input-name"
-        :type="type"
-        class="base-text-field-input"
-        :value="modelValue"
-        :class="[
+    <div class="base-text-field-container-input">
+      <div class="base-text-field-container-input-left-icon">
+        <slot name="leftIcon">
+          <i v-if="leftIcon" :class="leftIcon"></i>
+        </slot>
+      </div>
+      <label
+          v-if="label"
+          for="base-text-field-input-name"
+          class="base-text-field-container-input-label"
+          :style="customStyleLabel"
+          :class="{
+            ['base-text-field-container-input-label-active']: ((hasText || inputFocused) && !readonly) || (readonly && hasText),
+            ['base-text-field-container-input-label-has-left-icon']: leftIcon,
+            [`label-${variant}`]: variant
+          }"
+      >
+        <slot name="label">
+          {{ label }}
+        </slot>
+      </label>
+      <input
+          data-testid="base-text-field-input"
+          name="base-text-field-input-name"
+          :type="type"
+          class="base-text-field-container-input-input"
+          :value="modelValue"
+          :class="[
           {
-              [`base-text-field-input-${variant}`]: variant,
-              ['base-text-field-error']: hasError && !loading,
-              ['base-text-field-border']: variant === 'outlined',
-              ['base-text-field-input-has-spinner']: loading && !useBorderLoading,
-              ['base-text-field-input-has-base-color']: variant === 'default',
-              ['base-text-field-input-has-dark-color']: variant === 'dark',
-              ['base-text-field-input-has-left-icon']: leftIcon || !!slots?.leftIcon,
-              ['base-text-field-input-has-right-icon']: rightIcon || !!slots?.rightIcon
+              [`base-text-field-container-input-input-${variant}`]: variant,
+              ['base-text-field-container-input-error']: hasError && !loading,
+              ['base-text-field-container-input-border']: variant === 'outlined',
+              ['base-text-field-container-input-input-has-spinner']: loading && !useBorderLoading,
+              ['base-text-field-container-input-input-has-base-color']: variant === 'default',
+              ['base-text-field-container-input-input-has-dark-color']: variant === 'dark',
+              ['base-text-field-container-input-input-has-left-icon']: leftIcon || !!slots?.leftIcon,
+              ['base-text-field-container-input-input-has-right-icon']: rightIcon || !!slots?.rightIcon
           },
           customClass
         ]"
-        :required="required"
-        :style="[customStyle, { width, height }]"
-        :placeholder="(hasText || inputFocused) && !readonly && placeholder ? placeholder : ''"
-        :disabled="disabled || (disableOnLoading && loading)"
-        :readonly="readonly"
-        @input="emitUpdateModelValue($event.target.value)"
-        @change="emitUpdateModelValue($event.target.value)"
-        @blur="emitUpdateModelValue($event.target.value)"
-        @focus="emitFocus($event)"
-        @focusout="emitFocusOut($event)"
-        @click="emits('click', $event)"
-        @dblclick="emits('dblclick', $event)"
-        @mousedown="emits('mousedown', $event)"
-        @mouseup="emits('mouseup', $event)"
-        @mouseenter="emits('mouseenter', $event)"
-        @keydown.enter="emits('enter', $event)"
-        @keydown.up="emits('up', $event)"
-        @keydown.down="emits('down', $event)"
-        v-bind="bind"
-    >
-    <div class="base-text-field-right-icon">
-      <slot name="spinner">
-        <Spinner class="base-text-field-spinner" :size="loadingSize" :color-spinner="loadingColor" v-if="loading && !useBorderLoading"></Spinner>
-      </slot>
-      <slot name="rightIcon">
-        <i v-if="!(loading && !useBorderLoading) && rightIcon" :class="rightIcon"></i>
-        <i v-else-if="password" :class="`fa ${hidePassword ? 'fa-eye-slash' : 'fa-eye'}`" @click="hidePassword = !hidePassword"></i>
-      </slot>
+          :required="required"
+          :style="[customStyle, { width, height }]"
+          :placeholder="(hasText || inputFocused) && !readonly && placeholder ? placeholder : ''"
+          :disabled="disabled || (disableOnLoading && loading)"
+          :readonly="readonly"
+          @input="emitUpdateModelValue($event.target.value)"
+          @change="emitUpdateModelValue($event.target.value)"
+          @blur="emitUpdateModelValue($event.target.value)"
+          @focus="emitFocus($event)"
+          @focusout="emitFocusOut($event)"
+          @click="emits('click', $event)"
+          @dblclick="emits('dblclick', $event)"
+          @mousedown="emits('mousedown', $event)"
+          @mouseup="emits('mouseup', $event)"
+          @mouseenter="emits('mouseenter', $event)"
+          @keydown.enter="emits('enter', $event)"
+          @keydown.up="emits('up', $event)"
+          @keydown.down="emits('down', $event)"
+          v-bind="bind"
+      >
+      <div class="base-text-field-container-input-right-icon">
+        <slot name="spinner">
+          <Spinner class="base-text-field-spinner" :size="loadingSize" :color-spinner="loadingColor" v-if="loading && !useBorderLoading"></Spinner>
+        </slot>
+        <slot name="rightIcon">
+          <i v-if="!(loading && !useBorderLoading) && rightIcon" :class="rightIcon"></i>
+          <i v-else-if="password" :class="`fa ${hidePassword ? 'fa-eye-slash' : 'fa-eye'}`" @click="hidePassword = !hidePassword"></i>
+        </slot>
+      </div>
     </div>
     <slot name="loadingBorder">
       <div class="base-text-field-loading-border" :style="{ ['background-color']: loadingColor }" v-if="loading && useBorderLoading"></div>
@@ -268,61 +271,6 @@ const slots = useSlots()
     margin-top: $size-small-1x;
   }
 
-  &-input {
-    height: 2em;
-    border: none;
-    box-sizing: border-box;
-    padding: $size-small-3x $size-tiny-3x;
-    border-bottom: 1px solid lighten($label-color, 10%);
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-
-    &-underlined {
-      outline: none;
-
-      &:focus {
-       border-color: lighten($label-color, 20%);
-      }
-    }
-
-    &-has-base-color {
-      background-color: lighten($base-color, 5%);
-      border-radius: 3px;
-      color: darken($label-color, 10%);
-
-      &:focus {
-        outline: none;
-        border-color: darken($dark-label-color, 10%);;
-      }
-    }
-
-    &-has-dark-color {
-      background-color: lighten($dark-base-color, 5%);
-      border: 1px solid lighten($dark-label-color, 10%);
-      border-radius: 3px;
-      color: lighten($label-color, 10%);
-
-      &:focus {
-        outline: none;
-        border-color: lighten($label-color, 10%);
-      }
-    }
-
-    &-has-spinner {
-      padding-right: $size-large-2x;
-      box-sizing: border-box;
-    }
-
-    &-has-left-icon {
-      padding-left: 30px;
-      box-sizing: border-box;
-    }
-
-    &-has-right-icon {
-      padding-right: $size-large-1x;
-      box-sizing: border-box;
-    }
-  }
-
   &-border {
     &:not(.has-dark-color) {
       border: 1px solid lighten($label-color, 10%);
@@ -342,24 +290,6 @@ const slots = useSlots()
     animation: loadingBorder 5s linear infinite;
   }
 
-  &-left-icon {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0.4em;
-    display: flex;
-    align-items: center;
-  }
-
-  &-right-icon {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0.5em;
-    display: flex;
-    align-items: center;
-  }
-
   &-error {
     border-color: lighten($error-color, 10%);
 
@@ -368,25 +298,118 @@ const slots = useSlots()
     }
   }
 
-  &-label {
-    color: darken($label-color, 10%);
-    pointer-events: none;
-    font-size: $size-small-1x;
-    position: absolute;
-    transition: top 100ms, left 1s;
-    left: $size-tiny-3x;
-    top: .85em;
+  &-container-input {
+    position: relative;
 
-    &-has-left-icon {
-      transition: top 200ms, padding-left 1s;
-      padding-left: 25px;
+    &-label {
+      color: darken($label-color, 10%);
+      pointer-events: none;
+      font-size: $size-small-1x;
+      position: absolute;
+      transition: top 100ms, left 1s;
+      top: 35%;
+      left: 4%;
+
+      &-has-left-icon {
+        transition: top 200ms, left 1s;
+        left: 15%;
+      }
+
+      &-active {
+        transition: top 200ms;
+        top: -22%;
+        font-size: 0.7em;
+        font-weight: bold;
+
+        &.label-outlined, &.label-dark {
+          top: -38%;
+        }
+
+        &.label-dark {
+          background-color: lighten($dark-base-color, 5%);
+          border: 1px solid lighten($dark-label-color, 10%);
+          border-bottom: none;
+          padding: 2px 8px 0 8px;
+          border-radius: 8px 8px 0 0;
+        }
+      }
+
+      &.label-dark {
+        color: lighten($dark-label-color, 10%);
+      }
     }
 
-    &-active {
-      padding-left: 0;
-      top: -1.1em;
-      font-size: 0.7em;
-      font-weight: bold;
+    &-input {
+      width: 100%;
+      border: none;
+      box-sizing: border-box;
+      padding: $size-small-3x $size-tiny-3x;
+      border-bottom: 1px solid lighten($label-color, 10%);
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+
+      &-underlined {
+        outline: none;
+
+        &:focus {
+          border-color: lighten($label-color, 20%);
+        }
+      }
+
+      &-has-base-color {
+        background-color: $base-color;
+        border-radius: 3px;
+        color: darken($label-color, 10%);
+
+        &:focus {
+          outline: none;
+          border-color: darken($dark-label-color, 10%);;
+        }
+      }
+
+      &-has-dark-color {
+        background-color: lighten($dark-base-color, 5%);
+        border: 1px solid lighten($dark-label-color, 10%);
+        border-radius: 3px;
+        color: lighten($label-color, 50%);
+
+        &:focus {
+          outline: none;
+          border-color: lighten($label-color, 10%);
+        }
+      }
+
+      &-has-spinner {
+        padding-right: $size-large-2x;
+        box-sizing: border-box;
+      }
+
+      &-has-left-icon {
+        padding-left: 30px;
+        box-sizing: border-box;
+      }
+
+      &-has-right-icon {
+        padding-right: $size-large-1x;
+        box-sizing: border-box;
+      }
+    }
+
+    &-left-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    &-right-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 8px;
+      display: flex;
+      align-items: center;
     }
   }
 }
