@@ -41,8 +41,8 @@
           :class="[
           {
               [`base-text-field-container-input-input-${variant}`]: variant,
-              ['base-text-field-container-input-error']: hasError && !loading,
-              ['base-text-field-container-input-border']: variant === 'outlined',
+              ['base-text-field-container-input-input-error']: hasError && !loading,
+              ['base-text-field-container-input-input-border']: variant === 'outlined',
               ['base-text-field-container-input-input-has-spinner']: loading && !useBorderLoading,
               ['base-text-field-container-input-input-has-base-color']: variant === 'default',
               ['base-text-field-container-input-input-has-dark-color']: variant === 'dark',
@@ -113,7 +113,7 @@ const props = withDefaults(defineProps<Props>(), {
 	minLength: 0,
 	required: false,
 	width: '',
-	height: '30px',
+	height: '24px',
 	style: '',
 	customStyle: '',
 	customStyleLabel: '',
@@ -271,31 +271,11 @@ const slots = useSlots()
     margin-top: $size-small-1x;
   }
 
-  &-border {
-    &:not(.has-dark-color) {
-      border: 1px solid lighten($label-color, 10%);
-    }
-    &:not(.has-base-color) {
-      border: 1px solid lighten($dark-label-color, 10%);
-    }
-    border-radius: 0.4em;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin-top: 0.1em;
-  }
-
   &-loading-border {
     height: v-bind(loadingBorderSize);
     border-color: v-bind(loadingColor);
     transform-origin: left;
     animation: loadingBorder 5s linear infinite;
-  }
-
-  &-error {
-    border-color: lighten($error-color, 10%);
-
-    &:focus {
-      border-color: lighten($error-color, 20%);
-    }
   }
 
   &-container-input {
@@ -307,7 +287,7 @@ const slots = useSlots()
       font-size: $size-small-1x;
       position: absolute;
       transition: top 100ms, left 1s;
-      top: 35%;
+      top: 25%;
       left: 4%;
 
       &-has-left-icon {
@@ -322,10 +302,11 @@ const slots = useSlots()
         font-weight: bold;
 
         &.label-outlined, &.label-dark {
-          top: -38%;
+          top: -30%;
         }
 
         &.label-dark {
+          left: 0;
           background-color: lighten($dark-base-color, 5%);
           border: 1px solid lighten($dark-label-color, 10%);
           border-bottom: none;
@@ -391,6 +372,26 @@ const slots = useSlots()
       &-has-right-icon {
         padding-right: $size-large-1x;
         box-sizing: border-box;
+      }
+
+      &-border {
+        &:not(.has-dark-color) {
+          border: 1px solid lighten($label-color, 10%);
+        }
+        &:not(.has-base-color) {
+          border: 1px solid lighten($dark-label-color, 10%);
+        }
+        border-radius: 0.4em;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin-top: 0.1em;
+      }
+
+      &-error {
+        border-color: lighten($error-color, 10%);
+
+        &:focus {
+          border-color: lighten($error-color, 20%);
+        }
       }
     }
 
