@@ -3,9 +3,10 @@
     <BaseTextField
       :bind="{
         class: 'base-autocomplete',
-        autocomplete: 'off'
+        autocomplete: 'off',
+        ref: 'textFieldRef'
       }"
-      v-model="textField.text"
+      v-model="textField"
       v-bind="baseTextFieldProps"
       @enter="handleEnter"
       @up="handleUp"
@@ -15,7 +16,13 @@
       @click="handleMenu"
     />
     <slot name="menu">
-      <BaseMenu :variant="props.variant" :show="showMenu" :custom-style="menuStyle">
+      <BaseMenu
+          :variant="props.variant"
+          :show="showMenu"
+          :custom-style="menuStyle"
+          @mousedown="handleMenuMouseDown"
+          @mouseleave="handleMenuMouseLeave"
+      >
         <div
             v-for="(option, index) in filteredOptions"
             :key="index"
@@ -26,7 +33,7 @@
             v-if="option?.group && option?.items.length > 0"
             :title="option?.group"
           >
-            <slot name="item" v-bind="{ option, index }">
+            <slot name="item" v-bind="{ option, index, selectOption, isActive: getIsActive(option) }">
               <BaseItem
                 v-for="(item, index) in option.items"
                 :key="index"
@@ -43,7 +50,7 @@
               </BaseItem>
             </slot>
           </BaseGroup>
-          <slot name="item" v-else-if="!option?.group" v-bind="{ option, index }">
+          <slot name="item" v-else-if="!option?.group" v-bind="{ option, index, selectOption, isActive: getIsActive(option) }">
             <BaseItem
               :custom-style="itemStyle"
               :active="getIsActive(option)"
@@ -62,7 +69,7 @@
           <div class="no-options">
             <p>Nothing found! Consider clearing the filter to see all options.</p>
             <div class="button-field">
-              <BaseButton size="5em" @click="textField = initialState" variant="outline-primary">Clear</BaseButton>
+              <BaseButton size="5em" @click="textField = ''" variant="outline-primary">Clear</BaseButton>
             </div>
           </div>
         </slot>
@@ -97,18 +104,29 @@ const props = withDefaults(defineProps<Props>(), {
 
 /* States */
 const initialState = { text: '', value: '' }
-const textField = ref<NormalOption>(props.modelValue || initialState)
-const showMenu = ref<boolean>(false)
+const textFieldRef = ref(null)
+const textModel = ref<NormalOption>(props.modelValue || initialState)
+const textField = ref<string>(textModel.value.text || '')
+const valueField = ref<string>(textModel.value.value || '')
 const isFocused = ref<boolean>(false)
+const mouseOnMenu = ref(false)
+
+const handleMenuMouseDown = () => {
+  mouseOnMenu.value = true
+}
+
+const handleMenuMouseLeave = () => {
+  mouseOnMenu.value = false
+}
 
 // This is the active option when the user is pressing the key down, up, or tab to choose an option
 const activeOption = ref<NormalOption>({ text: '', value: '' })
 
-// When we click on any option, it will be true. If it's true, the menu will not be closed until it is false,
-// This logic is useful to select the option before close the menu, and at the same time close the menu when the "focusout" event be triggered
-const clickedOption = ref<boolean>(false)
-
 /* Computed properties */
+const showMenu = computed(() => {
+  return isFocused.value
+})
+
 const baseTextFieldProps = computed(() => ({
 	label: props.label,
 	variant: props.variant,
@@ -132,10 +150,10 @@ const filteredOptions = computed<(NormalOption | GroupOption)[]>(() => {
 
 	const filterOption = (option: NormalOption): boolean => {
 		if (props.caseSensitiveFilter) {
-			return option.text.toLowerCase().includes(textField.value.text.toLowerCase())
+			return option.text.toLowerCase().includes(textField.value.toLowerCase())
 		}
 
-		return option.text.includes(textField.value.text)
+		return option.text.includes(textField.value)
 	}
 
 	return props.options.map((option: NormalOption | GroupOption) => {
@@ -154,62 +172,42 @@ const filteredOptions = computed<(NormalOption | GroupOption)[]>(() => {
 /* Methods */
 const handleMenu = (): void => {
 	if (props.disabled) return
-
-	showMenu.value = true
 }
 
 const getIsActive = (option: NormalOption): boolean => {
 	return activeOption.value.text === option.text
 }
 
+const handleEnter = () => {
+  if (activeOption.value) {
+    selectOption(activeOption.value)
+    isFocused.value = false
+  }
+}
+
 const selectOption = (option: NormalOption): void => {
 	if (props.disabled) return
 	const clonedOption = Object.assign({}, option)
-	textField.value = clonedOption
-	emits('update:modelValue', clonedOption)
-	clickedOption.value = true
-	showMenu.value = false
-}
-
-const maySelectOption = (): void => {
-	const option: NormalOption | undefined = props.options.flatMap(option => {
-		if ((option as GroupOption)?.group) {
-			return (option as GroupOption).items
-		}
-		return option as NormalOption
-	}).find((option: NormalOption) => option.text === textField.value.text)
-	if (option) {
-		selectOption(option)
-	} else {
-		textField.value = initialState
-	}
+	textModel.value = clonedOption
+  activeOption.value = clonedOption
+  valueField.value = clonedOption.value
+  textField.value = clonedOption.text
+  isFocused.value = false
 }
 
 const handleSlotMouseDown = (): void => {
-	clickedOption.value = true
 }
 
 const handleFocus = () => {
 	isFocused.value = true
 }
 
-const handleFocusOut = (): void => {
-	isFocused.value = false
-	if (clickedOption.value) {
-		clickedOption.value = false
-		return
-	}
-
-	maySelectOption()
-
-	showMenu.value = false
-}
-
-const handleEnter = () => {
-	if (activeOption.value) {
-		textField.value = activeOption.value
-	}
-	maySelectOption()
+const handleFocusOut = (e) => {
+  if (mouseOnMenu.value && showMenu.value) {
+    e.target.focus()
+  } else {
+    isFocused.value = false
+  }
 }
 
 const handleUp = () => {
@@ -325,15 +323,26 @@ const emits = defineEmits<Emits>()
 watch(
 	() => textField.value,
 	() => {
+    if (!valueField.value) isFocused.value = true
+    if (textModel.value.text && textField.value !== textModel.value.text) {
+      valueField.value = ''
+    }
+
 		emits('input', textField.value)
 
-		// If there is a search not already selected, the menu will be opened
-		if (textField.value.text) {
-			showMenu.value = !clickedOption.value
-			clickedOption.value = false
+    const values = props.options.flatMap((option: NormalOption | GroupOption) => {
+      if ((option as GroupOption)?.group) {
+        return (option as GroupOption).items.map((item: NormalOption) => item.value)
+      }
+      return (option as NormalOption)?.value
+    })
+		if (values.includes(valueField.value)) {
+			emits('update:modelValue', textModel.value)
+			emits('selectOption', textModel.value)
 		} else {
+      textModel.value = initialState
 			emits('update:modelValue', initialState)
-			showMenu.value = false
+      emits('selectOption', initialState)
 		}
 	}
 )
@@ -352,15 +361,6 @@ watch(
 	() => {
 		if (!showMenu.value) {
 			activeOption.value = { text: '', value: '' }
-		}
-	}
-)
-
-watch(
-	() => isFocused.value,
-	() => {
-		if (isFocused.value) {
-			showMenu.value = true
 		}
 	}
 )

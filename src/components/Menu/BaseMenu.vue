@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show" class="base-menu" :class="[customClass, `base-menu__${variant}`]" :style="customStyle as StyleValue">
+  <div @click="$emit('click')" v-if="show" class="base-menu" :class="[customClass, `base-menu__${variant}`]" :style="customStyle as StyleValue">
     <div class="menu-content">
       <div class="header">
         <span class="title" v-if="title">
@@ -27,7 +27,7 @@ import { Props } from '@/typing/BaseMenu'
 withDefaults(defineProps<Props>(), {
 	show: false,
 	backgroundColor: '#ffffff',
-	top: '1.9em',
+	top: '32px',
 	left: '0',
 	right: '0',
 	maxHeight: '200px',
