@@ -113,7 +113,7 @@ const props = withDefaults(defineProps<Props>(), {
 	minLength: 0,
 	required: false,
 	width: '',
-	height: '24px',
+	height: '32px',
 	style: '',
 	customStyle: '',
 	customStyleLabel: '',
@@ -287,12 +287,12 @@ const slots = useSlots()
       font-size: $size-small-1x;
       position: absolute;
       transition: top 100ms, left 1s;
-      top: 29%;
-      left: 4%;
+      top: 33%;
+      left: 12px;
 
       &-has-left-icon {
         transition: top 200ms, left 1s;
-        left: 15%;
+        left: 32px;
       }
 
       &-active {
@@ -324,12 +324,13 @@ const slots = useSlots()
       width: 100%;
       border: none;
       box-sizing: border-box;
-      padding: $size-small-3x $size-tiny-3x;
+      padding: $size-medium-1x $size-tiny-3x;
       border-bottom: 1px solid lighten($label-color, 10%);
       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
       &-underlined {
         outline: none;
+        padding: $size-small-1x $size-tiny-3x $size-tiny-1x $size-tiny-3x;
 
         &:focus {
           border-color: lighten($label-color, 20%);

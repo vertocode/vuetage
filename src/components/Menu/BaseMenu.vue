@@ -27,7 +27,7 @@ import { Props } from '@/typing/BaseMenu'
 withDefaults(defineProps<Props>(), {
 	show: false,
 	backgroundColor: '#ffffff',
-	top: '32px',
+	top: '40px',
 	left: '0',
 	right: '0',
 	maxHeight: '200px',
