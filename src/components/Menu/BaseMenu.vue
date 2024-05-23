@@ -40,8 +40,8 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const defaultTopStyle = computed(() => {
-  if (props.top !== '40px') return props.top
-  return props.variant === 'underlined' ? '30px' : props.top
+	if (props.top !== '40px') return props.top
+	return props.variant === 'underlined' ? '30px' : props.top
 })
 </script>
 

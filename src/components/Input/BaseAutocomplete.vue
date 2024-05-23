@@ -104,7 +104,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 /* States */
 const initialState = { text: '', value: '' }
-const textFieldRef = ref(null)
 const textModel = ref<NormalOption>(props.modelValue || initialState)
 const textField = ref<string>(textModel.value.text || '')
 const valueField = ref<string>(textModel.value.value || '')
@@ -112,11 +111,11 @@ const isFocused = ref<boolean>(false)
 const mouseOnMenu = ref(false)
 
 const handleMenuMouseDown = () => {
-  mouseOnMenu.value = true
+	mouseOnMenu.value = true
 }
 
 const handleMenuMouseLeave = () => {
-  mouseOnMenu.value = false
+	mouseOnMenu.value = false
 }
 
 // This is the active option when the user is pressing the key down, up, or tab to choose an option
@@ -124,7 +123,7 @@ const activeOption = ref<NormalOption>({ text: '', value: '' })
 
 /* Computed properties */
 const showMenu = computed(() => {
-  return isFocused.value
+	return isFocused.value
 })
 
 const baseTextFieldProps = computed(() => ({
@@ -179,20 +178,20 @@ const getIsActive = (option: NormalOption): boolean => {
 }
 
 const handleEnter = () => {
-  if (activeOption.value) {
-    selectOption(activeOption.value)
-    isFocused.value = false
-  }
+	if (activeOption.value) {
+		selectOption(activeOption.value)
+		isFocused.value = false
+	}
 }
 
 const selectOption = (option: NormalOption): void => {
 	if (props.disabled) return
 	const clonedOption = Object.assign({}, option)
 	textModel.value = clonedOption
-  activeOption.value = clonedOption
-  valueField.value = clonedOption.value
-  textField.value = clonedOption.text
-  isFocused.value = false
+	activeOption.value = clonedOption
+	valueField.value = clonedOption.value
+	textField.value = clonedOption.text
+	isFocused.value = false
 }
 
 const handleSlotMouseDown = (): void => {
@@ -202,12 +201,15 @@ const handleFocus = () => {
 	isFocused.value = true
 }
 
-const handleFocusOut = (e) => {
-  if (mouseOnMenu.value && showMenu.value) {
-    e.target.focus()
-  } else {
-    isFocused.value = false
-  }
+interface FocusEvent extends Event {
+  target: HTMLElement
+}
+const handleFocusOut = (e: FocusEvent) => {
+	if (mouseOnMenu.value && showMenu.value) {
+		e.target.focus()
+	} else {
+		isFocused.value = false
+	}
 }
 
 const handleUp = () => {
@@ -323,27 +325,27 @@ const emits = defineEmits<Emits>()
 watch(
 	() => textField.value,
 	() => {
-    if (!valueField.value) isFocused.value = true
-    if (textModel.value.text && textField.value !== textModel.value.text) {
-      valueField.value = ''
-    }
-    activeOption.value = initialState
+		if (!valueField.value) isFocused.value = true
+		if (textModel.value.text && textField.value !== textModel.value.text) {
+			valueField.value = ''
+		}
+		activeOption.value = initialState
 
 		emits('input', textField.value)
 
-    const values = props.options.flatMap((option: NormalOption | GroupOption) => {
-      if ((option as GroupOption)?.group) {
-        return (option as GroupOption).items.map((item: NormalOption) => item.value)
-      }
-      return (option as NormalOption)?.value
-    })
+		const values = props.options.flatMap((option: NormalOption | GroupOption) => {
+			if ((option as GroupOption)?.group) {
+				return (option as GroupOption).items.map((item: NormalOption) => item.value)
+			}
+			return (option as NormalOption)?.value
+		})
 		if (values.includes(valueField.value)) {
 			emits('update:modelValue', textModel.value)
 			emits('selectOption', textModel.value)
 		} else {
-      textModel.value = initialState
+			textModel.value = initialState
 			emits('update:modelValue', initialState)
-      emits('selectOption', initialState)
+			emits('selectOption', initialState)
 		}
 	}
 )
