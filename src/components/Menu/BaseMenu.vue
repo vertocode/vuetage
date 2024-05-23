@@ -9,7 +9,7 @@
             <i v-if="rightIcon" :class="rightIcon"></i>
           </slot>
         </span>
-        <slot name="close-button">
+        <slot name="closeButton">
           <button v-if="showCloseButton" class="close-button" @click="$emit('close')">
             <i :class="closeIcon"></i>
           </button>

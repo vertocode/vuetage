@@ -6,4 +6,6 @@ export interface Props {
     rightIcon?: string
     customStyle?: CustomStyle
     customClass?: string
+    showDropdown?: boolean
+    defaultOpen?: boolean
 }
