@@ -287,7 +287,7 @@ const slots = useSlots()
       font-size: $size-small-1x;
       position: absolute;
       transition: top 100ms, left 1s;
-      top: 25%;
+      top: 29%;
       left: 4%;
 
       &-has-left-icon {

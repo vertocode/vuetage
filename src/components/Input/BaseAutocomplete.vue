@@ -327,6 +327,7 @@ watch(
     if (textModel.value.text && textField.value !== textModel.value.text) {
       valueField.value = ''
     }
+    activeOption.value = initialState
 
 		emits('input', textField.value)
 
