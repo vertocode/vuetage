@@ -41,7 +41,7 @@ const Template: Story = {
                 }
             }
         },
-        template: `<div style="width: 200px;"><BaseSelect v-bind="args" /></div>`
+        template: `<div style="width: 300px;"><BaseSelect v-bind="args" /></div>`
     })
 }
 

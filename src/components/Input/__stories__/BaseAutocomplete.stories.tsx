@@ -55,7 +55,7 @@ const Template: Story = {
                 }
             }
         },
-        template: `<div style="max-width: 500px;"><BaseAutocomplete v-bind="args" /></div>`
+        template: `<div style="max-width: 300px;"><BaseAutocomplete v-bind="args" /></div>`
     })
 }
 

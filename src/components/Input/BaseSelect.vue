@@ -36,7 +36,7 @@
       </template>
     </BaseTextField>
     <slot name="menu" v-bind="{ show: showOptions, options }">
-      <BaseMenu :show="showOptions" :custom-style="menuStyle">
+      <BaseMenu :show="showOptions" :custom-style="menuStyle" :variant="variant">
         <div v-for="(option, index) in options" :key="index">
           <BaseGroup
               :custom-style="groupStyle"

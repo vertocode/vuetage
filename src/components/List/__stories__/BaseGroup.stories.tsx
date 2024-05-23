@@ -41,7 +41,7 @@ const Template: Story = {
                 }
             }
         },
-        template: `<div style="width: 200px;"><BaseGroup :title="args.title" v-bind="args" /></div>`
+        template: `<div style="width: 300px;"><BaseGroup :title="args.title" v-bind="args" /></div>`
     })
 }
 
@@ -55,7 +55,7 @@ export const Default = {
 export const GroupWithItems = {
     render: () => ({
         components: { BaseGroup, BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
           <BaseGroup title="Phones">
             <BaseItem>Item 1</BaseItem>
             <BaseItem active>Item 2</BaseItem>
@@ -68,7 +68,7 @@ export const GroupWithItems = {
 export const LeftIcon = {
     render: () => ({
         components: { BaseGroup, BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
           <BaseGroup leftIcon="fa fa-check" title="TO DO">
             <BaseItem active>Task 1</BaseItem>
             <BaseItem active>Task 2</BaseItem>
@@ -81,7 +81,7 @@ export const LeftIcon = {
 export const RightIcon = {
     render: () => ({
         components: { BaseGroup, BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
           <BaseGroup rightIcon="fa fa-trash" title="Bin">
             <BaseItem>Folder 1</BaseItem>
             <BaseItem active>Folder 2</BaseItem>
@@ -94,7 +94,7 @@ export const RightIcon = {
 export const CustomStyle = {
     render: () => ({
         components: { BaseGroup, BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
           <BaseGroup title="Any custom Style" custom-style="background-color: red; color: white; borderRadius: 15px;">
             <BaseItem>Item 1</BaseItem>
             <BaseItem active>Item 2</BaseItem>

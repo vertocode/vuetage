@@ -98,7 +98,7 @@ const Template: Story = {
                 }
             }
         },
-        template: '<div style="width: 200px"><BaseTextField v-model="modelValue" v-bind="args">Default</BaseTextField></div>'
+        template: '<div style="width: 300px"><BaseTextField v-model="modelValue" v-bind="args">Default</BaseTextField></div>'
     }),
     args: {
         ...BaseTextField.args

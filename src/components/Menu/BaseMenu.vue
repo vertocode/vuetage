@@ -21,10 +21,10 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, withDefaults, StyleValue } from 'vue'
+import { defineProps, withDefaults, StyleValue, computed } from 'vue'
 import { Props } from '@/typing/BaseMenu'
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
 	show: false,
 	backgroundColor: '#ffffff',
 	top: '40px',
@@ -38,6 +38,11 @@ withDefaults(defineProps<Props>(), {
 	closeIcon: 'fas fa-times',
 	variant: 'default'
 })
+
+const defaultTopStyle = computed(() => {
+  if (props.top !== '40px') return props.top
+  return props.variant === 'underlined' ? '30px' : props.top
+})
 </script>
 
 <style lang="scss" scoped>
@@ -45,7 +50,7 @@ withDefaults(defineProps<Props>(), {
 
 .base-menu {
   position: absolute;
-  top: v-bind(top);
+  top: v-bind(defaultTopStyle);
   left: v-bind(left);
   bottom: v-bind(bottom);
   right: v-bind(right);

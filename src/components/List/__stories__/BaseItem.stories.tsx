@@ -21,7 +21,7 @@ const Template: Story = {
                 }
             }
         },
-        template: `<div style="width: 200px;"><BaseItem >Item <BaseItem /></div>`
+        template: `<div style="width: 300px;"><BaseItem >Item <BaseItem /></div>`
     })
 }
 
@@ -35,7 +35,7 @@ export const Default = {
 export const LeftIcon = {
     render: () => ({
         components: { BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
             <BaseItem leftIcon="fa fa-check">Item with left icon</BaseItem>
         </div>`
     })
@@ -44,7 +44,7 @@ export const LeftIcon = {
 export const RightIcon = {
     render: () => ({
         components: { BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
         <BaseItem rightIcon="fa fa-check">Item with right icon</BaseItem>
         </div>`
     })
@@ -53,7 +53,7 @@ export const RightIcon = {
 export const Cursor = {
     render: () => ({
         components: { BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
         <BaseItem cursor="help">Help cursor when hover here</BaseItem>
         </div>`
     })
@@ -62,7 +62,7 @@ export const Cursor = {
 export const Active = {
     render: () => ({
         components: { BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
         <BaseItem active>Active item</BaseItem>
         </div>`
     })
@@ -72,7 +72,7 @@ export const Active = {
 export const ActiveTextColor = {
     render: () => ({
         components: { BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
         <BaseItem active activeTextColor="blue">Blue active text color when it's active</BaseItem>
         </div>`
     })
@@ -81,7 +81,7 @@ export const ActiveTextColor = {
 export const ActiveBgColor = {
     render: () => ({
         components: { BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
         <BaseItem active activeBgColor="yellow">Yellow active background color when it's active</BaseItem>
         </div>`
     })
@@ -90,7 +90,7 @@ export const ActiveBgColor = {
 export const CustomStyle = {
     render: () => ({
         components: { BaseItem },
-        template: `<div style="width: 200px;">
+        template: `<div style="width: 300px;">
         <BaseItem customStyle="color: white; background-color: red;">Any custom style</BaseItem>
         </div>`
     })
