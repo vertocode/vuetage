@@ -1,7 +1,7 @@
 import type  { Meta, StoryObj } from '@storybook/vue3'
-import { BaseSelect, BaseButton, BaseTextField } from '@/components'
+import { BaseSelect, BaseButton, BaseTextField, BaseAutocomplete } from '@/components'
 import { reactive, ref, computed } from 'vue'
-import { NormalOption } from '@/typing/BaseSelect'
+import { NormalOption, GroupOption } from '@/typing/Option'
 
 const meta: Meta = {
     title: 'Doc/FormExample',
@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>
 
 const Template: Story = {
     render: (args) => ({
-        components: { BaseTextField, BaseButton, BaseSelect },
+        components: { BaseTextField, BaseButton, BaseSelect, BaseAutocomplete },
         setup() {
             const loading = ref(false)
             const submit = () => {
@@ -31,10 +31,14 @@ const Template: Story = {
                 country: {
                     text: '',
                     value: ''
+                },
+                state: {
+                    text: '',
+                    value: ''
                 }
             })
             const disabled = computed(() => {
-                return !data.name || !data.email || !data.country.value
+                return !data.name || !data.email || !data.country.value || !data.state.value
             })
             const countries: NormalOption[] = [
                 { text: 'United States', value: 'us' },
@@ -42,11 +46,39 @@ const Template: Story = {
                 { text: 'Mexico', value: 'mx' },
             ]
 
+            const states: GroupOption[] = [
+                {
+                    group: 'United States',
+                    items: [
+                        { text: 'California', value: 'ca' },
+                        { text: 'Texas', value: 'tx' },
+                        { text: 'Florida', value: 'fl' }
+                    ]
+                },
+                {
+                    group: 'Canada',
+                    items: [
+                        { text: 'Ontario', value: 'on' },
+                        { text: 'Quebec', value: 'qc' },
+                        { text: 'British Columbia', value: 'bc' }
+                    ]
+                },
+                {
+                    group: 'Mexico',
+                    items: [
+                        { text: 'Mexico City', value: 'mc' },
+                        { text: 'Jalisco', value: 'jl' },
+                        { text: 'Nuevo Leon', value: 'nl' }
+                    ]
+                }
+            ]
+
             return {
                 data,
                 disabled,
                 loading,
                 countries,
+                states,
                 submit,
                 args
             }
@@ -68,6 +100,12 @@ const Template: Story = {
                   label="Country"
                   :options="countries"
                   v-model="data.country"
+              />
+              <BaseAutocomplete 
+                label="States"
+                :options="states"
+                leftIcon="fa fa-map-marker"
+                v-model="data.state"
               />
               <BaseButton
                   rightIcon="fa fa-rocket"
