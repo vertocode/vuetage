@@ -15,8 +15,7 @@
           <span v-if="!(loading && !useBorderLoading)" class="right-icon" @click="handleMenu">
             <i :class="rightIcon" v-if="rightIcon"></i>
             <i
-                class="fa fa-caret-down"
-                style="transform: rotate(180deg);"
+                class="fa fa-caret-up"
                 :style="{
                   color: variant === 'dark' ? 'white' : 'black',
                   opacity: disabled ? 0.5 : 1
@@ -128,6 +127,14 @@ const cursorStyle = computed(() => {
 	return 'pointer'
 })
 
+const iconTopStyle = computed(() => {
+	if (props.variant === 'underlined') {
+		return '10%'
+	}
+
+	return '50%'
+})
+
 /* Methods */
 const getIsActive = (option: NormalOption): boolean => {
 	return selectedOptions.value.map(({ value }) => value).includes(option.value)
@@ -180,7 +187,11 @@ onMounted(() => {
     cursor: v-bind(cursorStyle);
   }
 
-  :deep(.right-icon) {
+  .right-icon {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: v-bind(iconTopStyle);
+    right: 0;
     cursor: v-bind(cursorStyle);
   }
 }

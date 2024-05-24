@@ -287,26 +287,22 @@ const slots = useSlots()
       font-size: $size-small-1x;
       position: absolute;
       transition: top 100ms, left 1s;
-      top: 33%;
-      left: 12px;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 24px;
 
       &-has-left-icon {
         transition: top 200ms, left 1s;
-        left: 32px;
+        left: 44px;
       }
 
       &-active {
         transition: top 200ms;
-        top: -22%;
+        top: -10%;
         font-size: 0.7em;
         font-weight: bold;
 
-        &.label-outlined, &.label-dark {
-          top: -30%;
-        }
-
         &.label-dark {
-          left: 0;
           background-color: lighten($dark-base-color, 5%);
           border: 1px solid lighten($dark-label-color, 10%);
           border-bottom: none;
@@ -398,9 +394,9 @@ const slots = useSlots()
 
     &-left-icon {
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 8px;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 16px;
       display: flex;
       align-items: center;
     }
@@ -412,6 +408,19 @@ const slots = useSlots()
       right: 8px;
       display: flex;
       align-items: center;
+    }
+  }
+}
+
+// Specific styles for underlined variant
+.base-text-field-underlined {
+  .base-text-field-container-input {
+    &-left-icon, &-label, &-right-icon {
+      top: 60%;
+    }
+
+    &-label-active {
+      top: 12%;
     }
   }
 }

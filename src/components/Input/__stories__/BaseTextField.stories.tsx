@@ -130,6 +130,7 @@ export const Underlined = {
     ...Template,
     args: {
         ...Template.args,
+        leftIcon: 'fa fa-fire',
         variant: 'underlined'
     }
 }
