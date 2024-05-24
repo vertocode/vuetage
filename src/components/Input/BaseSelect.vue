@@ -189,7 +189,7 @@ onMounted(() => {
 
   .right-icon {
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
     top: v-bind(iconTopStyle);
     right: 0;
     cursor: v-bind(cursorStyle);

@@ -287,13 +287,13 @@ const slots = useSlots()
       font-size: $size-small-1x;
       position: absolute;
       transition: top 100ms, left 1s;
-      transform: translate(-50%, -50%);
+      transform: translate(0, -50%);
       top: 50%;
-      left: 24px;
+      left: 8px;
 
       &-has-left-icon {
         transition: top 200ms, left 1s;
-        left: 44px;
+        left: 30px;
       }
 
       &-active {
@@ -394,9 +394,9 @@ const slots = useSlots()
 
     &-left-icon {
       position: absolute;
-      transform: translate(-50%, -50%);
+      transform: translate(0, -50%);
       top: 50%;
-      left: 16px;
+      left: 8px;
       display: flex;
       align-items: center;
     }
