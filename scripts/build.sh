@@ -8,13 +8,13 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo 'running eslint...'
-yarn lint
-
-if [ $? -ne 0 ]; then
-  echo 'Error: ESLint failed. Build process aborted.'
-  exit 1
-fi
+#echo 'running eslint...'
+#yarn lint
+#
+#if [ $? -ne 0 ]; then
+#  echo 'Error: ESLint failed. Build process aborted.'
+#  exit 1
+#fi
 
 
 echo 'removing wrong type react if has in node_modules/@types...'

@@ -50,7 +50,7 @@ const cursor = computed(() => {
   gap: 1em;
 
   &:hover {
-    background-color: $base-color;
+    background-color: var(--base-color);
   }
 
   &.active {

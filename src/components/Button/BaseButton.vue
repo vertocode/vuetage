@@ -102,10 +102,10 @@ const classes = computed(() => {
 @import '@/components/variables.scss';
 
 .base-button {
-  padding: $size-tiny-2x $size-small-2x;
+  padding: var(--size-tiny-2x) var(--size-small-2x);
   border: 1px solid transparent;
   color: #fff;
-  border-radius: $size-tiny-1x;
+  border-radius: var(--size-tiny-1x);
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -117,87 +117,87 @@ const classes = computed(() => {
   }
 
   &.btn-primary {
-    background-color: $primary;
-    border-color: $border-primary;
+    background-color: var(--primary-color);
+    border-color: var(--border-primary-color);
 
     &.base-button-hover:hover {
-      background-color: $primary-hover;
-      border-color: $border-primary-hover;
+      background-color: var(--primary-color-hover);
+      border-color: var(--border-primary-color)-hover;
     }
   }
 
   &.btn-success {
-    background-color: $success;
-    border-color: $border-success;
+    background-color: var(--success);
+    border-color: var(--border-success);
 
     &.base-button-hover:hover {
-      background-color: $success-hover;
-      border-color: $border-success-hover;
+      background-color: var(--success)-hover;
+      border-color: var(--border-success-hover);
     }
   }
 
   &.btn-danger {
-    background-color: $danger;
-    border-color: $border-danger;
+    background-color: var(--danger);
+    border-color: var(--border-danger);
 
     &.base-button-hover:hover {
-      background-color: $danger-hover;
-      border-color: $border-danger-hover;
+      background-color: var(--danger-hover);
+      border-color: var(--border-danger-hover);
     }
   }
 
   &.btn-outline-primary {
-    background-color: $outline-primary;
-    border-color: $border-outline-primary;
-    color: $outline-primary-color;
+    background-color: var(--outline-primary);
+    border-color: var(--border-outline-primary);
+    color: var(--outline-primary-color);
 
     &.base-button-hover:hover {
-      background-color: $outline-primary-hover;
-      color: $outline-primary-color-hover;
+      background-color: var(--outline-primary)-hover;
+      color: var(--outline-primary)-color-hover;
     }
   }
 
   &.btn-outline-success {
-    background-color: $outline-success;
-    border-color: $outline-success-color;
-    color: $border-outline-success;
+    background-color: var(--outline-success);
+    border-color: var(--outline-success-color);
+    color: var(--border-outline-success);
 
     &.base-button-hover:hover {
-      background-color: $outline-success-hover;
-      color: $outline-success-color-hover;
+      background-color: var(--outline-success-hover);
+      color: var(--outline-success-color-hover);
     }
   }
 
   &.btn-outline-danger {
-    background-color: $outline-danger;
-    border-color: $border-outline-danger;
-    color: $outline-danger-color;
+    background-color: var(--outline-danger);
+    border-color: var(--border-outline-danger);
+    color: var(--outline-danger-color);
 
     &.base-button-hover:hover {
-      background-color: $outline-danger-hover;
-      color: $outline-danger-color-hover;
+      background-color: var(--outline-danger-hover);
+      color: var(--outline-danger-color-hover);
     }
   }
 
-  &.btn-dark {
-    background-color: $dark;
-    border-color: $border-dark;
-    color: $dark-color;
+  .btn-dark {
+    background-color: var(--dark);
+    border-color: var(--border-dark);
+    color: var(--dark-color);
 
     &.base-button-hover:hover {
-      background-color: $dark-hover;
-      border-color: $border-dark-hover;
+      background-color: var(--dark-hover);
+      border-color: var(--border-dark-hover);
     }
   }
 
-  &.btn-outline-dark {
-    background-color: $outline-dark;
-    border-color: $border-outline-dark;
-    color: $outline-dark-color;
+  .btn-outline-dark {
+    background-color: var(--outline-dark);
+    border-color: var(--border-outline-dark);
+    color: var(--outline-dark-color);
 
     &.base-button-hover:hover {
-      background-color: $outline-dark-hover;
-      color: $outline-dark-color-hover;
+      background-color: var(--outline-dark-hover);
+      color: var(--outline-dark-color-hover);
     }
   }
 

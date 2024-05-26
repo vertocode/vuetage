@@ -66,7 +66,7 @@ const defaultTopStyle = computed(() => {
   &__outlined {
     border-radius: 0.4em;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    border: 1px solid $label-color;
+    border: 1px solid var(--label-color);
   }
 
   &__underlined {
@@ -75,9 +75,9 @@ const defaultTopStyle = computed(() => {
   }
 
   &__dark {
-    background-color: $dark-base-color;
-    color: $dark-label-color;
-    border-color: $border-dark;
+    background-color: var(--dark-base-color);
+    color: var(--dark-label-color);
+    border-color: var(--border-dark);
   }
 
   .menu-content {

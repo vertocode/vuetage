@@ -1,82 +1,83 @@
-/* === Spacing variables === */
-$size-tiny-1x: 0.2em;
-$size-tiny-2x: 0.4em;
-$size-tiny-3x: 0.6em;
-$size-small-1x: 0.8em;
-$size-small-2x: 1em;
-$size-small-3x: 1.2em;
-$size-medium-1x: 1.5em;
-$size-medium-2x: 1.8em;
-$size-medium-3x: 2em;
-$size-medium-4x: 2.1em;
-$size-large-1x: 2.3em;
-$size-large-2x: 2.5em;
-$size-large-3x: 3em;
+:root {
+  /* === Base colors variables === */
+  --base-color: #F6F6F6;
+  --label-color: #7F7F7F;
+  --error-color: #D32F2F;
+  --disabled-color: #BDBDBD;
+  --active-text-color: #424242;
 
-/* === Base colors variables === */
-$base-color: #F6F6F6;
-$label-color: #7F7F7F;
-$error-color: #D32F2F;
-$disabled-color: #BDBDBD;
-$active-bg-color: #BDBDBD;
-$active-text-color: #424242;
+  /* === Spacing variables === */
+  --size-tiny-1x: 0.2em;
+  --size-tiny-2x: 0.4em;
+  --size-tiny-3x: 0.6em;
+  --size-small-1x: 0.8em;
+  --size-small-2x: 1em;
+  --size-small-3x: 1.2em;
+  --size-medium-1x: 1.5em;
+  --size-medium-2x: 1.8em;
+  --size-medium-3x: 2em;
+  --size-medium-4x: 2.1em;
+  --size-large-1x: 2.3em;
+  --size-large-2x: 2.5em;
+  --size-large-3x: 3em;
 
-/* === Dark colors variables === */
-$dark-base-color: #2D2D2D;
-$dark-label-color: #B3B3B3;
-$dark-error-color: #FF4C4C;
-$dark-disabled-color: #666666;
+  /* === Dark colors variables === */
+  --dark-base-color: #2D2D2D;
+  --dark-label-color: #B3B3B3;
+  --dark-error-color: #FF4C4C;
+  --dark-disabled-color: #666666;
 
-/* === Variant colors === */
-// Primary
-$primary: #1E88E5;
-$border-primary: #1E88E5;
-$primary-hover: #1565C0;
-$border-primary-hover: #1565C0;
+  /* === Variant colors === */
+  /* Primary */
+  --primary-color: #1E88E5;
+  --primary-color-hover: #1565C0;
+  --border-primary: #1E88E5;
+  --border-primary-hover: #1565C0;
 
-// Success
-$success: #43A047;
-$border-success: #43A047;
-$success-hover: #388E3C;
-$border-success-hover: #388E3C;
+  /* Success */
+  --success: #43A047;
+  --border-success: #43A047;
+  --success-hover: #388E3C;
+  --border-success-hover: #388E3C;
 
-// Danger
-$danger: #D32F2F;
-$border-danger: #D32F2F;
-$danger-hover: #C62828;
-$border-danger-hover: #C62828;
+  /* Danger */
+  --danger: #D32F2F;
+  --border-danger: #D32F2F;
+  --danger-hover: #C62828;
+  --border-danger-hover: #C62828;
 
-// Dark
-$dark: #2D2D2D;
-$border-dark: #444444;
-$dark-color: #B3B3B3;
-$dark-hover: #424242;
-$border-dark-hover: #555555;
+  /* Dark */
+  --dark: #2D2D2D;
+  --border-dark: #444444;
+  --dark-color: #B3B3B3;
+  --dark-hover: #424242;
+  --border-dark-hover: #555555;
 
-// Outline Primary
-$outline-primary: #transparent;
-$outline-primary-color: #1E88E5;
-$border-outline-primary: #1E88E5;
-$outline-primary-hover: rgba(30, 136, 229, 0.2);
-$outline-primary-color-hover: #1E88E5;
+  /* Outline Primary */
+  --outline-primary: #transparent;
+  --outline-primary-color: #1E88E5;
+  --border-outline-primary: #1E88E5;
+  --outline-primary-hover: rgba(30, 136, 229, 0.2);
+  --outline-primary-color-hover: #1E88E5;
 
-// Outline Success
-$outline-success: #transparent;
-$outline-success-color: #43A047;
-$border-outline-success: #43A047;
-$outline-success-hover: rgba(67, 160, 71, 0.2);
-$outline-success-color-hover: #43A047;
+  /* Outline Success */
+  --outline-success: #transparent;
+  --outline-success-color: #43A047;
+  --border-outline-success: #43A047;
+  --outline-success-hover: rgba(67, 160, 71, 0.2);
+  --outline-success-color-hover: #43A047;
 
-// Outline Danger
-$outline-danger: #transparent;
-$border-outline-danger: #D32F2F;
-$outline-danger-color: #D32F2F;
-$outline-danger-hover: rgba(211, 47, 47, 0.2);
-$outline-danger-color-hover: #D32F2F;
+  /* Outline Danger */
+  --outline-danger: #transparent;
+  --border-outline-danger: #D32F2F;
+  --outline-danger-color: #D32F2F;
+  --outline-danger-hover: rgba(211, 47, 47, 0.2);
+  --outline-danger-color-hover: #D32F2F;
 
-// Outline Dark
-$outline-dark: #transparent;
-$border-outline-dark: #444444;
-$outline-dark-color: #B3B3B3;
-$outline-dark-hover: rgba(150, 150, 150, 0.5);
-$outline-dark-color-hover: #B3B3B3;
+  /* Outline Dark */
+  --outline-dark: #transparent;
+  --border-outline-dark: #444444;
+  --outline-dark-color: #B3B3B3;
+  --outline-dark-hover: rgba(150, 150, 150, 0.5);
+  --outline-dark-color-hover: #B3B3B3;
+}

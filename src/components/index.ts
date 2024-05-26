@@ -19,4 +19,3 @@ export type { Props as BaseItemProps } from '../typing/BaseItem'
 export type { Props as BaseMenuProps } from '../typing/BaseMenu'
 export type { Props as BaseSelectProps } from '../typing/BaseSelect'
 export type { NormalOption, GroupOption } from '@/typing/Option'
-

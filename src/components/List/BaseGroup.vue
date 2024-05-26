@@ -62,7 +62,7 @@ const showOptions = ref<boolean>(props?.defaultOpen || true)
     align-items: center;
     gap: 1em;
     padding: 10px;
-    border-bottom: 1px solid $base-color;
+    border-bottom: 1px solid var(--base-color);
     cursor: pointer;
 
     &-container {
@@ -89,7 +89,7 @@ const showOptions = ref<boolean>(props?.defaultOpen || true)
     }
 
     &:hover {
-      background-color: $base-color;
+      background-color: var(--base-color);
     }
   }
 }

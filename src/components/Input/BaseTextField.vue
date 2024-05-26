@@ -264,11 +264,11 @@ const slots = useSlots()
   [disabled] {
     opacity: 0.7;
     cursor: not-allowed;
-    background-color: lighten($disabled-color, 10%);
+    background-color: var(--disabled-color)
   }
 
   &-has-label {
-    margin-top: $size-small-1x;
+    margin-top: var(--size-small-1x);
   }
 
   &-loading-border {
@@ -282,9 +282,9 @@ const slots = useSlots()
     position: relative;
 
     &-label {
-      color: darken($label-color, 10%);
+      color: var(--label-color);
       pointer-events: none;
-      font-size: $size-small-1x;
+      font-size: var(--size-small-1x);
       position: absolute;
       transition: top 100ms, left 1s;
       transform: translate(0, -50%);
@@ -303,8 +303,8 @@ const slots = useSlots()
         font-weight: bold;
 
         &.label-dark {
-          background-color: lighten($dark-base-color, 5%);
-          border: 1px solid lighten($dark-label-color, 10%);
+          background-color: var(--dark-base-color), 5%;
+          border: 1px solid var(--dark-label-color), 10%;
           border-bottom: none;
           padding: 2px 8px 0 8px;
           border-radius: 8px 8px 0 0;
@@ -312,7 +312,7 @@ const slots = useSlots()
       }
 
       &.label-dark {
-        color: lighten($dark-label-color, 10%);
+        color: var(--dark-label-color), 10%;
       }
     }
 
@@ -320,44 +320,44 @@ const slots = useSlots()
       width: 100%;
       border: none;
       box-sizing: border-box;
-      padding: $size-medium-1x $size-tiny-3x;
-      border-bottom: 1px solid lighten($label-color, 10%);
+      padding: var(--size-medium-1x) var(--size-tiny-3x);
+      border-bottom: 1px solid var(--label-color), 10%;
       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
       &-underlined {
         outline: none;
-        padding: $size-small-1x $size-tiny-3x $size-tiny-1x $size-tiny-3x;
+        padding: var(--size-small-1x) var(--size-tiny-3x) var(--size-tiny-1x) var(--size-tiny-3x);
 
         &:focus {
-          border-color: lighten($label-color, 20%);
+          border-color: var(--label-color), 20%;
         }
       }
 
       &-has-base-color {
-        background-color: $base-color;
+        background-color: var(--base-color);
         border-radius: 3px;
-        color: darken($label-color, 10%);
+        color: var(--label-color);
 
         &:focus {
           outline: none;
-          border-color: darken($dark-label-color, 10%);;
+          border-color: var(--dark-label-color);
         }
       }
 
       &-has-dark-color {
-        background-color: lighten($dark-base-color, 5%);
-        border: 1px solid lighten($dark-label-color, 10%);
+        background-color: var(--dark-base-color);
+        border: 1px solid var(--dark-label-color);
         border-radius: 3px;
-        color: lighten($label-color, 50%);
+        color: var(--label-color), 50%;
 
         &:focus {
           outline: none;
-          border-color: lighten($label-color, 10%);
+          border-color: var(--label-color);
         }
       }
 
       &-has-spinner {
-        padding-right: $size-large-2x;
+        padding-right: var(--size-large-2x);
         box-sizing: border-box;
       }
 
@@ -367,16 +367,16 @@ const slots = useSlots()
       }
 
       &-has-right-icon {
-        padding-right: $size-large-1x;
+        padding-right: var(--size-large-1x);
         box-sizing: border-box;
       }
 
       &-border {
         &:not(.has-dark-color) {
-          border: 1px solid lighten($label-color, 10%);
+          border: 1px solid var(--label-color);
         }
         &:not(.has-base-color) {
-          border: 1px solid lighten($dark-label-color, 10%);
+          border: 1px solid var(--dark-label-color);
         }
         border-radius: 0.4em;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -384,10 +384,10 @@ const slots = useSlots()
       }
 
       &-error {
-        border-color: lighten($error-color, 10%);
+        border-color: var(--error-color);
 
         &:focus {
-          border-color: lighten($error-color, 20%);
+          border-color: var(--error-color);
         }
       }
     }
@@ -426,9 +426,9 @@ const slots = useSlots()
 }
 
 .error-message {
-  color: $error-color;
+  color: var(--error-color);
   font-size: 0.7em;
-  margin-left: $size-tiny-3x;
+  margin-left: var(--size-tiny-3x);
   font-weight: bolder;
   display: inline-block;
 }
