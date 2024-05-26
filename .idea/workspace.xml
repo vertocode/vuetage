@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/loader.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/BaseItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/variables.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +179,7 @@
       <workItem from="1716493038390" duration="4387000" />
       <workItem from="1716552738233" duration="615000" />
       <workItem from="1716580167951" duration="4092000" />
-      <workItem from="1716654259990" duration="9546000" />
+      <workItem from="1716654259990" duration="10185000" />
     </task>
     <servers />
   </component>
