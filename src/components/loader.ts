@@ -65,11 +65,14 @@ interface UserStyleConfig {
 }
 
 interface UserConfig {
-    theme: UserStyleConfig
+    theme?: UserStyleConfig
 }
 
 export const getSCSSVariables = (userStyleConfig: UserStyleConfigVariables) => {
-    if (!userStyleConfig) return ''
+    if (!userStyleConfig) {
+        console.error('[Vuetage] No user style config found.')
+        return ''
+    }
     const scssVariables = Object.entries(userStyleConfig)
         .map(([key, value]) => `--${key.replaceAll('_', '-').replace(/([A-Z])/g, '-$1').toLowerCase()}: ${value};`)
         .join('\n')
@@ -78,16 +81,21 @@ export const getSCSSVariables = (userStyleConfig: UserStyleConfigVariables) => {
 }
 
 export const changeTheme = (userStyleConfig: UserStyleConfig) => {
-    if (!userStyleConfig?.variables) return
-    const scssVariables = getSCSSVariables(userStyleConfig.variables)
+    if (userStyleConfig?.variables) {
+        const scssVariables = getSCSSVariables(userStyleConfig.variables)
 
-    const style = document?.createElement('style')
-    if (!style?.textContent) return
-    style.textContent = scssVariables
-    document.head.appendChild(style)
+        const style = document?.createElement('style')
+        if (!style?.textContent) {
+            console.error('[Vuetage] No style found.')
+            return
+        }
+        style.textContent = scssVariables
+        document.head.appendChild(style)
+    }
 }
 
 export const defineVuetageConfig = async (userConfig: UserConfig) => {
-    if (!userConfig?.theme) return
-    changeTheme(userConfig.theme)
+    if (userConfig?.theme) {
+        changeTheme(userConfig.theme)
+    }
 }
