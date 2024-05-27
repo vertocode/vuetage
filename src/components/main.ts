@@ -9,7 +9,10 @@ import {
 	BaseSelect,
 	BaseItem,
 	BaseGroup,
-	BaseMenu
+	BaseMenu,
+	changeTheme,
+	getSCSSVariables,
+	defineVuetageConfig
 } from '@/components'
 
 export default {
@@ -33,5 +36,8 @@ export {
 	BaseSelect,
 	BaseItem,
 	BaseGroup,
-	BaseMenu
+	BaseMenu,
+	changeTheme,
+	getSCSSVariables,
+	defineVuetageConfig
 }
