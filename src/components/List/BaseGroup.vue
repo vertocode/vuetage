@@ -18,18 +18,24 @@
           <div class="title-container">
             <slot name="title">
               <slot name="leftIcon">
-                <FontAwesomeIcon v-if="leftIcon" :icon="leftIcon" />
+                <i v-if="leftIcon" :class="leftIcon"></i>
               </slot>
               <div class="title">{{ title }}</div>
               <slot name="rightIcon">
-                <FontAwesomeIcon v-if="rightIcon" :icon="rightIcon" />
+                <i v-if="rightIcon" :class="rightIcon"></i>
               </slot>
             </slot>
           </div>
           <div class="dropdown-icon-container" v-if="showDropdown">
             <slot name="dropdownIcon">
-              <FontAwesomeIcon v-if="showOptions" icon="caret-up" />
-              <FontAwesomeIcon v-else icon="caret-down" />
+              <i
+                  class="fa fa-caret-down"
+                  v-if="showOptions"
+              ></i>
+              <i
+                  class="fa fa-caret-up"
+                  v-else
+              ></i>
             </slot>
           </div>
         </div>

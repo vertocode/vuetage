@@ -20,22 +20,26 @@
 
       <span v-else class="base-button-content">
         <slot name="leftIcon">
-          <FontAwesomeIcon v-if="leftIcon" :icon="leftIcon" data-test-id="left-icon" />
+          <i
+              v-if="leftIcon && !hideLeftIcon"
+              :class="leftIcon"
+              data-test-id="left-icon"
+          ></i>
         </slot>
 
         <slot>Label</slot>
 
         <slot name="rightIcon">
-          <FontAwesomeIcon
+          <i
               v-if="disabled && !hideRightIcon"
-              icon="fa fa-lock"
+              class="fa fa-lock"
               data-test-id="right-icon-lock"
-          />
-           <FontAwesomeIcon
-               v-else-if="rightIcon && !hideRightIcon"
-               :icon="rightIcon"
-               data-test-id="right-icon"
-           />
+          ></i>
+          <i
+              v-else-if="rightIcon && !hideRightIcon"
+              :class="rightIcon"
+              data-test-id="right-icon"
+          ></i>
         </slot>
       </span>
     </button>
@@ -46,7 +50,6 @@
 import { computed } from 'vue'
 import { Props } from '@/typing/BaseButton'
 import Spinner from '@/components/Spinner/Spinner.vue'
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 const props = withDefaults(defineProps<Props>(), {
 	disabled: false,

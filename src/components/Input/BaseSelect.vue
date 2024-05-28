@@ -13,23 +13,23 @@
       <template #rightIcon>
         <slot name="rightIcon" v-bind="{ show: showOptions, disabled }">
           <span v-if="!(loading && !useBorderLoading)" class="right-icon" @click="handleMenu">
-            <FontAwesomeIcon v-if="rightIcon" :icon="rightIcon" />
-            <FontAwesomeIcon
-                icon="fa fa-caret-up"
+         <i :class="rightIcon" v-if="rightIcon"></i>
+            <i
+                class="fa fa-caret-up"
                 :style="{
                   color: variant === 'dark' ? 'white' : 'black',
                   opacity: disabled ? 0.5 : 1
                 }"
                 v-else-if="showOptions"
-            />
-            <FontAwesomeIcon
-                icon="fa fa-caret-down"
+            ></i>
+            <i
+                class="fa fa-caret-down"
                 :style="{
                   color: variant === 'dark' ? 'white' : 'black',
                   opacity: disabled ? 0.5 : 1
                 }"
                 v-else
-            />
+            ></i>
           </span>
         </slot>
       </template>

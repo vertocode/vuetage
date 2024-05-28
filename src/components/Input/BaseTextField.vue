@@ -14,7 +14,7 @@
     <div class="base-text-field-container-input">
       <div class="base-text-field-container-input-left-icon">
         <slot name="leftIcon">
-          <FontAwesomeIcon v-if="leftIcon" :icon="leftIcon" />
+          <i v-if="leftIcon" :class="leftIcon"></i>
         </slot>
       </div>
       <label
@@ -76,8 +76,8 @@
           <Spinner class="base-text-field-spinner" :size="loadingSize" :color-spinner="loadingColor" v-if="loading && !useBorderLoading"></Spinner>
         </slot>
         <slot name="rightIcon">
-          <FontAwesomeIcon v-if="!(loading && !useBorderLoading) && rightIcon" :icon="rightIcon" />
-          <FontAwesomeIcon v-else-if="password" :icon="`fa ${hidePassword ? 'fa-eye-slash' : 'fa-eye'}`" @click="hidePassword = !hidePassword"></FontAwesomeIcon>
+          <i v-if="!(loading && !useBorderLoading) && rightIcon" :class="rightIcon"></i>
+          <i v-else-if="password" :class="`fa ${hidePassword ? 'fa-eye-slash' : 'fa-eye'}`" @click="hidePassword = !hidePassword"></i>
         </slot>
       </div>
     </div>

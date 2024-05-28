@@ -4,14 +4,14 @@
       <div class="header">
         <span class="title" v-if="title">
           <slot name="title">
-            <FontAwesomeIcon v-if="leftIcon" :icon="leftIcon" />
+            <i v-if="leftIcon" :class="leftIcon"></i>
             {{ title }}
-            <FontAwesomeIcon v-if="rightIcon" :icon="rightIcon" />
+            <i v-if="rightIcon" :class="rightIcon"></i>
           </slot>
         </span>
         <slot name="closeButton">
           <button v-if="showCloseButton" class="close-button" @click="$emit('close')">
-            <FontAwesomeIcon v-if="closeIcon" :icon="closeIcon" />
+            <i :class="closeIcon"></i>
           </button>
         </slot>
       </div>
