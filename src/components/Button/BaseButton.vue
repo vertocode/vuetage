@@ -20,26 +20,22 @@
 
       <span v-else class="base-button-content">
         <slot name="leftIcon">
-         <i
-             v-if="leftIcon && !hideLeftIcon"
-             :class="leftIcon"
-             data-test-id="left-icon"
-         ></i>
+          <FontAwesomeIcon v-if="leftIcon" :icon="leftIcon" data-test-id="left-icon" />
         </slot>
 
         <slot>Label</slot>
 
         <slot name="rightIcon">
-          <i
+          <FontAwesomeIcon
               v-if="disabled && !hideRightIcon"
-              class="fa fa-lock"
+              icon="fa fa-lock"
               data-test-id="right-icon-lock"
-          ></i>
-          <i
-              v-else-if="rightIcon && !hideRightIcon"
-              :class="rightIcon"
-              data-test-id="right-icon"
-          ></i>
+          />
+           <FontAwesomeIcon
+               v-else-if="rightIcon && !hideRightIcon"
+               :icon="rightIcon"
+               data-test-id="right-icon"
+           />
         </slot>
       </span>
     </button>
@@ -50,6 +46,7 @@
 import { computed } from 'vue'
 import { Props } from '@/typing/BaseButton'
 import Spinner from '@/components/Spinner/Spinner.vue'
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 const props = withDefaults(defineProps<Props>(), {
 	disabled: false,
@@ -122,7 +119,7 @@ const classes = computed(() => {
 
     &.base-button-hover:hover {
       background-color: var(--primary-color-hover);
-      border-color: var(--border-primary-color)-hover;
+      border-color: var(--border-primary-color-hover);
     }
   }
 
@@ -131,7 +128,7 @@ const classes = computed(() => {
     border-color: var(--border-success);
 
     &.base-button-hover:hover {
-      background-color: var(--success)-hover;
+      background-color: var(--success-hover);
       border-color: var(--border-success-hover);
     }
   }
@@ -153,7 +150,7 @@ const classes = computed(() => {
 
     &.base-button-hover:hover {
       background-color: var(--outline-primary)-hover;
-      color: var(--outline-primary)-color-hover;
+      color: var(--outline-primary-color-hover);
     }
   }
 

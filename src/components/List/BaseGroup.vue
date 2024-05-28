@@ -17,21 +17,19 @@
         <div class="header-container">
           <div class="title-container">
             <slot name="title">
-              <i v-if="leftIcon" :class="leftIcon"></i>
+              <slot name="leftIcon">
+                <FontAwesomeIcon v-if="leftIcon" :icon="leftIcon" />
+              </slot>
               <div class="title">{{ title }}</div>
-              <i v-if="rightIcon" :class="rightIcon"></i>
+              <slot name="rightIcon">
+                <FontAwesomeIcon v-if="rightIcon" :icon="rightIcon" />
+              </slot>
             </slot>
           </div>
-          <div class="dropdown-icon-container" v-if="showDropdown || true">
+          <div class="dropdown-icon-container" v-if="showDropdown">
             <slot name="dropdownIcon">
-              <i
-                  class="fa fa-caret-down"
-                  v-if="showOptions"
-              ></i>
-              <i
-                  class="fa fa-caret-up"
-                  v-else
-              ></i>
+              <FontAwesomeIcon v-if="showOptions" icon="caret-up" />
+              <FontAwesomeIcon v-else icon="caret-down" />
             </slot>
           </div>
         </div>
@@ -45,6 +43,7 @@
 
 <script setup lang="ts">
 import { defineProps, ref, StyleValue } from 'vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import type { Props } from '@/typing/BaseGroup'
 
 const props = defineProps<Props>()

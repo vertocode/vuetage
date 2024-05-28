@@ -11,9 +11,9 @@
       @mouseenter="isHovered = true"
       @mouseout="isHovered = false"
   >
-    <i v-if="leftIcon" :class="leftIcon"></i>
+    <FontAwesomeIcon v-if="leftIcon" :icon="leftIcon" />
     <slot v-bind="{ active }"></slot>
-    <i v-if="rightIcon" :class="rightIcon"></i>
+    <FontAwesomeIcon v-if="rightIcon" :icon="rightIcon" />
   </div>
 </template>
 

@@ -14,7 +14,7 @@
     <div class="base-text-field-container-input">
       <div class="base-text-field-container-input-left-icon">
         <slot name="leftIcon">
-          <i v-if="leftIcon" :class="leftIcon"></i>
+          <FontAwesomeIcon v-if="leftIcon" :icon="leftIcon" />
         </slot>
       </div>
       <label
@@ -76,8 +76,8 @@
           <Spinner class="base-text-field-spinner" :size="loadingSize" :color-spinner="loadingColor" v-if="loading && !useBorderLoading"></Spinner>
         </slot>
         <slot name="rightIcon">
-          <i v-if="!(loading && !useBorderLoading) && rightIcon" :class="rightIcon"></i>
-          <i v-else-if="password" :class="`fa ${hidePassword ? 'fa-eye-slash' : 'fa-eye'}`" @click="hidePassword = !hidePassword"></i>
+          <FontAwesomeIcon v-if="!(loading && !useBorderLoading) && rightIcon" :icon="rightIcon" />
+          <FontAwesomeIcon v-else-if="password" :icon="`fa ${hidePassword ? 'fa-eye-slash' : 'fa-eye'}`" @click="hidePassword = !hidePassword"></FontAwesomeIcon>
         </slot>
       </div>
     </div>
@@ -91,6 +91,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { ref, watch, computed, useSlots } from 'vue'
 import Spinner from '@/components/Spinner/Spinner.vue'
 import ErrorComponent from '@/components/Error/ErrorComponent.vue'
@@ -303,8 +304,8 @@ const slots = useSlots()
         font-weight: bold;
 
         &.label-dark {
-          background-color: var(--dark-base-color), 5%;
-          border: 1px solid var(--dark-label-color), 10%;
+          background-color: var(--dark-base-color);
+          border: 1px solid var(--dark-label-color);
           border-bottom: none;
           padding: 2px 8px 0 8px;
           border-radius: 8px 8px 0 0;
@@ -312,7 +313,7 @@ const slots = useSlots()
       }
 
       &.label-dark {
-        color: var(--dark-label-color), 10%;
+        color: var(--dark-label-color);
       }
     }
 
@@ -321,7 +322,7 @@ const slots = useSlots()
       border: none;
       box-sizing: border-box;
       padding: var(--size-medium-1x) var(--size-tiny-3x);
-      border-bottom: 1px solid var(--label-color), 10%;
+      border-bottom: 1px solid var(--label-color);
       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
       &-underlined {
@@ -329,7 +330,7 @@ const slots = useSlots()
         padding: var(--size-small-1x) var(--size-tiny-3x) var(--size-tiny-1x) var(--size-tiny-3x);
 
         &:focus {
-          border-color: var(--label-color), 20%;
+          border-color: var(--label-color);
         }
       }
 
@@ -348,7 +349,7 @@ const slots = useSlots()
         background-color: var(--dark-base-color);
         border: 1px solid var(--dark-label-color);
         border-radius: 3px;
-        color: var(--label-color), 50%;
+        color: var(--label-color);
 
         &:focus {
           outline: none;

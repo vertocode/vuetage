@@ -29,6 +29,7 @@
             @mousedown="handleSlotMouseDown"
         >
           <BaseGroup
+            show-dropdown
             :custom-style="groupStyle"
             v-if="option?.group && option?.items.length > 0"
             :title="option?.group"
