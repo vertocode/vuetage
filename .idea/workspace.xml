@@ -8,12 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lockb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/__tests__/__snapshots__/BaseButton.test.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/__tests__/__snapshots__/BaseButton.test.ts.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseAutocomplete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseAutocomplete.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseSelect.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/BaseItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/BaseMenu.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +191,7 @@
       <workItem from="1716810964132" duration="427000" />
       <workItem from="1716837890516" duration="6919000" />
       <workItem from="1716897608884" duration="600000" />
-      <workItem from="1716932924147" duration="3837000" />
+      <workItem from="1716932924147" duration="1349000" />
     </task>
     <servers />
   </component>
@@ -209,7 +209,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
