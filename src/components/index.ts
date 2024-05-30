@@ -20,9 +20,5 @@ export type { Props as BaseMenuProps } from '../typing/BaseMenu'
 export type { Props as BaseSelectProps } from '../typing/BaseSelect'
 export type { NormalOption, GroupOption } from '@/typing/Option'
 
-// Export config functions
-export {
-    getSCSSVariables,
-    defineVuetageConfig,
-    changeTheme
-} from './loader'
+// Export theme functions
+export { changeTheme } from './theme'

@@ -18,7 +18,7 @@ export const changeTheme = (userStyleConfig: UserStyleConfig) => {
         const scssVariables = getSCSSVariables(userStyleConfig.variables)
 
         const style = document?.createElement('style')
-        if (!style?.textContent) {
+        if (style?.textContent === undefined) {
             console.error('[Vuetage] No style found.')
             return
         }

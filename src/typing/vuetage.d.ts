@@ -5,6 +5,7 @@ import { Props as BaseTextFieldProps } from '@/typing/BaseTextField'
 import { Props as BaseGroupProps } from '@/typing/BaseGroup'
 import { Props as BaseItemProps } from '@/typing/BaseItem'
 import { Props as BaseMenuProps } from '@/typing/BaseMenu'
+import { UserStyleConfig } from '@/typing/Config'
 
 declare module 'vuetage' {
     import { DefineComponent } from 'vue'
@@ -24,4 +25,6 @@ declare module 'vuetage' {
     export const BaseMenu: DefineComponent<BaseMenuProps>
 
     export const Spinner: DefineComponent
+
+    export function changeTheme(theme: UserStyleConfig): void
 }

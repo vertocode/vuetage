@@ -10,9 +10,7 @@ import {
 	BaseItem,
 	BaseGroup,
 	BaseMenu,
-	changeTheme,
-	getSCSSVariables,
-	defineVuetageConfig
+	changeTheme
 } from '@/components'
 
 export default {
@@ -37,7 +35,5 @@ export {
 	BaseItem,
 	BaseGroup,
 	BaseMenu,
-	changeTheme,
-	getSCSSVariables,
-	defineVuetageConfig
+	changeTheme
 }

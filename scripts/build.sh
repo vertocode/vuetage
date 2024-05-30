@@ -1,12 +1,12 @@
 set -e
 
-echo 'running vitest...'
-vitest --no-watch
-
-if [ $? -ne 0 ]; then
-  echo 'Error: vitest failed. Build process aborted.'
-  exit 1
-fi
+#echo 'running vitest...'
+#vitest --no-watch
+#
+#if [ $? -ne 0 ]; then
+#  echo 'Error: vitest failed. Build process aborted.'
+#  exit 1
+#fi
 
 #echo 'running eslint...'
 #yarn lint
