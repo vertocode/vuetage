@@ -23,39 +23,51 @@ export interface UserStyleConfigVariables {
     dark_disabled_color?: string
     primary_color?: string
     primary_color_hover?: string
+    primary_text_color?: string
     border_primary?: string
     border_primary_hover?: string
-    success?: string
+    success_color?: string
+    success_color_hover?: string
+    success_text_color?: string
     border_success?: string
-    success_hover?: string
     border_success_hover?: string
-    danger?: string
+    danger_color?: string
+    danger_color_hover?: string
+    danger_text_color?: string
     border_danger?: string
-    danger_hover?: string
     border_danger_hover?: string
-    dark?: string
-    border_dark?: string
     dark_color?: string
-    dark_hover?: string
+    dark_color_hover?: string
+    dark_text_color?: string
+    border_dark?: string
     border_dark_hover?: string
+    light_color?: string
+    light_color_hover?: string
+    light_text_color?: string
+    border_light?: string
+    border_light_hover?: string
     outline_primary?: string
     outline_primary_color?: string
+    outline_primary_text_color?: string
     border_outline_primary?: string
     outline_primary_hover?: string
     outline_primary_color_hover?: string
     outline_success?: string
     outline_success_color?: string
+    outline_success_text_color?: string
     border_outline_success?: string
     outline_success_hover?: string
     outline_success_color_hover?: string
     outline_danger?: string
-    border_outline_danger?: string
     outline_danger_color?: string
+    outline_danger_text_color?: string
+    border_outline_danger?: string
     outline_danger_hover?: string
     outline_danger_color_hover?: string
     outline_dark?: string
-    border_outline_dark?: string
     outline_dark_color?: string
+    outline_dark_text_color?: string
+    border_outline_dark?: string
     outline_dark_hover?: string
     outline_dark_color_hover?: string
 }

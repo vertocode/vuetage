@@ -124,21 +124,21 @@ const classes = computed(() => {
   }
 
   &.btn-success {
-    background-color: var(--success);
+    background-color: var(--success-color);
     border-color: var(--border-success);
 
     &.base-button-hover:hover {
-      background-color: var(--success-hover);
+      background-color: var(--success-color-hover);
       border-color: var(--border-success-hover);
     }
   }
 
   &.btn-danger {
-    background-color: var(--danger);
+    background-color: var(--danger-color);
     border-color: var(--border-danger);
 
     &.base-button-hover:hover {
-      background-color: var(--danger-hover);
+      background-color: var(--danger-color-hover);
       border-color: var(--border-danger-hover);
     }
   }
@@ -177,12 +177,12 @@ const classes = computed(() => {
   }
 
   .btn-dark {
-    background-color: var(--dark);
+    background-color: var(--dark-color);
     border-color: var(--border-dark);
-    color: var(--dark-color);
+    color: var(--dark-text-color);
 
     &.base-button-hover:hover {
-      background-color: var(--dark-hover);
+      background-color: var(--dark-color-hover);
       border-color: var(--border-dark-hover);
     }
   }

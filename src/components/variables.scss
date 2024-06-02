@@ -30,54 +30,83 @@
   /* === Variant colors === */
   /* Primary */
   --primary-color: #1E88E5;
+  --primary-text-color: #FFFFFF;
   --primary-color-hover: #1565C0;
   --border-primary: #1E88E5;
   --border-primary-hover: #1565C0;
 
+  /* Info */
+  --info-color: #00BCD4;
+  --info-text-color: #FFFFFF;
+  --border-info: #00BCD4;
+  --info-color-hover: #0097A7;
+  --border-info-hover: #0097A7;
+
+  /* Warning */
+  --warning-color: #FF9800;
+  --warning-text-color: #FFFFFF;
+  --border-warning: #FF9800;
+  --warning-color-hover: #F57C00;
+  --border-warning-hover: #F57C00;
+
   /* Success */
-  --success: #43A047;
+  --success-color: #43A047;
+  --success-text-color: #FFFFFF;
   --border-success: #43A047;
-  --success-hover: #388E3C;
+  --success-color-hover: #388E3C;
   --border-success-hover: #388E3C;
 
   /* Danger */
-  --danger: #D32F2F;
+  --danger-color: #D32F2F;
+  --danger-text-color: #FFFFFF;
   --border-danger: #D32F2F;
-  --danger-hover: #C62828;
+  --danger-color-hover: #C62828;
   --border-danger-hover: #C62828;
 
   /* Dark */
-  --dark: #2D2D2D;
+  --dark-color: #2D2D2D;
+  --dark-text-color: #B3B3B3;
   --border-dark: #444444;
-  --dark-color: #B3B3B3;
-  --dark-hover: #424242;
+  --dark-color-hover: #424242;
   --border-dark-hover: #555555;
 
+  /* Light */
+  --light-color: #F6F6F6;
+  --light-text-color: #7F7F7F;
+  --border-light: #7F7F7F;
+  --light-color-hover: #F0F0F0;
+  --border-light-hover: #F0F0F0;
+
   /* Outline Primary */
-  --outline-primary: #transparent;
+  --outline-primary: transparent;
   --outline-primary-color: #1E88E5;
+  --outline-primary-text-color: #1E88E5;
   --border-outline-primary: #1E88E5;
   --outline-primary-hover: rgba(30, 136, 229, 0.2);
   --outline-primary-color-hover: #1E88E5;
 
   /* Outline Success */
-  --outline-success: #transparent;
+  --outline-success: transparent;
   --outline-success-color: #43A047;
+  --outline-success-text-color: #43A047;
   --border-outline-success: #43A047;
   --outline-success-hover: rgba(67, 160, 71, 0.2);
   --outline-success-color-hover: #43A047;
 
   /* Outline Danger */
-  --outline-danger: #transparent;
+  --outline-danger: transparent;
   --border-outline-danger: #D32F2F;
   --outline-danger-color: #D32F2F;
+  --outline-danger-text-color: #D32F2F;
   --outline-danger-hover: rgba(211, 47, 47, 0.2);
   --outline-danger-color-hover: #D32F2F;
 
   /* Outline Dark */
-  --outline-dark: #transparent;
+  --outline-dark: transparent;
   --border-outline-dark: #444444;
   --outline-dark-color: #B3B3B3;
+  --outline-dark-text-color: #B3B3B3;
   --outline-dark-hover: rgba(150, 150, 150, 0.5);
   --outline-dark-color-hover: #B3B3B3;
+
 }
