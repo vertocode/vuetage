@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Checkbox/BaseCheckbox.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Checkbox/__stories__/BaseCheckbox.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/composables/useColor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/typing/BaseCheckbox.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/typing/Color.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/BaseButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/Config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/Config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typing/BaseCheckbox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseCheckbox.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +186,7 @@
       <workItem from="1716932924147" duration="1349000" />
       <workItem from="1717027028015" duration="11000" />
       <workItem from="1717103022110" duration="3104000" />
-      <workItem from="1717359174666" duration="5365000" />
+      <workItem from="1717359174666" duration="5468000" />
     </task>
     <servers />
   </component>
