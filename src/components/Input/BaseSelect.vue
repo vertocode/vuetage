@@ -13,17 +13,17 @@
       <template #rightIcon>
         <slot name="rightIcon" v-bind="{ show: showOptions, disabled }">
           <span v-if="!(loading && !useBorderLoading)" class="right-icon" @click="handleMenu">
-            <FontAwesomeIcon v-if="rightIcon" :icon="rightIcon" />
-            <FontAwesomeIcon
-                icon="fa fa-caret-up"
+            <i v-if="rightIcon" :class="rightIcon" />
+            <i
+                class="fa fa-caret-up"
                 :style="{
                   color: variant === 'dark' ? 'white' : 'black',
                   opacity: disabled ? 0.5 : 1
                 }"
                 v-else-if="showOptions"
             />
-            <FontAwesomeIcon
-                icon="fa fa-caret-down"
+            <i
+                class="fa fa-caret-down"
                 :style="{
                   color: variant === 'dark' ? 'white' : 'black',
                   opacity: disabled ? 0.5 : 1
@@ -76,7 +76,6 @@ import { BaseTextField, BaseItem, BaseMenu, BaseGroup } from '@/components'
 
 import type { NormalOption } from '@/typing/Option'
 import type { Props } from '@/typing/BaseSelect'
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 const props = withDefaults(defineProps<Props>(), {
 	multiple: false,

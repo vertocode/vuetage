@@ -4,12 +4,20 @@
         class="default-input"
         type="checkbox"
         width="48px"
+        :disabled="disabled"
         :value="key"
         :checked="checked"
         @change="handleChange"
     />
     <slot name="checkmark">
-      <span class="checkmark"></span>
+      <div class="checkmark" :class="disabled && 'disabled'">
+         <span class="icon-container">
+            <i
+              class="fa fa-check"
+              :class="checkmarkSize"
+            />
+        </span>
+      </div>
     </slot>
   </div>
 </template>
@@ -19,10 +27,12 @@ import { Props } from '@/typing/BaseCheckbox'
 import { computed, ref } from 'vue'
 import { useColor } from "@/composables/useColor"
 
-
 const props = defineProps<Props>()
 
-const { variantColorHover, variantColor, variantTextColor } = useColor({ variant: props.color || 'primary' })
+const { variantColorHover, variantColor, variantTextColor } = useColor({
+  variant: props.color || 'primary',
+  disabled: props.disabled
+})
 
 const emits = defineEmits(['key', 'checked'])
 const checked = ref<boolean>(props.defaultChecked || false)
@@ -36,6 +46,33 @@ const handleChange = (e: Event) => {
   emits('checked', checked)
 }
 
+const size = computed(() => {
+  switch (props.size) {
+    case 'small':
+      return '20px'
+    case 'medium':
+      return '25px'
+    case 'large':
+      return '30px'
+    default:
+      if (props.size) return props.size
+      return '25px'
+  }
+})
+
+const checkmarkSize = computed(() => {
+  switch (props.size) {
+    case 'small':
+      return 'fa-2xs'
+    case 'medium':
+      return 'fa-1x'
+    case 'large':
+      return 'fa-lg'
+    default:
+      if (props.checkIconClass) return props.checkIconClass
+      return 'fa-1x'
+  }
+})
 
 </script>
 
@@ -44,8 +81,8 @@ const handleChange = (e: Event) => {
 
 .base-checkbox {
   position: relative;
-  height: 25px;
-  width: 25px;
+  height: v-bind(size);
+  width: v-bind(size);
 
   .default-input {
     opacity: 0;
@@ -57,6 +94,10 @@ const handleChange = (e: Event) => {
     margin: 0;
     cursor: pointer;
     z-index: 10;
+
+    &[disabled] {
+      cursor: not-allowed;
+    }
   }
 
   .checkmark {
@@ -69,9 +110,15 @@ const handleChange = (e: Event) => {
     border: 1px solid v-bind(variantColorHover);
     border-radius: 4px;
 
-    &:after {
-      content: '';
-      position: absolute;
+    .icon-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    i {
       display: none;
     }
   }
@@ -84,19 +131,14 @@ const handleChange = (e: Event) => {
     background-color: v-bind(variantColor);
   }
 
-  .default-input:checked ~ .checkmark:after {
+  .default-input:checked ~ .checkmark i {
+    color: v-bind(variantTextColor);
     display: block;
   }
 
-  /* Styles for check icon */
-  .checkmark:after {
-    left: 8px;
-    top: 3px;
-    width: 6px;
-    height: 12px;
-    border: solid v-bind(variantTextColor);
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
+  .disabled {
+    background-color: var(--disabled-color);
+    border-color: var(--disabled-color);
   }
 }
 

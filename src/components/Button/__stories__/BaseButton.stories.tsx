@@ -106,6 +106,22 @@ Danger.args = {
     variant: 'danger'
 }
 
+export const Dark: Story = {
+    render: (args) => ({
+        components: { BaseButton },
+        setup() {
+            return { args }
+        },
+        template: '<BaseButton v-bind="args">Dark</BaseButton>'
+    }),
+    args: {
+        ...BaseButton.args
+    }
+}
+Dark.args = {
+    variant: 'dark'
+}
+
 export const OutlinePrimary: Story = {
     render: (args) => ({
         components: { BaseButton },
@@ -152,22 +168,6 @@ export const OutlineDanger: Story = {
 }
 OutlineDanger.args = {
     variant: 'outline-danger'
-}
-
-export const Dark: Story = {
-    render: (args) => ({
-        components: { BaseButton },
-        setup() {
-            return { args }
-        },
-        template: '<BaseButton v-bind="args">Dark</BaseButton>'
-    }),
-    args: {
-        ...BaseButton.args
-    }
-}
-Dark.args = {
-    variant: 'dark'
 }
 
 export const OutlineDark: Story = {

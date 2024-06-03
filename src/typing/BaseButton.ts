@@ -21,10 +21,10 @@ type Variant =
     'primary'
     | 'success'
     | 'danger'
+    | 'dark'
     | 'outline-primary'
     | 'outline-success'
     | 'outline-danger'
-    | 'dark'
     | 'outline-dark'
 
 type Size = 'small' | 'medium' | 'large'

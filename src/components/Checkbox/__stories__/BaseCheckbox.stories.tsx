@@ -72,3 +72,39 @@ export const Light = {
         color: 'light'
     }
 }
+
+export const Small = {
+    ...Template,
+    args: {
+        size: 'small'
+    }
+}
+
+export const Medium = {
+    ...Template,
+    args: {
+        size: 'medium'
+    }
+}
+
+export const Large = {
+    ...Template,
+    args: {
+        size: 'large'
+    }
+}
+
+export const CustomSize = {
+    ...Template,
+    args: {
+        size: '100px',
+        checkIconClass: 'fa-5x'
+    }
+}
+
+export const Disabled = {
+    ...Template,
+    args: {
+        disabled: true
+    }
+}

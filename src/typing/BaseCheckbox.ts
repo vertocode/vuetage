@@ -6,5 +6,10 @@ export interface Props {
     color?: Color
     inputStyle?: CustomStyle
     key?: string
+    size?: Size
     defaultChecked?: boolean
+    checkIconClass?: string
+    disabled?: boolean
 }
+
+type Size = 'small' | 'medium' | 'large' | string

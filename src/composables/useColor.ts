@@ -3,6 +3,7 @@ import {computed} from "vue";
 
 interface UseColorProps {
     variant: Color | string
+    disabled?: boolean
 }
 
 interface UseColorReturn {
@@ -11,8 +12,22 @@ interface UseColorReturn {
     variantTextColor: string
 }
 
-export const useColor = ({ variant }: UseColorProps): UseColorReturn => {
+export const useColor = ({ variant, disabled }: UseColorProps): UseColorReturn => {
     const config = computed(() => {
+        if (disabled) {
+            if (variant === 'dark') {
+                return {
+                    variantColor: 'var(--dark-disabled-color)',
+                    variantColorHover: 'var(--dark-disabled-color)',
+                    variantTextColor: 'var(--dark-disabled-color)'
+                }
+            }
+            return {
+                variantColor: 'var(--disabled-color)',
+                variantColorHover: 'var(--disabled-color)',
+                variantTextColor: 'var(--disabled-text-color)'
+            }
+        }
         switch (variant) {
             case 'primary':
                 return {

@@ -4,14 +4,14 @@
       <div class="header">
         <span class="title" v-if="title">
           <slot name="title">
-            <FontAwesomeIcon v-if="leftIcon" :icon="leftIcon" />
+            <i v-if="leftIcon" :class="leftIcon" />
             {{ title }}
-            <FontAwesomeIcon v-if="rightIcon" :icon="rightIcon" />
+            <i v-if="rightIcon" :class="rightIcon" />
           </slot>
         </span>
         <slot name="closeButton">
           <button v-if="showCloseButton" class="close-button" @click="$emit('close')">
-            <FontAwesomeIcon v-if="closeIcon" :icon="closeIcon" />
+            <i v-if="closeIcon" :class="closeIcon" />
           </button>
         </slot>
       </div>
@@ -21,7 +21,6 @@
 </template>
 
 <script setup lang="ts">
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { defineProps, withDefaults, StyleValue, computed } from 'vue'
 import { Props } from '@/typing/BaseMenu'
 

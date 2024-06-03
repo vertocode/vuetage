@@ -20,20 +20,20 @@
 
       <span v-else class="base-button-content">
         <slot name="leftIcon">
-          <FontAwesomeIcon v-if="leftIcon" :icon="leftIcon" data-test-id="left-icon" />
+          <i v-if="leftIcon" :class="leftIcon" data-test-id="left-icon" />
         </slot>
 
         <slot>Label</slot>
 
         <slot name="rightIcon">
-          <FontAwesomeIcon
+          <i
               v-if="disabled && !hideRightIcon"
-              icon="fa fa-lock"
+              class="fa fa-lock"
               data-test-id="right-icon-lock"
           />
-           <FontAwesomeIcon
+           <i
                v-else-if="rightIcon && !hideRightIcon"
-               :icon="rightIcon"
+               :class="rightIcon"
                data-test-id="right-icon"
            />
         </slot>
@@ -46,7 +46,6 @@
 import { computed } from 'vue'
 import { Props } from '@/typing/BaseButton'
 import Spinner from '@/components/Spinner/Spinner.vue'
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 const props = withDefaults(defineProps<Props>(), {
 	disabled: false,
@@ -176,7 +175,7 @@ const classes = computed(() => {
     }
   }
 
-  .btn-dark {
+  &.btn-dark {
     background-color: var(--dark-color);
     border-color: var(--border-dark);
     color: var(--dark-text-color);
@@ -187,7 +186,7 @@ const classes = computed(() => {
     }
   }
 
-  .btn-outline-dark {
+  &.btn-outline-dark {
     background-color: var(--outline-dark);
     border-color: var(--border-outline-dark);
     color: var(--outline-dark-color);
