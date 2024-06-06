@@ -13,10 +13,12 @@
       <slot name="checkmark" v-bind="{ checked }">
         <div class="checkmark" :class="disabled && 'disabled'">
          <span class="icon-container">
-            <i
-                class="fa fa-check"
-                :class="checkmarkSize"
-            />
+           <slot name="checkIcon" v-bind="{ checked }">
+               <i
+                   class="fa fa-check"
+                   :class="checkmarkSize"
+               />
+           </slot>
         </span>
         </div>
       </slot>
