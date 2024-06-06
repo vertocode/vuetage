@@ -9,16 +9,18 @@
         :checked="checked"
         @change="handleChange"
     />
-    <slot name="checkmark">
-      <div class="checkmark" :class="disabled && 'disabled'">
+    <div class="container">
+      <slot name="checkmark" v-bind="{ checked }">
+        <div class="checkmark" :class="disabled && 'disabled'">
          <span class="icon-container">
             <i
-              class="fa fa-check"
-              :class="checkmarkSize"
+                class="fa fa-check"
+                :class="checkmarkSize"
             />
         </span>
-      </div>
-    </slot>
+        </div>
+      </slot>
+    </div>
   </div>
 </template>
 
@@ -38,7 +40,9 @@ const emits = defineEmits(['key', 'checked'])
 const checked = ref<boolean>(props.defaultChecked || false)
 
 const handleChange = (e: Event) => {
-  const { value, checked } = e.target as HTMLInputElement
+  console.log('sendo executado')
+  const { value, checked: newChecked } = e.target as HTMLInputElement
+  checked.value = newChecked
   if (props.key) {
     emits('key', value)
   }
@@ -100,38 +104,44 @@ const checkmarkSize = computed(() => {
     }
   }
 
-  .checkmark {
+  .container {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     right: 0;
-    background-color: var(--base-color);
-    border: 1px solid v-bind(variantColorHover);
-    border-radius: 4px;
 
-    .icon-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .checkmark {
       width: 100%;
       height: 100%;
-    }
+      background-color: var(--base-color);
+      border: 1px solid v-bind(variantColorHover);
+      border-radius: 4px;
 
-    i {
-      display: none;
+      .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      i {
+        display: none;
+      }
     }
   }
 
-  &:hover .default-input ~ .checkmark {
+
+  &:hover .default-input ~ .container > .checkmark {
     background-color: v-bind(variantColorHover);
   }
 
-  .default-input:checked ~ .checkmark {
+  .default-input:checked ~ .container > .checkmark {
     background-color: v-bind(variantColor);
   }
 
-  .default-input:checked ~ .checkmark i {
+  .default-input:checked ~ .container > .checkmark i {
     color: v-bind(variantTextColor);
     display: block;
   }

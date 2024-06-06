@@ -108,3 +108,56 @@ export const Disabled = {
         disabled: true
     }
 }
+
+export const CustomCheckbox = {
+    render: () => ({
+        components: { BaseCheckbox },
+        template: `<div style="max-width: 300px; display: flex; gap: 12px;">
+            <BaseCheckbox v-bind="args" style="margin-right: 8px">
+                 <template #checkmark="{ checked, test }">
+                      <i 
+                          class="fa fa-car"
+                          :style="{
+                             color: checked ? 'green' : 'red',
+                             fontSize: '32px'
+                          }"
+                      />
+                 </template>
+            </BaseCheckbox>
+            <BaseCheckbox defaultChecked v-bind="args" >
+             <template #checkmark="{ checked, test }">
+                     <i 
+                          class="fa fa-car"
+                          :style="{
+                             color: checked ? 'green' : 'red',
+                             fontSize: '32px'
+                          }"
+                      />
+                 </template>
+            </BaseCheckbox>
+            <br>
+            <BaseCheckbox v-bind="args" style="margin-right: 8px">
+                 <template #checkmark="{ checked, test }">
+                      <i 
+                          class="fa fa-laptop"
+                          :style="{
+                             color: checked ? 'blue' : 'gray',
+                             fontSize: '32px'
+                          }"
+                      />
+                 </template>
+            </BaseCheckbox>
+            <BaseCheckbox defaultChecked v-bind="args" >
+             <template #checkmark="{ checked, test }">
+                     <i 
+                          class="fa fa-laptop"
+                          :style="{
+                             color: checked ? 'blue' : 'gray',
+                             fontSize: '32px'
+                          }"
+                      />
+                 </template>
+            </BaseCheckbox>
+        </div>`
+    })
+}
