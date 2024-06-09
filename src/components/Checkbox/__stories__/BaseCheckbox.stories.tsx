@@ -161,3 +161,10 @@ export const CustomCheckbox = {
         </div>`
     })
 }
+
+export const DefaultChecked = {
+    render: () => ({
+        components: { BaseCheckbox },
+        template: `<BaseCheckbox defaultChecked />`
+    })
+}

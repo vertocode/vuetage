@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Checkbox/BaseCheckbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Checkbox/BaseCheckbox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Checkbox/__stories__/BaseCheckbox.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Checkbox/__stories__/BaseCheckbox.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +190,8 @@
       <workItem from="1717103022110" duration="3104000" />
       <workItem from="1717359174666" duration="5728000" />
       <workItem from="1717446883015" duration="4515000" />
-      <workItem from="1717710348432" duration="2040000" />
+      <workItem from="1717710348432" duration="2694000" />
+      <workItem from="1717954233259" duration="110000" />
     </task>
     <servers />
   </component>

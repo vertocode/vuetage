@@ -42,7 +42,6 @@ const emits = defineEmits(['key', 'checked'])
 const checked = ref<boolean>(props.defaultChecked || false)
 
 const handleChange = (e: Event) => {
-  console.log('sendo executado')
   const { value, checked: newChecked } = e.target as HTMLInputElement
   checked.value = newChecked
   if (props.key) {
