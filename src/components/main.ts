@@ -34,6 +34,7 @@ export {
 	BaseTextField,
 	BaseAutocomplete,
 	BaseSelect,
+	BaseCheckbox,
 	BaseItem,
 	BaseGroup,
 	BaseMenu,

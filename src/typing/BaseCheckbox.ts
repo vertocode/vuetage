@@ -10,6 +10,9 @@ export interface Props {
     defaultChecked?: boolean
     checkIconClass?: string
     disabled?: boolean
+    variantColor?: string
+    bgHoverColor?: string
+    checkColor?: string
 }
 
 type Size = 'small' | 'medium' | 'large' | string

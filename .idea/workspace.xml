@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/CREATING_COMPONENT.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Checkbox/BaseCheckbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Checkbox/BaseCheckbox.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/vuetage.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/vuetage.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composables/useColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/composables/useColor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typing/BaseCheckbox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseCheckbox.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +195,8 @@
       <workItem from="1717359174666" duration="5728000" />
       <workItem from="1717446883015" duration="4515000" />
       <workItem from="1717710348432" duration="2694000" />
-      <workItem from="1717954233259" duration="4638000" />
+      <workItem from="1717954233259" duration="9432000" />
+      <workItem from="1718061788087" duration="884000" />
     </task>
     <servers />
   </component>

@@ -8,6 +8,18 @@
         :value="key"
         :checked="checked"
         @change="handleChange"
+        @input="emits('input', $event)"
+        @click="emits('click', $event)"
+        @focus="emits('focus', $event)"
+        @focusout="emits('focusout', $event)"
+        @blur="emits('blur', $event)"
+        @keydown="emits('keydown', $event)"
+        @keyup="emits('keyup', $event)"
+        @mousedown="emits('mousedown', $event)"
+        @mouseup="emits('mouseup', $event)"
+        @mouseout="emits('mouseout', $event)"
+        @mouseenter="emits('mouseenter', $event)"
+        @mouseleave="emits('mouseleave', $event)"
     />
     <div class="container">
       <slot name="checkmark" v-bind="{ checked }">
@@ -35,13 +47,35 @@ const props = defineProps<Props>()
 
 const { variantColorHover, variantColor, variantTextColor } = useColor({
   variant: props.color || 'primary',
-  disabled: props.disabled
+  disabled: props.disabled,
+  customColors: {
+    variantColor: props.variantColor,
+    variantColorHover: props.bgHoverColor,
+    variantTextColor: props.checkColor
+  }
 })
 
-const emits = defineEmits(['key', 'checked'])
+const emits = defineEmits([
+  'key',
+  'checked',
+  'change',
+  'input',
+  'click',
+  'focus',
+  'focusout',
+  'blur',
+  'keydown',
+  'keyup',
+  'mousedown',
+  'mouseup',
+  'mouseout',
+  'mouseenter',
+  'mouseleave'
+])
 const checked = ref<boolean>(props.defaultChecked || false)
 
 const handleChange = (e: Event) => {
+  emits('change', e)
   const { value, checked: newChecked } = e.target as HTMLInputElement
   checked.value = newChecked
   if (props.key) {

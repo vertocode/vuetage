@@ -4,6 +4,11 @@ import {computed} from "vue";
 interface UseColorProps {
     variant: Color | string
     disabled?: boolean
+    customColors?: {
+        variantColor?: string
+        variantColorHover?: string
+        variantTextColor?: string
+    }
 }
 
 interface UseColorReturn {
@@ -12,71 +17,71 @@ interface UseColorReturn {
     variantTextColor: string
 }
 
-export const useColor = ({ variant, disabled }: UseColorProps): UseColorReturn => {
+export const useColor = ({ variant, disabled, customColors }: UseColorProps): UseColorReturn => {
     const config = computed(() => {
         if (disabled) {
             if (variant === 'dark') {
                 return {
-                    variantColor: 'var(--dark-disabled-color)',
-                    variantColorHover: 'var(--dark-disabled-color)',
-                    variantTextColor: 'var(--dark-disabled-color)'
+                    variantColor: customColors?.variantColor || 'var(--dark-disabled-color)',
+                    variantColorHover: customColors?.variantColorHover || 'var(--dark-disabled-color)',
+                    variantTextColor: customColors?.variantTextColor || 'var(--dark-disabled-color)'
                 }
             }
             return {
-                variantColor: 'var(--disabled-color)',
-                variantColorHover: 'var(--disabled-color)',
-                variantTextColor: 'var(--disabled-text-color)'
+                variantColor: customColors?.variantColor || 'var(--disabled-color)',
+                variantColorHover: customColors?.variantColorHover || 'var(--disabled-color)',
+                variantTextColor: customColors?.variantTextColor || 'var(--disabled-text-color)'
             }
         }
         switch (variant) {
             case 'primary':
                 return {
-                    variantColor: 'var(--primary-color)',
-                    variantColorHover: 'var(--primary-color-hover)',
-                    variantTextColor: 'var(--primary-text-color)'
+                    variantColor: customColors?.variantColor || 'var(--primary-color)',
+                    variantColorHover: customColors?.variantColorHover || 'var(--primary-color-hover)',
+                    variantTextColor: customColors?.variantTextColor || 'var(--primary-text-color)'
                 }
             case 'success':
                 return {
-                    variantColor: 'var(--success-color)',
-                    variantColorHover: 'var(--success-color-hover)',
-                    variantTextColor: 'var(--success-text-color)'
+                    variantColor: customColors?.variantColor || 'var(--success-color)',
+                    variantColorHover: customColors?.variantColorHover || 'var(--success-color-hover)',
+                    variantTextColor: customColors?.variantTextColor || 'var(--success-text-color)'
                 }
             case 'danger':
                 return {
-                    variantColor: 'var(--danger-color)',
-                    variantColorHover: 'var(--danger-color-hover)',
-                    variantTextColor: 'var(--danger-text-color)'
+                    variantColor: customColors?.variantColor || 'var(--danger-color)',
+                    variantColorHover: customColors?.variantColorHover || 'var(--danger-color-hover)',
+                    variantTextColor: customColors?.variantTextColor || 'var(--danger-text-color)'
                 }
             case 'warning':
                 return {
-                    variantColor: 'var(--warning-color)',
-                    variantColorHover: 'var(--warning-color-hover)',
-                    variantTextColor: 'var(--warning-text-color)'
+                    variantColor: customColors?.variantColor || 'var(--warning-color)',
+                    variantColorHover: customColors?.variantColorHover || 'var(--warning-color-hover)',
+                    variantTextColor: customColors?.variantTextColor || 'var(--warning-text-color)'
                 }
             case 'info':
                 return {
-                    variantColor: 'var(--info-color)',
-                    variantColorHover: 'var(--info-color-hover)',
-                    variantTextColor: 'var(--info-text-color)'
+                    variantColor: customColors?.variantColor || 'var(--info-color)',
+                    variantColorHover: customColors?.variantColorHover || 'var(--info-color-hover)',
+                    variantTextColor: customColors?.variantTextColor || 'var(--info-text-color)'
                 }
             case 'dark':
                 return {
-                    variantColor: 'var(--dark-color)',
-                    variantColorHover: 'var(--dark-color-hover)',
-                    variantTextColor: 'var(--dark-text-color)'
+                    variantColor: customColors?.variantColor || 'var(--dark-color)',
+                    variantColorHover: customColors?.variantColorHover || 'var(--dark-color-hover)',
+                    variantTextColor: customColors?.variantTextColor || 'var(--dark-text-color)'
                 }
             case 'light':
                 return {
-                    variantColor: 'var(--light-color)',
-                    variantColorHover: 'var(--light-color-hover)',
-                    variantTextColor: 'var(--light-text-color)'
+                    variantColor: customColors?.variantColor || 'var(--light-color)',
+                    variantColorHover: customColors?.variantColorHover || 'var(--light-color-hover)',
+                    variantTextColor: customColors?.variantTextColor || 'var(--light-text-color)'
                 }
             default:
                 console.log('[vuetage]: variant not found, using primary color as default')
                 return {
-                    variantColor: 'var(--primary-color)',
-                    variantColorHover: 'var(--primary-color-hover)',
-                    variantTextColor: 'var(--primary-text-color)'
+                    variantColor: customColors?.variantColor || 'var(--primary-color)',
+                    variantColorHover: customColors?.variantColorHover || 'var(--primary-color-hover)',
+                    variantTextColor: customColors?.variantTextColor || 'var(--primary-text-color)'
                 }
         }
     })

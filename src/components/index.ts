@@ -1,7 +1,7 @@
 import './style.scss'
 
 // Exports components
-export { default as BaseButton } from 'src/Button/BaseButton.vue'
+export { default as BaseButton } from './Button/BaseButton.vue'
 export { default as BaseTextField } from './Input/BaseTextField.vue'
 export { default as BaseSelect } from './Input/BaseSelect.vue'
 export { default as BaseAutocomplete } from './Input/BaseAutocomplete.vue'
