@@ -6,6 +6,7 @@ import { Props as BaseCheckboxProps } from '@/typing/BaseCheckbox'
 import { Props as BaseGroupProps } from '@/typing/BaseGroup'
 import { Props as BaseItemProps } from '@/typing/BaseItem'
 import { Props as BaseMenuProps } from '@/typing/BaseMenu'
+import { Props as BaseFlexProps } from '@/typing/BaseFlex'
 import { UserStyleConfig } from '@/typing/Config'
 
 declare module 'vuetage' {
@@ -27,7 +28,10 @@ declare module 'vuetage' {
 
     export const BaseMenu: DefineComponent<BaseMenuProps>
 
+    export const BaseFlex: DefineComponent<BaseFlexProps>
+
     export const Spinner: DefineComponent
+
 
     export function changeTheme(theme: UserStyleConfig): void
 }

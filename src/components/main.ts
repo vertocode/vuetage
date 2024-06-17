@@ -11,6 +11,7 @@ import {
 	BaseGroup,
 	BaseMenu,
 	BaseCheckbox,
+	BaseFlex,
 	changeTheme
 } from '@/components'
 
@@ -21,6 +22,7 @@ export default {
 		app.component('BaseSelect', BaseSelect)
 		app.component('BaseAutocomplete', BaseAutocomplete)
 		app.component('BaseCheckbox', BaseCheckbox)
+		app.component('BaseFlex', BaseFlex)
 		app.component('BaseItem', BaseItem)
 		app.component('BaseGroup', BaseGroup)
 		app.component('BaseMenu', BaseMenu)
@@ -38,5 +40,6 @@ export {
 	BaseItem,
 	BaseGroup,
 	BaseMenu,
+	BaseFlex,
 	changeTheme
 }

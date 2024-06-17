@@ -168,3 +168,11 @@ export const DefaultChecked = {
         template: `<BaseCheckbox defaultChecked />`
     })
 }
+
+
+export const Label = {
+    ...Template,
+    args: {
+        label: 'Label'
+    }
+}

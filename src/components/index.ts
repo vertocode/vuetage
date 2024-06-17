@@ -10,6 +10,7 @@ export { default as BaseItem } from './List/BaseItem.vue'
 export { default as BaseGroup } from './List/BaseGroup.vue'
 export { default as BaseMenu } from './Menu/BaseMenu.vue'
 export { default as Spinner } from './Spinner/Spinner.vue'
+export { default as BaseFlex } from './Layout/BaseFlex.vue'
 
 // Export types
 export type { Props as BaseButtonProps } from '../typing/BaseButton'

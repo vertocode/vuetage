@@ -28,8 +28,8 @@
           </div>
           <div class="dropdown-icon-container" v-if="showDropdown">
             <slot name="dropdownIcon">
-              <i v-if="showOptions" class="caret-up" />
-              <i v-else class="caret-down" />
+              <i v-if="showOptions" class="fa fa-caret-up" />
+              <i v-else class="fa fa-caret-down" />
             </slot>
           </div>
         </div>

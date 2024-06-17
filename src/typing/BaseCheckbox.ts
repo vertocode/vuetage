@@ -4,7 +4,9 @@ import { Color } from '@/typing/Color'
 export interface Props {
     modelValue?: boolean
     color?: Color
+    label?: string
     inputStyle?: CustomStyle
+    labelStyle?: CustomStyle
     key?: string
     size?: Size
     defaultChecked?: boolean

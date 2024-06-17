@@ -1,29 +1,30 @@
 <template>
-  <div class="base-checkbox">
-    <input
-        class="default-input"
-        type="checkbox"
-        width="48px"
-        :disabled="disabled"
-        :value="key"
-        :checked="checked"
-        @change="handleChange"
-        @input="emits('input', $event)"
-        @click="emits('click', $event)"
-        @focus="emits('focus', $event)"
-        @focusout="emits('focusout', $event)"
-        @blur="emits('blur', $event)"
-        @keydown="emits('keydown', $event)"
-        @keyup="emits('keyup', $event)"
-        @mousedown="emits('mousedown', $event)"
-        @mouseup="emits('mouseup', $event)"
-        @mouseout="emits('mouseout', $event)"
-        @mouseenter="emits('mouseenter', $event)"
-        @mouseleave="emits('mouseleave', $event)"
-    />
-    <div class="container">
-      <slot name="checkmark" v-bind="{ checked }">
-        <div class="checkmark" :class="disabled && 'disabled'">
+  <BaseFlex align="center">
+    <div class="base-checkbox">
+      <input
+          class="default-input"
+          type="checkbox"
+          width="48px"
+          :disabled="disabled"
+          :value="key"
+          :checked="checked"
+          @change="handleChange"
+          @input="emits('input', $event)"
+          @click="emits('click', $event)"
+          @focus="emits('focus', $event)"
+          @focusout="emits('focusout', $event)"
+          @blur="emits('blur', $event)"
+          @keydown="emits('keydown', $event)"
+          @keyup="emits('keyup', $event)"
+          @mousedown="emits('mousedown', $event)"
+          @mouseup="emits('mouseup', $event)"
+          @mouseout="emits('mouseout', $event)"
+          @mouseenter="emits('mouseenter', $event)"
+          @mouseleave="emits('mouseleave', $event)"
+      />
+      <div class="container">
+        <slot name="checkmark" v-bind="{ checked }">
+          <div class="checkmark" :class="disabled && 'disabled'">
          <span class="icon-container">
            <slot name="checkIcon" v-bind="{ checked }">
                <i
@@ -32,16 +33,23 @@
                />
            </slot>
         </span>
-        </div>
+          </div>
+        </slot>
+      </div>
+    </div>
+    <div class="label-container" v-if="label">
+      <slot name="label" v-bind="{ checked }">
+        <span>{{ label }}</span>
       </slot>
     </div>
-  </div>
+  </BaseFlex>
 </template>
 
 <script setup lang="ts">
 import { Props } from '@/typing/BaseCheckbox'
 import { computed, ref } from 'vue'
 import { useColor } from "@/composables/useColor"
+import { BaseFlex } from "@/components"
 
 const props = defineProps<Props>()
 
@@ -168,7 +176,7 @@ const checkmarkSize = computed(() => {
   }
 
 
-  &:hover .default-input ~ .container > .checkmark {
+  .default-input:hover ~ .container > .checkmark {
     background-color: v-bind(variantColorHover);
   }
 
@@ -185,6 +193,12 @@ const checkmarkSize = computed(() => {
     background-color: var(--disabled-color);
     border-color: var(--disabled-color);
   }
+}
+
+.label-container {
+  height: max-content;
+  font-size: 14px;
+  color: var(--active-text-color)
 }
 
 </style>
