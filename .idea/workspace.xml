@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a6bf79-99cf-4c64-98bd-af63b1c7a416" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/BaseFlex.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/typing/BaseFlex.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Checkbox/BaseCheckbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Checkbox/BaseCheckbox.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Checkbox/__stories__/BaseCheckbox.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Checkbox/__stories__/BaseCheckbox.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/BaseGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/BaseCheckbox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/BaseCheckbox.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typing/vuetage.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typing/vuetage.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseAutocomplete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseAutocomplete.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/BaseTextField.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +194,8 @@
       <workItem from="1717954233259" duration="9432000" />
       <workItem from="1718061788087" duration="1532000" />
       <workItem from="1718364365231" duration="2104000" />
-      <workItem from="1718667368958" duration="537000" />
+      <workItem from="1718667368958" duration="654000" />
+      <workItem from="1718837387074" duration="1384000" />
     </task>
     <servers />
   </component>

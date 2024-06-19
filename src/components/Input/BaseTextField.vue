@@ -53,7 +53,7 @@
         ]"
           :required="required"
           :style="[customStyle, { width, height }]"
-          :placeholder="(hasText || inputFocused) && !readonly && placeholder ? placeholder : ''"
+          :placeholder="(!hasText && (inputFocused || !label)) && !readonly && placeholder ? placeholder : ''"
           :disabled="disabled || (disableOnLoading && loading)"
           :readonly="readonly"
           @input="emitUpdateModelValue($event.target.value)"
@@ -86,7 +86,7 @@
     </slot>
   </div>
   <slot name="errorMessage" v-bind="{ error: errorMessage }">
-    <span class="error-message" v-if="!(loading && useBorderLoading)">{{ errorMessage }}</span>
+    <span class="error-message" v-if="errorMessage && !(loading && useBorderLoading)">{{ errorMessage }}</span>
   </slot>
 </template>
 

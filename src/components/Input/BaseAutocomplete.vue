@@ -143,6 +143,7 @@ const baseTextFieldProps = computed(() => ({
 	customClass: props.customClass,
 	rightIcon: props.rightIcon,
 	leftIcon: props.leftIcon,
+  placeholder: props.placeholder
 }))
 
 const filteredOptions = computed<(NormalOption | GroupOption)[]>(() => {
